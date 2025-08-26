@@ -7,4 +7,4 @@ outputs/logs/*
 outputs/reports/*
 
 # Keep placeholders so empty dirs appear in repo
-!**/.gitkeep
+!**/.gitkeepoutputs/
