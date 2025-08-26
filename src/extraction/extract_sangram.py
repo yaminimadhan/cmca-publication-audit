@@ -175,5 +175,5 @@ def extract_pdf(pdf_path_str, output_dir_str="outputs/processed_text", min_chars
     #check
     print("Files written to:", out_dir)
     print("Preview (first 8 sentences):")
-    for s in sentences[:8]:
+    for s in sentences[:5]:
         print(s)
