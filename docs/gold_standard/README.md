@@ -1,15 +1,13 @@
-# Documentation – CMCA Publication Audit
+# Gold Standard Dataset – CMCA Publication Audit
 
-This folder contains documentation for the Gold Standard dataset.
+This folder contains the Gold Standard dataset (final Excel) and supporting codebooks.
 
-- **codebook_v1.md**  
-  Initial codebook covering the first 20/30 cases.  
-  Defines fields, coding rules, and includes examples.  
-  Status: Work in progress, to be updated after PDF verification and negative case inclusion.
+## Files
 
-- **Future versions**  
-  - v2: Full 30/30 cases, adjudicated decisions, negative cases.  
-  - v3: Final polished codebook with edge case guidelines.
+- **Gold_Standard_Codebook_v2.docx** – Final, Excel-aligned codebook with column definitions, coding rules, decision tree, and worked examples.  
+- **Gold_Standard_v1.xlsx** – Final dataset (30/30 cases, PDF verified).  
+- **codebook_v1.md** – Earlier draft kept for transparency (superseded by v2).
 
-⚠️ Note: The Excel file (`Gold_Standard_Draft20of30.xlsx`) is not the final dataset.  
-It’s a partial draft to track progress only.
+## Notes
+- Use **Codebook v2** for all current and future work.
+- v1 shows the initial approach but should not be used for analysis.
