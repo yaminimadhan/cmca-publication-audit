@@ -1,0 +1,37 @@
+{
+  "case_id": "15",
+  "metadata": {
+    "title": "Pharmacological blockade of the interleukin-1 \nreceptor suppressed Escherichia coli \nlipopolysaccharide-induced neuroinflammation\n in preterm fetal sheep",
+    "doi": "10.1016/j.ajogmf.2023.101124",
+    "journal": "American Journal of Obstetrics\n and Gynecology MFM"
+  },
+  "authors_verbatim": "Takahashi Y.; Takahashi T.; Usuda H.; Carter S.; Fee E. L.; Furfaro L.; Chemtob S.; Olson D. M.; Keelan J. A.; Kallapur S.; Kemp M. W.",
+  "acknowledgement": {
+    "present": false
+  },
+  "cmca_affiliation": {
+    "present": false
+  },
+  "instruments": [
+    {
+      "verbatim": "Confocal microscope (Nikon A1Si)"
+    },
+    {
+      "verbatim": "ELISA plate reader (Spectramax, Molecular Devices LLC)"
+    },
+    {
+      "verbatim": "ViiA7 real-time PCR thermocycler (Life Technologies)"
+    }
+  ],
+  "labels": {
+    "initial": "Ambigiuous",
+    "adjudicated": "Ambigiuous",
+    "rationale": "Mismatch:\n\nAcknowledgement - No\nAffiliation: No\nCo-author: No\nPlatform: Yes "
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1016/j.ajogmf.2023.101124"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "case_id": "11",
+  "metadata": {
+    "title": "Micromachining porous silicon thin films for thermal sensing applications \n \n \n",
+    "doi": "10.1016/j.apmt.2024.102320",
+    "journal": "Applied Materials Today "
+  },
+  "authors_verbatim": "Sharma P.; Erfantalab S.; Dell J.; Parish G.; Keating A.",
+  "acknowledgement": {
+    "present": true,
+    "exact_text": "Acknowledgement:\nThe present work was supported by the Australian Research Council under the project DP170104266. The authors acknowledge the Western Australian node of the NCRIS enabled Australian National Fabrication Facility (ANFF) and the Centre for Microscopy, Characterisation & Analysis (CMCA) at The University of Western Australia and the WA state government.",
+    "pages": [
+      11
+    ],
+    "sections": [
+      "Acknowledgements"
+    ]
+  },
+  "cmca_affiliation": {
+    "present": false
+  },
+  "instruments": [
+    {
+      "verbatim": "FEI Verios XHR SEM"
+    },
+    {
+      "verbatim": "FIB-SEM"
+    },
+    {
+      "verbatim": "Zygo New View™ 6300 optical profilometer"
+    },
+    {
+      "verbatim": "SENTECH Instruments ICP-CVD system"
+    },
+    {
+      "verbatim": "Oxford Instruments Plasmalab system 100 (ICP-RIE)"
+    }
+  ],
+  "labels": {
+    "initial": "Positive",
+    "adjudicated": "Positive",
+    "rationale": "Acknowledgement: Yes\nAffiliation: No\nCo-author: No\nPlatform: Yes "
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1016/j.apmt.2024.102320"
+    }
+  }
+}

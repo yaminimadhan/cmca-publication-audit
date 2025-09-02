@@ -1,0 +1,47 @@
+{
+  "case_id": "29",
+  "metadata": {
+    "title": "\nBrittle–Ductile Threshold in Lithium Disilicate under Sharp Sliding Contact\n",
+    "doi": "10.1177/00220345241256279",
+    "journal": "Journal of dental research"
+  },
+  "authors_verbatim": "Bawazir M.; Lim C. H.; Arnés-Urgellés P.; Lu M.; Huang H.; Zhang Y.",
+  "acknowledgement": {
+    "present": false
+  },
+  "cmca_affiliation": {
+    "present": false
+  },
+  "instruments": [
+    {
+      "verbatim": "environmental field emission scanning"
+    },
+    {
+      "verbatim": "electron microscope (Quanta 250 FEG,"
+    },
+    {
+      "verbatim": "Thermo Fisher Scientific)"
+    },
+    {
+      "verbatim": "dual-beam plasma focused ion beam"
+    },
+    {
+      "verbatim": "scanning electron microscope (FIB-SEM"
+    },
+    {
+      "verbatim": "Tescan S8252X Plasma FIB, Tescan)"
+    }
+  ],
+  "labels": {
+    "initial": "Negative",
+    "adjudicated": "Negative",
+    "negative_type": "Random Negative",
+    "rationale": "Dental materials study \nusing SEM and FIB. \n\nAffiliations: University of \nPennsylvania,\nKing Abdulaziz University,\n University of Queensland,\n Sun Yat-sen University. \n\nNo CMCA involvement."
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1177/00220345241256279"
+    }
+  }
+}

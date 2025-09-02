@@ -1,0 +1,43 @@
+{
+  "case_id": "12",
+  "metadata": {
+    "title": "Enhancing Fast-Charge Capabilities in\n Solid-State Lithium Batteries through the \nIntegration of High Li0.5La0.5TiO3 (LLTO) \nContent in the Lithium-Metal Anode",
+    "doi": "10.1021/acsami.3c12414",
+    "journal": "ACS Applied Materials and Interfaces"
+  },
+  "authors_verbatim": "Chencheng Cao; Yijun Zhong; Leqi Zhao; Hannah Seneque; Zongping Shao",
+  "acknowledgement": {
+    "present": false
+  },
+  "cmca_affiliation": {
+    "present": false
+  },
+  "instruments": [
+    {
+      "verbatim": "Verios SEM instrument"
+    },
+    {
+      "verbatim": "XRD apparatus from Bruker"
+    },
+    {
+      "verbatim": "Kratos Axis Ultra XPS"
+    },
+    {
+      "verbatim": "Solartron 1260"
+    },
+    {
+      "verbatim": "Biologic VSP"
+    }
+  ],
+  "labels": {
+    "initial": "Ambigiuous",
+    "adjudicated": "Ambigiuous",
+    "rationale": "Mismatch:\n\nAcknowledgement: No\nAffiliation: No\nCo-author: No\nPlatform: Yes "
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1021/acsami.3c12414"
+    }
+  }
+}

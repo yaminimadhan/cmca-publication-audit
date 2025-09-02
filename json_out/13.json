@@ -1,0 +1,49 @@
+{
+  "case_id": "13",
+  "metadata": {
+    "title": "Understanding the effect of microstructural\n texture on the anisotropic elastic properties of \nselective laser melted Ti-24Nb-4Zr-8Sn",
+    "doi": "10.1016/j.actamat.2023.119021",
+    "journal": "Acta Materialia"
+  },
+  "authors_verbatim": "Challis V. J.; Xu X.; Halfpenny A.; Cramer A. D.; Saunders M.; Roberts A. P.; Sercombe T. B.",
+  "acknowledgement": {
+    "present": false
+  },
+  "cmca_affiliation": {
+    "present": true,
+    "snippets": [
+      "Centre for Microscopy, Characterisation and Analysis, The University of Western Australia, Perth, WA 6009, Australia"
+    ]
+  },
+  "cmca_coauthors": [
+    "Martin Saunders"
+  ],
+  "instruments": [
+    {
+      "verbatim": "Zeiss Ultraplus FEG SEM"
+    },
+    {
+      "verbatim": "Bruker e− Flash detector"
+    },
+    {
+      "verbatim": "EBSD"
+    },
+    {
+      "verbatim": "Bruker Quantax Espirit 1.9 software"
+    },
+    {
+      "verbatim": "Oxford Instruments Channel 5 software"
+    }
+  ],
+  "labels": {
+    "initial": "Ambigiuous",
+    "adjudicated": "Positive",
+    "rationale": "Mismatch:\n\nAcknowledgement - No\nAffiliation: Yes\nCo-author: Yes\nPlatform: Yes \n\n"
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1016/j.actamat.2023.119021"
+    }
+  }
+}

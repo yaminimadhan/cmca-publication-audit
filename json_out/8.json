@@ -1,0 +1,56 @@
+{
+  "case_id": "8",
+  "metadata": {
+    "title": "Distinct differences between calvarial and long \nbone osteocytes in cell morphologies, gene \nexpression and aging responses",
+    "doi": "10.1111/febs.16797",
+    "journal": "The FEBS Journal"
+  },
+  "authors_verbatim": "Gao M.; Zhu B.; Fan J.; Gao Y.; Xue F.; Li G.; Hubbard A.; Gao X.; Sun J.; Ling J.; Cao L.; Liu D.; Yuan J.; Jiang Q.; Papadimitriou J.; Zou W.; Feng J. Q.; Yang L.; Zhang C.; Gao J.; Zheng M",
+  "acknowledgement": {
+    "present": true,
+    "exact_text": "Acknowledgments: \nThis project was supported by a grant received from\nNational Natural Science Foundation of China\nawarded to CZ (no. 81820108020). \nWe would like to acknowledge the scientific and technical assistance received from the National Imaging Facility at the\nCentre for Microscopy, Characterization & Analysis,\nThe University of Western Australia.",
+    "pages": [
+      4089
+    ],
+    "sections": [
+      "Acknowledgements"
+    ]
+  },
+  "cmca_affiliation": {
+    "present": false
+  },
+  "cmca_coauthors": [
+    "Alysia Hubbard"
+  ],
+  "instruments": [
+    {
+      "verbatim": "Confocal microscopy (ECLIPSE Ti Series, Nikon, Tokyo, Japan)"
+    },
+    {
+      "verbatim": "Structured illumination microscopy (Ti2, Nikon)"
+    },
+    {
+      "verbatim": "SR Apo TIRF 100× 1.49NA Oil"
+    },
+    {
+      "verbatim": "immersion objective with motorized correction collar (Nikon)"
+    },
+    {
+      "verbatim": "iXon 897 EMCCD camera (Andor, Belfast, UK)"
+    },
+    {
+      "verbatim": "NIS ELEMENTS (Nikon)"
+    }
+  ],
+  "labels": {
+    "initial": "Positive",
+    "adjudicated": "Positive",
+    "rationale": "Acknowledgement: Yes\nAffiliation: No\nCo-author: Yes\nPlatform: Yes"
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1111/febs.16797"
+    }
+  }
+}

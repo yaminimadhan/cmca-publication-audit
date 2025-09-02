@@ -1,0 +1,50 @@
+{
+  "case_id": "16",
+  "metadata": {
+    "title": "The effects of anterior temporal lobe resection on cortical morphology",
+    "doi": "10.1016/j.cortex.2023.04.018",
+    "journal": "Cortex"
+  },
+  "authors_verbatim": "\n\n\n\n\nKaroline Leiberg; Jane de Tisi; John S. Duncan; Bethany Little; Peter N. Taylor; Sjoerd B. Vos; Gavin P. Winston; Bruno Mota; Yujiang Wang\n\n\n\n\n",
+  "acknowledgement": {
+    "present": true,
+    "exact_text": "Acknowledgement:\nThe authors acknowledge the\nfacilities and scientific and technical assistance of the National\nImaging Facility, a National Collaborative Research\nInfrastructure Strategy (NCRIS) capability, at the Centre for\nMicroscopy, Characterisation, and Analysis, the University of\nWestern Australia.",
+    "pages": [
+      241
+    ],
+    "sections": [
+      "Acknowledgements"
+    ]
+  },
+  "cmca_affiliation": {
+    "present": true,
+    "snippets": [
+      "Centre for Microscopy, Characterisation, And Analysis, The University of Western Australia, Nedlands, Australia"
+    ]
+  },
+  "cmca_coauthors": [
+    "N\n\n[Audit: Sjoerd B. Vos]"
+  ],
+  "instruments": [
+    {
+      "verbatim": "3T T1-weighted structural magnetic resonance images (MRIs)"
+    },
+    {
+      "verbatim": "FreeSurfer (Fischl, 2012) 6.0 recon-all pipeline"
+    },
+    {
+      "verbatim": "SurfStat random field theory clustering"
+    }
+  ],
+  "labels": {
+    "initial": "Positive",
+    "adjudicated": "Positive",
+    "rationale": "\nMismatch:\n\nAcknowledgement - Yes\nAffiliation: Yes\nCo-author: Not in the current list; Co-author: Sjoerd B. Vos?\nPlatform: No"
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1016/j.cortex.2023.04.018"
+    }
+  }
+}

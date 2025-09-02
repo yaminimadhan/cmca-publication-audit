@@ -1,0 +1,59 @@
+{
+  "case_id": "18",
+  "metadata": {
+    "title": "Investigating parasites in three-dimensions: \nTrends in volume microscopy",
+    "doi": "10.1016/j.pt.2023.05.004",
+    "journal": "Trends in Parasitology"
+  },
+  "authors_verbatim": "Cooper C.; Thompson R. C. A.; Clode P. L.",
+  "acknowledgement": {
+    "present": true,
+    "exact_text": "Acknowledgments:\nThe authors acknowledge the instruments and expertise of Microscopy Australia at the Centre for Microscopy, Characterisation and Analysis, University of Western Australia, enabled by National Collaborative Research Infrastructure Strategy\n(NCRIS), university, and state government support.",
+    "pages": [
+      679
+    ],
+    "sections": [
+      "Acknowledgements"
+    ]
+  },
+  "cmca_affiliation": {
+    "present": true,
+    "snippets": [
+      "Centre forMicroscopy, Characterisation,",
+      "and Analysis, University of Western",
+      "Australia, Stirling Hwy, Crawley, WA",
+      "6009, Australia"
+    ]
+  },
+  "cmca_coauthors": [
+    "Peta L. Clode\nCrystal Cooper"
+  ],
+  "instruments": [
+    {
+      "verbatim": "Volume electron microscopy techniques"
+    },
+    {
+      "verbatim": "Serial block face–SEM (SBF-SEM)"
+    },
+    {
+      "verbatim": "Focussed ion beam–SEM (FIB-SEM)"
+    },
+    {
+      "verbatim": "Cryo-electron tomography (cryo-ET)"
+    },
+    {
+      "verbatim": "Cryo-scanning TEM (cryo-STEM)"
+    }
+  ],
+  "labels": {
+    "initial": "Positive",
+    "adjudicated": "Positive",
+    "rationale": "Mismatch:\n\nAcknowledgement - Yes\nAffiliation: Yes\nCo-author: Yes\nPlatform: No"
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1016/j.pt.2023.05.004"
+    }
+  }
+}

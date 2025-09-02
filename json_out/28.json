@@ -1,0 +1,47 @@
+{
+  "case_id": "28",
+  "metadata": {
+    "title": "\nMiocene caddisflies from Australia: iron-rich sediments preserve internal organs, tracheoles, and corneal nanocoating of larvae and pupae\n",
+    "doi": "10.1093/zoolinnean/zlae003",
+    "journal": "Zoological journal of the Linnean Society"
+  },
+  "authors_verbatim": "Frese Michael; McCurry Matthew R.; Wells Alice",
+  "acknowledgement": {
+    "exact_text": "\n"
+  },
+  "cmca_affiliation": {
+    "present": false
+  },
+  "instruments": [
+    {
+      "verbatim": "FEI Quanta 650F variable-pressure"
+    },
+    {
+      "verbatim": "field-emission scanning electron"
+    },
+    {
+      "verbatim": "microscope (FEI Company,"
+    },
+    {
+      "verbatim": "Hillsboro, OR, USA)"
+    },
+    {
+      "verbatim": "photomicrographs with Canon EOS 7D"
+    },
+    {
+      "verbatim": "Mark II"
+    }
+  ],
+  "labels": {
+    "initial": "Ambigiuous",
+    "adjudicated": "Negative",
+    "negative_type": "Hard Negative",
+    "rationale": "Acknowledges Microscopy Australia (ANU node), not CMCA/UWA. \n\n\nGeneric NCRIS-linked acknowledgement → Ambiguous classification."
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1093/zoolinnean/zlae003"
+    }
+  }
+}

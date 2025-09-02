@@ -1,0 +1,39 @@
+{
+  "case_id": "3",
+  "metadata": {
+    "title": "Effects of point defects on the monoclinic angle \nof the B19? phase in NiTi based shape memory \nalloys",
+    "doi": "10.1007/s40830-023-00467-5",
+    "journal": "Shape Memory and Superplasticity"
+  },
+  "authors_verbatim": "Li Y.; Bakhtiari S.; Yang H.; Saunders M.; Jiang D.; Liu Y.",
+  "acknowledgement": {
+    "present": true,
+    "exact_text": "Acknowledgements:\nThe authors acknowledge the financial support\nfrom the Australian Research Council in grants DP180101744 and\nDP180101955 for this study. \nThe authors acknowledge the facilities and the scientific and technical assistance of Microscopy Australia at the Centre for Microscopy, Characterisation & Analysis, The University of Western Australia, a facility funded by the University and the State and Commonwealth Governments. This work was supported by resources provided by The Pawsey Supercomputing Centre (project pawsey0393) with funding from the Australian Government and the Government of Western Australia.",
+    "pages": [
+      24
+    ],
+    "sections": [
+      "Acknowledgements"
+    ]
+  },
+  "cmca_affiliation": {
+    "present": true,
+    "snippets": [
+      "Centre for Microscopy, Characterisation and Analysis, The University of Western Australia, 35 Stirling Highway, Crawley, 6009, Australia"
+    ]
+  },
+  "cmca_coauthors": [
+    "Martin Saunders"
+  ],
+  "labels": {
+    "initial": "Positive",
+    "adjudicated": "Positive",
+    "rationale": "\n\nAcknowledgement: Yes\nAffiliation: Yes\nCo-author: Yes\nPlatform: Yes"
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1007/s40830-023-00467-5"
+    }
+  }
+}

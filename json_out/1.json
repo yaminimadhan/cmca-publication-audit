@@ -1,0 +1,41 @@
+{
+  "case_id": "1",
+  "metadata": {
+    "title": "Flowable resin-based composites modified with\nchlorhexidine-loaded mesoporus silica \nnanoparticles induce superior antibiofilm \nproperties",
+    "doi": "10.1007/s11051-024-06046-8",
+    "journal": "Journal of Nanoparticle Research"
+  },
+  "authors_verbatim": "Shrestha B.; Aati S.; Rajan S. M.; Fawzy A.",
+  "acknowledgement": {
+    "present": true,
+    "exact_text": "\nAcknowledgements: \nThe authors acknowledge the University\nof Western Australia’s support through a ‘Scholarship for International Research Fees and International Living Allowance Scholarship (Ad Hoc Postgraduate Scholarships); and the facilities and technical assistance provided by electron microscopy group of the Centre for Microscopy, Characterization & Analysis, The University of Western Australia, a facility funded by the University, State and Commonwealth Governments.",
+    "pages": [
+      13
+    ],
+    "sections": [
+      "Acknowledgements"
+    ]
+  },
+  "cmca_affiliation": {
+    "present": false
+  },
+  "instruments": [
+    {
+      "verbatim": "Verios XHR: Thermo Fisher Scientific, USA"
+    },
+    {
+      "verbatim": "JEOL-200, Japan"
+    }
+  ],
+  "labels": {
+    "initial": "Positive",
+    "adjudicated": "Positive",
+    "rationale": "Acknowledgement: Yes\nAffiliation: No\nCo-author: No\nPlatform: Yes"
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1007/s11051-024-06046-8"
+    }
+  }
+}

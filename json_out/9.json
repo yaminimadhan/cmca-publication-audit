@@ -1,0 +1,44 @@
+{
+  "case_id": "9",
+  "metadata": {
+    "title": "An Orthogonal Conductance Pathway in \nSpiropyrans for Well-Defined Electrosteric \nSwitching Single-Molecule Junctions",
+    "doi": "10.1002/smll.202306334",
+    "journal": "Small"
+  },
+  "authors_verbatim": "Jago D.; Liu C.; Daaoub A. H. S.; Gaschk E.; Walkey M. C.; Pulbrook T.; Qiao X.; Sobolev A. N.; Moggach S. A.; Costa-Milan D.; Higgins S. J.; Piggott M. J.; Sadeghi H.; Nichols R. J.; Sangtarash S.; Vezzoli A.; Koutsantonis G. A.",
+  "acknowledgement": {
+    "present": true,
+    "exact_text": "Acknowledgements: \nThe authors acknowledge the facilities and the scientific\nand technical assistance of the Australian Microscopy and Microanalysis Research Facility at the Centre for Microscopy, Characterisation, and Analysis, The University of Western Australia, a facility funded by the University, State and Commonwealth Governments.\n ",
+    "sections": [
+      "Acknowledgements"
+    ]
+  },
+  "cmca_affiliation": {
+    "present": true,
+    "snippets": [
+      "Centre for Microscopy",
+      "Characterisation and Analysis",
+      "University ofWestern Australia",
+      "Stirling Highway,Crawley,Western Australia 6009, Australia"
+    ]
+  },
+  "instruments": [
+    {
+      "verbatim": "single-crystal X-ray diffraction experiments"
+    },
+    {
+      "verbatim": "STM-BJ (scanning tunneling microscope break junction)"
+    }
+  ],
+  "labels": {
+    "initial": "Positive",
+    "adjudicated": "Positive",
+    "rationale": "Acknowledgement: Yes\nAffiliation: Yes\nCo-author: No\nPlatform: Yes"
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1002/smll.202306334"
+    }
+  }
+}

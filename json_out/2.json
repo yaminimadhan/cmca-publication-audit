@@ -1,0 +1,56 @@
+{
+  "case_id": "2",
+  "metadata": {
+    "title": "Controlled growth of Sb2Te3 nanoplates and their applications in ultrafast near-infrared photodetection",
+    "doi": "10.1016/j.optmat.2024.115220",
+    "journal": "Optical Materials"
+  },
+  "authors_verbatim": "Zhang S.; H Luo; H Wang; J Liu; A Suvorova; Y Ren; C Yuan; W Lei",
+  "acknowledgement": {
+    "present": true,
+    "exact_text": "Acknowledgement:\nThe present research work was supported by the Australian Research Council (LE200100032 and DP200103188) as well as a Research Impact Grant of The University of Western Australia (UWA). \nWe acknowledge Microscopy Australia Facility at the Center for Microscopy, Characterization and Analysis (CMCA) at UWA and the WA node of the Australian National Fabrication Facility (ANFF) for their facilities.",
+    "pages": [
+      6
+    ],
+    "sections": [
+      "Acknowledgement"
+    ]
+  },
+  "cmca_affiliation": {
+    "present": true,
+    "snippets": [
+      "Centre for Microscopy, Characterisation and Analysis, The University of Western Australia, 35 Stirling Highway, Crawley, 6009, Australia"
+    ]
+  },
+  "cmca_coauthors": [
+    "Alexandra Suvorova"
+  ],
+  "instruments": [
+    {
+      "verbatim": "FEI Verios 460L"
+    },
+    {
+      "verbatim": "Witec alpha 300RA+"
+    },
+    {
+      "verbatim": "FEI Titan G2 80–200 TEM/STEM"
+    },
+    {
+      "verbatim": "FEI Helios NanoLab G3 CX"
+    },
+    {
+      "verbatim": "Oxford Instruments X-Max 80 EDX system"
+    }
+  ],
+  "labels": {
+    "initial": "Positive",
+    "adjudicated": "Positive",
+    "rationale": "\n\nAcknowledgement: Yes\nAffiliation: Yes\nCo-author: Yes\nPlatform: Yes"
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1016/j.optmat.2024.115220"
+    }
+  }
+}

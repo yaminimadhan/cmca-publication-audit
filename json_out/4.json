@@ -1,0 +1,47 @@
+{
+  "case_id": "4",
+  "metadata": {
+    "title": "Nanoparticulate apatite and greenalite in oldest, well-preserved hydrothermal vent precipitates",
+    "doi": "10.1126/sciadv.adj4789\n",
+    "journal": "Science Advances"
+  },
+  "authors_verbatim": "Rasmussen B.; Muhling J. R.; Tosca N. J.",
+  "acknowledgement": {
+    "present": true,
+    "exact_text": "Acknowledgments: \nSEM, Raman spectroscopy, FIB, and TEM analyses were performed at the Centre for Microscopy, Characterisation and Analysis (CMCA) at the University of Western Australia (UWA), a node of Microscopy Australia funded by NCRIS, university, and state government sources. \nWe thank A. Suvorova, S. Gain, and M. Saunders for technical support and B. Krapez for comments. We acknowledge the University of Western Australia Geology\nMuseum and the Western Australian Museum for access to samples.",
+    "pages": [
+      16
+    ],
+    "sections": [
+      "Acknowledgements"
+    ]
+  },
+  "cmca_affiliation": {
+    "present": false
+  },
+  "instruments": [
+    {
+      "verbatim": "SEM imaging"
+    },
+    {
+      "verbatim": "Focused ion beam (FIB)"
+    },
+    {
+      "verbatim": "Transmission electron microscopy (TEM)"
+    },
+    {
+      "verbatim": "Raman spectroscopy"
+    }
+  ],
+  "labels": {
+    "initial": "Positive",
+    "adjudicated": "Positive",
+    "rationale": "\nAcknowledgement: Yes\nAffiliation: No\nCo-author: No\nPlatform: Yes"
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1126/sciadv.adj4789\n"
+    }
+  }
+}

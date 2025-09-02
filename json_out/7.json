@@ -1,0 +1,44 @@
+{
+  "case_id": "7",
+  "metadata": {
+    "title": "Subset-specific Retention of Donor Myeloid \nCells After Major Histocompatibility \nComplexmatched and Mismatched Liver \nTransplantation",
+    "doi": "10.1097/TP.0000000000004481",
+    "journal": "Transplatation"
+  },
+  "authors_verbatim": "Martin J. Van Kranendonk b; Kliti Grice g",
+  "acknowledgement": {
+    "present": true,
+    "exact_text": "ACKNOWLEDGMENTS:\nThe authors thank the Centre for Microscopy,\nCharacterisation, and Analysis,, funded by The University\nof Western Australia (UWA), State and Commonwealth\nGovernments; the UWA Centre for Applied Statistics; and\nUWA Animal Care Services for their assistance, especially\nSandra Goodin.\n",
+    "pages": [
+      1511
+    ],
+    "sections": [
+      "Acknowledgements"
+    ]
+  },
+  "cmca_affiliation": {
+    "present": false
+  },
+  "instruments": [
+    {
+      "verbatim": "Nikon A1 Confocal Microscope"
+    },
+    {
+      "verbatim": "BD LSRFortessa flow cytometer"
+    },
+    {
+      "verbatim": "FlowJo software (BD Biosciences)"
+    }
+  ],
+  "labels": {
+    "initial": "Positive",
+    "adjudicated": "Positive",
+    "rationale": "\n\nAcknowledgement: Yes\nAffiliation: No\nCo-author: No\nPlatform: Yes\n\n"
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1097/TP.0000000000004481"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "case_id": "25",
+  "metadata": {
+    "title": "\nTermitomyces pakistanensis, a new mushroom species from Pakistan based on scanning electron microscopy and ITS-rDNA barcoding\n",
+    "doi": "10.1002%2Fjemt.24265",
+    "journal": "Microscopy research and technique"
+  },
+  "authors_verbatim": "Razaq Abdul; Ishaq Aamna; Ilyas Sobia; Niaz Shereen; Sadia Sehrish",
+  "acknowledgement": {
+    "present": false
+  },
+  "cmca_affiliation": {
+    "present": false
+  },
+  "instruments": [
+    {
+      "verbatim": "Scanning electron microscopy (SEM)"
+    },
+    {
+      "verbatim": "of basidiospores"
+    },
+    {
+      "verbatim": "SEM micrographs of spores"
+    }
+  ],
+  "labels": {
+    "initial": "Negative",
+    "adjudicated": "Negative",
+    "negative_type": "Random Negative",
+    "rationale": "Taxonomic mycology study describing a new \nmushroom species from \nPakistan. \n\nSEM used for spores; \n\naffiliations with UVAS Pattoki, Lahore College for Women, and Peshawar University. \n\nNo CMCA involvement."
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1002%2Fjemt.24265"
+    }
+  }
+}

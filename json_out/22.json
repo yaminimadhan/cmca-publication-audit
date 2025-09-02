@@ -1,0 +1,47 @@
+{
+  "case_id": "22",
+  "metadata": {
+    "title": "\nTaxonomic significance of seed macro-micromorphology of Turkish Alcea L. (Malvaceae) through light microscopy and scanning electron microscopy\n",
+    "doi": "10.1002%2Fjemt.24385",
+    "journal": "Microscopy research and technique"
+  },
+  "authors_verbatim": "Ozbek Funda; Uzunhisarcikli Mehmet Erkan",
+  "acknowledgement": {
+    "present": false
+  },
+  "cmca_affiliation": {
+    "present": false
+  },
+  "instruments": [
+    {
+      "verbatim": "scanning electron microscope"
+    },
+    {
+      "verbatim": "(JEOL JSM 6060 LV)"
+    },
+    {
+      "verbatim": "stereoscopic microscope (Leica EZ4D)"
+    },
+    {
+      "verbatim": "stereomicroscope digital photomicrograph"
+    },
+    {
+      "verbatim": "system (Olympus SZX7)"
+    },
+    {
+      "verbatim": "sputter coater (Polaron SC 502)"
+    }
+  ],
+  "labels": {
+    "initial": "Negative",
+    "adjudicated": "Negative",
+    "negative_type": "Random Negative",
+    "rationale": "Taxonomic plant study using\n LM + SEM;                   \n\naffiliations are Gazi University, Turkey; \n\nno CMCA involvement."
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1002%2Fjemt.24385"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "case_id": "17",
+  "metadata": {
+    "title": "Decoupling of sulfur isotope signatures from \nplatinum group elements in komatiite-hosted \nore systems: Evidence from the Mount Keith \nMKD5 Ni-(Co-Cu) deposit, Western Australia",
+    "doi": "10.5382/econgeo.5030",
+    "journal": "Economic Geology"
+  },
+  "authors_verbatim": "Anne B Virnes; Marco L Fiorentini; Stephen J Barnes; Stefano Caruso; Laure A. J. Martin; Matvei Aleshin; Louise E Schoneveld; Malcolm P Roberts; Quentin Masurel; Nicolas Thebaud",
+  "acknowledgement": {
+    "exact_text": "Acknowledgement:\nThe authors acknowledge the facilities and the scientific\nand technical assistance of Microscopy Australia at the\nCentre for Microscopy, Characterisation, and Analysis, The\nUniversity of Western Australia, a facility funded by university,\nstate, and commonwealth governments.",
+    "pages": [
+      1831
+    ],
+    "sections": [
+      "Acknowledgements"
+    ]
+  },
+  "cmca_affiliation": {
+    "present": true,
+    "snippets": [
+      "Centre for Microscopy, Characterization, and Analysis, The University of Western Australia, 35 Stirling Hwy.,",
+      "Crawley, Western Australia 6009, Australia"
+    ]
+  },
+  "cmca_coauthors": [
+    "Laure A.J. Martin\n Matvei Aleshin\nMalcolm P. Roberts"
+  ],
+  "instruments": [
+    {
+      "verbatim": "CAMECA IMS1280 multicollector ion microprobe"
+    },
+    {
+      "verbatim": "Tescan Vega3 scanning electron microscope"
+    },
+    {
+      "verbatim": "JEOL 8530F hyperprobe equipped with five tunable wavelength-dispersive spectrometers"
+    }
+  ],
+  "labels": {
+    "initial": "Positive",
+    "adjudicated": "Positive",
+    "rationale": "Mismatch:\n\nAcknowledgement - Yes/But Audit: Unknown\nAffiliation: Yes\nCo-author: Yes \nPlatform: Yes"
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.5382/econgeo.5030"
+    }
+  }
+}

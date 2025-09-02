@@ -1,0 +1,38 @@
+{
+  "case_id": "26",
+  "metadata": {
+    "title": "Novel approaches to material use and reuse in Victorian-Era Melbourne, Australia; New insights from stable light isotope analysis and scanning electron microscopy of fiber artifacts\n",
+    "doi": "10.1016/j.jasrep.2024.104864",
+    "journal": "Journal of archaeological science"
+  },
+  "authors_verbatim": "Martens Tracy; Cameron Judith; Stuart-Williams Hilary; Kurpiel Rebekah; Myers Sarah",
+  "acknowledgement": {
+    "present": false
+  },
+  "cmca_affiliation": {
+    "present": false
+  },
+  "instruments": [
+    {
+      "verbatim": "Hitachi TM3030Plus Tabletop SEM"
+    },
+    {
+      "verbatim": "scanning electron microscopy (SEM)"
+    },
+    {
+      "verbatim": "stable isotope analysis"
+    }
+  ],
+  "labels": {
+    "initial": "Negative",
+    "adjudicated": "Negative",
+    "negative_type": "Random Negative",
+    "rationale": "Historical archaeology \nstudy of textiles from a \nVictorian-era cesspit in \nMelbourne. \n\nSEM and stable isotope\nanalysis were conducted \nat La Trobe University and\nANU; \n\nNo CMCA involvement.\n"
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1016/j.jasrep.2024.104864"
+    }
+  }
+}

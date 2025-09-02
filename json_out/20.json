@@ -1,0 +1,41 @@
+{
+  "case_id": "20",
+  "metadata": {
+    "title": "Molecular insights into the Darwin paradox of \ncoral reefs from the sea anemone Aiptasia",
+    "doi": "10.1126/sciadv.adf7108",
+    "journal": "Science Advances"
+  },
+  "authors_verbatim": "Guoxin Cui; Migle K Konciute; Lorraine Ling; Luke Esau; Jean-Baptiste Raina; Baoda Han; Octavio R Salazar; Jason S Presnell; Nils Rädecker; Huawen Zhong; Jessica Menzies; Phillip A Cleves; Yi Jin Liew; Cory J Krediet; Val Sawiccy; Maha J Cziesielski; Paul Guagliardo; Jeremy Bougoure; Mathieu Pernice; Heribert Hirt; Christian R Voolstra; Virginia M Weis; John R Pringle; Manuel Aranda",
+  "acknowledgement": {
+    "exact_text": "Methods:\nThe gold-coated sections were then imaged using the NanoSIMS\n50 ion probe at the Centre for Microscopy, Characterisation, and\nAnalysis at the University of Western Australia.",
+    "sections": [
+      "Methods"
+    ]
+  },
+  "cmca_affiliation": {
+    "present": true,
+    "snippets": [
+      "Centre for Microscopy Characterisation",
+      "and Analysis, The University of Western Australia, Perth, WA, Australia"
+    ]
+  },
+  "cmca_coauthors": [
+    "Paul Guagliardo"
+  ],
+  "instruments": [
+    {
+      "verbatim": "NanoSIMS 50 ion probe"
+    }
+  ],
+  "labels": {
+    "initial": "Ambigiuous",
+    "adjudicated": "Positive",
+    "rationale": "Mismatch:\n\nAcknowledgement - Found in Methods, not Acknowledgement Sdection\n\nAffiliation: Yes\nCo-author: Yes\nPlatform: Yes (by Audit)"
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1126/sciadv.adf7108"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "case_id": "6",
+  "metadata": {
+    "title": "Systematic evaluation of chromatin\n immunoprecipitation sequencing to study \nhistone occupancy in dormancy transitions of \ngrapevine buds",
+    "doi": "10.1093/treephys/tpac146",
+    "journal": "Tree Physiology"
+  },
+  "authors_verbatim": "Hermawaty D.; Cahn J.; Lister R.; Considine M. J.",
+  "acknowledgement": {
+    "present": true,
+    "exact_text": "Acknowledgments:\nWe express deep sadness at the passing of Tinashe Chabikwa and sincere condolences to his family. Tinashe was a very kind and brilliant scientist, and is sorely missed. He contributed greatly to this manuscript.\nWe are thankful to Keith Mugford of Moss Wood Wines for enduring support and access to plant material at often inconvenient times.\nWe are also very grateful to the team of the Centre for Microscopy, Characterization and Analysis of the University of Western Australia for technical guidance.",
+    "pages": [
+      686
+    ],
+    "sections": [
+      "Acknowledgements"
+    ]
+  },
+  "cmca_affiliation": {
+    "present": false
+  },
+  "instruments": [
+    {
+      "verbatim": "ovaris S220 Focused-ultrasonicator"
+    },
+    {
+      "verbatim": "TapeStation (Agilent, Australia)"
+    },
+    {
+      "verbatim": "Qubit (Thermo Fisher Scientific, Australia)"
+    },
+    {
+      "verbatim": "Abcam ChIP kit plant (Abcam, cat. no. ab117137)"
+    },
+    {
+      "verbatim": "AMPure XP beads (Beckman Coulter Life Science, cat. no. A63881)"
+    },
+    {
+      "verbatim": "NEBNext Ultra II DNA Library Prep Kit for Illumina"
+    }
+  ],
+  "labels": {
+    "initial": "Positive",
+    "adjudicated": "Positive",
+    "rationale": "\nAcknowledgement: Yes (CMCA, technical guidance)\n\nAudit mismatch: Audit lists OPCON, but not explicit in PDF)\n\nAffiliation: No\nCo-autho:  No\nPlatform: No\n"
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1093/treephys/tpac146"
+    }
+  }
+}

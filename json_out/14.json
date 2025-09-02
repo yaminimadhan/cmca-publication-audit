@@ -1,0 +1,46 @@
+{
+  "case_id": "14",
+  "metadata": {
+    "title": "Highly Controlled Zigzag Perovskite \nNanocrystals Enabled by Dipole-Induced \nSelf-Assembly of Nanocubes for Low-Threshold \nAmplified Spontaneous Emission and Lasing",
+    "doi": "10.1002/adfm.202211466",
+    "journal": "Advanced Functional Materials"
+  },
+  "authors_verbatim": "Chengxi Zhang; Jiayi Chen; Lyudmila Turyanska; Junhui Wang; Weihua Wang; Lin Wang; Lingmei Kong; Kaifeng Wu; Jisong Yao; Hongbin Yao; Zhiwen Yang; Wanwan Li; Yehonadav Bekenstein; Yue Wang; Guohua Jia; Xuyong Yang",
+  "acknowledgement": {
+    "present": false
+  },
+  "cmca_affiliation": {
+    "present": false
+  },
+  "instruments": [
+    {
+      "verbatim": "JEOL JEM-2100F transmission electron microscope"
+    },
+    {
+      "verbatim": "FEI Tecnai G20 transmission electron microscope"
+    },
+    {
+      "verbatim": "Rigaku D/max 2500 diffractometer"
+    },
+    {
+      "verbatim": "ULVAC-PHI 5000 VersaProbe instrument"
+    },
+    {
+      "verbatim": "PerkinElmer Lambda 950 UV–vis–NIR spectrometer"
+    },
+    {
+      "verbatim": "FLS-1000 (Edinburgh Instruments)"
+    }
+  ],
+  "labels": {
+    "initial": "Ambigiuous",
+    "adjudicated": "Ambigiuous",
+    "rationale": "Mismatch:\n\nAcknowledgement - No\nAffiliation: No\nCo-author: No\nPlatform: Yes \n\n"
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1002/adfm.202211466"
+    }
+  }
+}

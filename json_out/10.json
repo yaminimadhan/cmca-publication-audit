@@ -1,0 +1,50 @@
+{
+  "case_id": "10",
+  "metadata": {
+    "title": "The lipoprotein lipase that is shuttled into \ncapillaries by GPIHBP1 enters the glycocalyx\n where it mediates lipoprotein processing",
+    "doi": "10.1073/pnas.2313825120",
+    "journal": "Proceedings of the National Academy\n of Sciences"
+  },
+  "authors_verbatim": "Wenxin Song; Anne P Beigneux; Thomas A Weston; Kai Chen; Ye Yang; Le Phuong Nguyen; Paul Guagliardo; Hyesoo Jung; Anh P Tran; Yiping Tu; Caitlyn Tran; Gabriel Birrane; Kazuya Miyashita; Katsuyuki Nakajima; Masami Murakami; Peter Tontonoz; Haibo Jiang; Michael Ploug; Loren G Fong; Stephen G Young",
+  "acknowledgement": {},
+  "cmca_affiliation": {
+    "present": true,
+    "snippets": [
+      "Centre for Microscopy, Characterisation & Analysis, The University of Western Australia listed for Paul Guagliardo."
+    ]
+  },
+  "cmca_coauthors": [
+    "Paul Guagliardo"
+  ],
+  "instruments": [
+    {
+      "verbatim": "Confocal microscopy"
+    },
+    {
+      "verbatim": "Immunogold electron microscopy"
+    },
+    {
+      "verbatim": "Backscattered electron (BSE) imaging with a scanning electron microscope"
+    },
+    {
+      "verbatim": "NanoSIMS (nanoscale secondary ion mass spectrometry)"
+    },
+    {
+      "verbatim": "10-nm gold nanoparticle–conjugated 88B8"
+    },
+    {
+      "verbatim": "LaCl3/DyCl3 staining"
+    }
+  ],
+  "labels": {
+    "initial": "Positive",
+    "adjudicated": "Positive",
+    "rationale": "Acknowledgement: \nYes (via co-author, \nNo (acknowlegedment section)\n\nAffiliation: Yes\nCo-author: Yes\nPlatform: Yes\n"
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1073/pnas.2313825120"
+    }
+  }
+}

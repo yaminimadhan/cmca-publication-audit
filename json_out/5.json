@@ -1,0 +1,56 @@
+{
+  "case_id": "5",
+  "metadata": {
+    "title": "Salt tolerance in mungbean is associated with\n controllingNa and Cl transport across roots,\n regulating Na and Cl accumulation in \nchloroplasts and maintaining high K in root and\n leaf mesophyll cells",
+    "doi": "10.1111/pce.14943",
+    "journal": "Plant, Cell & Environment"
+  },
+  "authors_verbatim": "Iqbal M. S.; Clode P. L.; Malik A. I.; Erskine W.; Kotula L.",
+  "acknowledgement": {
+    "present": true,
+    "exact_text": "ACKNOWLEDGEMENTS:\nM. S. I. was supported by the John Allwright Fellowship Award from the Australian Centre for International Agricultural Research (ACIAR).\nThe research was supported through project CIM‐2014‐076 funded by ACIAR to W.E.\nThe authors acknowledge the use of Microscopy Australia facilities at the Centre for Microscopy, Characterisation and Analysis, The University of Western Australia, a facility funded by the University, State and Commonwealth Governments.\nWe thank Joana Kotula and Kosala Ranathunge for help in anatomy analysis, and Robert Creasy and Bill Piasini for plant growth support in the glasshouse.\nWe also thank Col Douglas, Department of Agriculture and Fisheries, Queensland for providing the seeds.\nOpen access publishing facilitated by The University of Western Australia, as part of the Wiley ‐ The University of Western Australia agreement via the Council of Australian University Librarians.",
+    "pages": [
+      14
+    ],
+    "sections": [
+      "Acknowledgements"
+    ]
+  },
+  "cmca_affiliation": {
+    "present": true,
+    "snippets": [
+      "Centre for Microscopy, Characterisation and Analysis, The University of Western Australia, Perth, Western Australia, Australia"
+    ]
+  },
+  "cmca_coauthors": [
+    "Peta L. Clode"
+  ],
+  "instruments": [
+    {
+      "verbatim": "Cryo-SEM X-ray microanalysis (JSM-IT800HR"
+    },
+    {
+      "verbatim": "JEOL)"
+    },
+    {
+      "verbatim": "Ultim-Max170 X-ray detector (Oxford Instruments)"
+    },
+    {
+      "verbatim": "Zeiss Axioscope2 plus microscope"
+    },
+    {
+      "verbatim": "Zeiss AxioCam Digital Camera"
+    }
+  ],
+  "labels": {
+    "initial": "Positive",
+    "adjudicated": "Positive",
+    "rationale": "\nAcknowledgement: Yes\nAffiliation: Yes\nCo-author: Yes\nPlatform: Yes\n\n\n\n"
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1111/pce.14943"
+    }
+  }
+}

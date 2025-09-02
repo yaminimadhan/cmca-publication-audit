@@ -1,0 +1,56 @@
+{
+  "case_id": "23",
+  "metadata": {
+    "title": "\nCD34+ stromal cells/telocytes and their role in mouse lung development: Light microscopy, immunofluorescence, ultrastructural and scanning electron microscopy evidence\n",
+    "doi": "10.1002%2Fcbin.12223",
+    "journal": "Cell biology international"
+  },
+  "authors_verbatim": "Dama Ganesh; Xue Chengxu; Zhang Yangxia; Li Dezhuang; Fan Jinyu; Qiao Liang; Xu Zhihao; Yang Ciqing; Liu Yanli; Abdullah Mohammad Farris Iman Leong Bin; Lin Juntang",
+  "acknowledgement": {
+    "present": false
+  },
+  "cmca_affiliation": {
+    "present": false
+  },
+  "instruments": [
+    {
+      "verbatim": "phase contrast microscope"
+    },
+    {
+      "verbatim": "(Diavert, Leica)"
+    },
+    {
+      "verbatim": "fluoview 1000 laser scanning confocal"
+    },
+    {
+      "verbatim": "imaging system (Olympus Optical)"
+    },
+    {
+      "verbatim": "HITACHI-HT7700 transmission electron"
+    },
+    {
+      "verbatim": "microscope"
+    },
+    {
+      "verbatim": "HITACHI-SU8100 scanning electron"
+    },
+    {
+      "verbatim": "Polaron apparatus"
+    },
+    {
+      "verbatim": "HITACHI-MC1000 ion sputtering device"
+    }
+  ],
+  "labels": {
+    "initial": "Negative",
+    "adjudicated": "Negative",
+    "negative_type": "Random Negative",
+    "rationale": "Developmental biology\nstudy using multiple microscopy techniques; \n\naffiliations are Xinxiang Medical University (China) and Universiti Sains Malaysia; \n\nno CMCA involvement.\n"
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1002%2Fcbin.12223"
+    }
+  }
+}

@@ -1,0 +1,1412 @@
+[
+  {
+    "case_id": "1",
+    "metadata": {
+      "title": "Flowable resin-based composites modified with\nchlorhexidine-loaded mesoporus silica \nnanoparticles induce superior antibiofilm \nproperties",
+      "doi": "10.1007/s11051-024-06046-8",
+      "journal": "Journal of Nanoparticle Research"
+    },
+    "authors_verbatim": "Shrestha B.; Aati S.; Rajan S. M.; Fawzy A.",
+    "acknowledgement": {
+      "present": true,
+      "exact_text": "\nAcknowledgements: \nThe authors acknowledge the University\nof Western Australia’s support through a ‘Scholarship for International Research Fees and International Living Allowance Scholarship (Ad Hoc Postgraduate Scholarships); and the facilities and technical assistance provided by electron microscopy group of the Centre for Microscopy, Characterization & Analysis, The University of Western Australia, a facility funded by the University, State and Commonwealth Governments.",
+      "pages": [
+        13
+      ],
+      "sections": [
+        "Acknowledgements"
+      ]
+    },
+    "cmca_affiliation": {
+      "present": false
+    },
+    "instruments": [
+      {
+        "verbatim": "Verios XHR: Thermo Fisher Scientific, USA"
+      },
+      {
+        "verbatim": "JEOL-200, Japan"
+      }
+    ],
+    "labels": {
+      "initial": "Positive",
+      "adjudicated": "Positive",
+      "rationale": "Acknowledgement: Yes\nAffiliation: No\nCo-author: No\nPlatform: Yes"
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1007/s11051-024-06046-8"
+      }
+    }
+  },
+  {
+    "case_id": "2",
+    "metadata": {
+      "title": "Controlled growth of Sb2Te3 nanoplates and their applications in ultrafast near-infrared photodetection",
+      "doi": "10.1016/j.optmat.2024.115220",
+      "journal": "Optical Materials"
+    },
+    "authors_verbatim": "Zhang S.; H Luo; H Wang; J Liu; A Suvorova; Y Ren; C Yuan; W Lei",
+    "acknowledgement": {
+      "present": true,
+      "exact_text": "Acknowledgement:\nThe present research work was supported by the Australian Research Council (LE200100032 and DP200103188) as well as a Research Impact Grant of The University of Western Australia (UWA). \nWe acknowledge Microscopy Australia Facility at the Center for Microscopy, Characterization and Analysis (CMCA) at UWA and the WA node of the Australian National Fabrication Facility (ANFF) for their facilities.",
+      "pages": [
+        6
+      ],
+      "sections": [
+        "Acknowledgement"
+      ]
+    },
+    "cmca_affiliation": {
+      "present": true,
+      "snippets": [
+        "Centre for Microscopy, Characterisation and Analysis, The University of Western Australia, 35 Stirling Highway, Crawley, 6009, Australia"
+      ]
+    },
+    "cmca_coauthors": [
+      "Alexandra Suvorova"
+    ],
+    "instruments": [
+      {
+        "verbatim": "FEI Verios 460L"
+      },
+      {
+        "verbatim": "Witec alpha 300RA+"
+      },
+      {
+        "verbatim": "FEI Titan G2 80–200 TEM/STEM"
+      },
+      {
+        "verbatim": "FEI Helios NanoLab G3 CX"
+      },
+      {
+        "verbatim": "Oxford Instruments X-Max 80 EDX system"
+      }
+    ],
+    "labels": {
+      "initial": "Positive",
+      "adjudicated": "Positive",
+      "rationale": "\n\nAcknowledgement: Yes\nAffiliation: Yes\nCo-author: Yes\nPlatform: Yes"
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1016/j.optmat.2024.115220"
+      }
+    }
+  },
+  {
+    "case_id": "3",
+    "metadata": {
+      "title": "Effects of point defects on the monoclinic angle \nof the B19? phase in NiTi based shape memory \nalloys",
+      "doi": "10.1007/s40830-023-00467-5",
+      "journal": "Shape Memory and Superplasticity"
+    },
+    "authors_verbatim": "Li Y.; Bakhtiari S.; Yang H.; Saunders M.; Jiang D.; Liu Y.",
+    "acknowledgement": {
+      "present": true,
+      "exact_text": "Acknowledgements:\nThe authors acknowledge the financial support\nfrom the Australian Research Council in grants DP180101744 and\nDP180101955 for this study. \nThe authors acknowledge the facilities and the scientific and technical assistance of Microscopy Australia at the Centre for Microscopy, Characterisation & Analysis, The University of Western Australia, a facility funded by the University and the State and Commonwealth Governments. This work was supported by resources provided by The Pawsey Supercomputing Centre (project pawsey0393) with funding from the Australian Government and the Government of Western Australia.",
+      "pages": [
+        24
+      ],
+      "sections": [
+        "Acknowledgements"
+      ]
+    },
+    "cmca_affiliation": {
+      "present": true,
+      "snippets": [
+        "Centre for Microscopy, Characterisation and Analysis, The University of Western Australia, 35 Stirling Highway, Crawley, 6009, Australia"
+      ]
+    },
+    "cmca_coauthors": [
+      "Martin Saunders"
+    ],
+    "labels": {
+      "initial": "Positive",
+      "adjudicated": "Positive",
+      "rationale": "\n\nAcknowledgement: Yes\nAffiliation: Yes\nCo-author: Yes\nPlatform: Yes"
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1007/s40830-023-00467-5"
+      }
+    }
+  },
+  {
+    "case_id": "4",
+    "metadata": {
+      "title": "Nanoparticulate apatite and greenalite in oldest, well-preserved hydrothermal vent precipitates",
+      "doi": "10.1126/sciadv.adj4789\n",
+      "journal": "Science Advances"
+    },
+    "authors_verbatim": "Rasmussen B.; Muhling J. R.; Tosca N. J.",
+    "acknowledgement": {
+      "present": true,
+      "exact_text": "Acknowledgments: \nSEM, Raman spectroscopy, FIB, and TEM analyses were performed at the Centre for Microscopy, Characterisation and Analysis (CMCA) at the University of Western Australia (UWA), a node of Microscopy Australia funded by NCRIS, university, and state government sources. \nWe thank A. Suvorova, S. Gain, and M. Saunders for technical support and B. Krapez for comments. We acknowledge the University of Western Australia Geology\nMuseum and the Western Australian Museum for access to samples.",
+      "pages": [
+        16
+      ],
+      "sections": [
+        "Acknowledgements"
+      ]
+    },
+    "cmca_affiliation": {
+      "present": false
+    },
+    "instruments": [
+      {
+        "verbatim": "SEM imaging"
+      },
+      {
+        "verbatim": "Focused ion beam (FIB)"
+      },
+      {
+        "verbatim": "Transmission electron microscopy (TEM)"
+      },
+      {
+        "verbatim": "Raman spectroscopy"
+      }
+    ],
+    "labels": {
+      "initial": "Positive",
+      "adjudicated": "Positive",
+      "rationale": "\nAcknowledgement: Yes\nAffiliation: No\nCo-author: No\nPlatform: Yes"
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1126/sciadv.adj4789\n"
+      }
+    }
+  },
+  {
+    "case_id": "5",
+    "metadata": {
+      "title": "Salt tolerance in mungbean is associated with\n controllingNa and Cl transport across roots,\n regulating Na and Cl accumulation in \nchloroplasts and maintaining high K in root and\n leaf mesophyll cells",
+      "doi": "10.1111/pce.14943",
+      "journal": "Plant, Cell & Environment"
+    },
+    "authors_verbatim": "Iqbal M. S.; Clode P. L.; Malik A. I.; Erskine W.; Kotula L.",
+    "acknowledgement": {
+      "present": true,
+      "exact_text": "ACKNOWLEDGEMENTS:\nM. S. I. was supported by the John Allwright Fellowship Award from the Australian Centre for International Agricultural Research (ACIAR).\nThe research was supported through project CIM‐2014‐076 funded by ACIAR to W.E.\nThe authors acknowledge the use of Microscopy Australia facilities at the Centre for Microscopy, Characterisation and Analysis, The University of Western Australia, a facility funded by the University, State and Commonwealth Governments.\nWe thank Joana Kotula and Kosala Ranathunge for help in anatomy analysis, and Robert Creasy and Bill Piasini for plant growth support in the glasshouse.\nWe also thank Col Douglas, Department of Agriculture and Fisheries, Queensland for providing the seeds.\nOpen access publishing facilitated by The University of Western Australia, as part of the Wiley ‐ The University of Western Australia agreement via the Council of Australian University Librarians.",
+      "pages": [
+        14
+      ],
+      "sections": [
+        "Acknowledgements"
+      ]
+    },
+    "cmca_affiliation": {
+      "present": true,
+      "snippets": [
+        "Centre for Microscopy, Characterisation and Analysis, The University of Western Australia, Perth, Western Australia, Australia"
+      ]
+    },
+    "cmca_coauthors": [
+      "Peta L. Clode"
+    ],
+    "instruments": [
+      {
+        "verbatim": "Cryo-SEM X-ray microanalysis (JSM-IT800HR"
+      },
+      {
+        "verbatim": "JEOL)"
+      },
+      {
+        "verbatim": "Ultim-Max170 X-ray detector (Oxford Instruments)"
+      },
+      {
+        "verbatim": "Zeiss Axioscope2 plus microscope"
+      },
+      {
+        "verbatim": "Zeiss AxioCam Digital Camera"
+      }
+    ],
+    "labels": {
+      "initial": "Positive",
+      "adjudicated": "Positive",
+      "rationale": "\nAcknowledgement: Yes\nAffiliation: Yes\nCo-author: Yes\nPlatform: Yes\n\n\n\n"
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1111/pce.14943"
+      }
+    }
+  },
+  {
+    "case_id": "6",
+    "metadata": {
+      "title": "Systematic evaluation of chromatin\n immunoprecipitation sequencing to study \nhistone occupancy in dormancy transitions of \ngrapevine buds",
+      "doi": "10.1093/treephys/tpac146",
+      "journal": "Tree Physiology"
+    },
+    "authors_verbatim": "Hermawaty D.; Cahn J.; Lister R.; Considine M. J.",
+    "acknowledgement": {
+      "present": true,
+      "exact_text": "Acknowledgments:\nWe express deep sadness at the passing of Tinashe Chabikwa and sincere condolences to his family. Tinashe was a very kind and brilliant scientist, and is sorely missed. He contributed greatly to this manuscript.\nWe are thankful to Keith Mugford of Moss Wood Wines for enduring support and access to plant material at often inconvenient times.\nWe are also very grateful to the team of the Centre for Microscopy, Characterization and Analysis of the University of Western Australia for technical guidance.",
+      "pages": [
+        686
+      ],
+      "sections": [
+        "Acknowledgements"
+      ]
+    },
+    "cmca_affiliation": {
+      "present": false
+    },
+    "instruments": [
+      {
+        "verbatim": "ovaris S220 Focused-ultrasonicator"
+      },
+      {
+        "verbatim": "TapeStation (Agilent, Australia)"
+      },
+      {
+        "verbatim": "Qubit (Thermo Fisher Scientific, Australia)"
+      },
+      {
+        "verbatim": "Abcam ChIP kit plant (Abcam, cat. no. ab117137)"
+      },
+      {
+        "verbatim": "AMPure XP beads (Beckman Coulter Life Science, cat. no. A63881)"
+      },
+      {
+        "verbatim": "NEBNext Ultra II DNA Library Prep Kit for Illumina"
+      }
+    ],
+    "labels": {
+      "initial": "Positive",
+      "adjudicated": "Positive",
+      "rationale": "\nAcknowledgement: Yes (CMCA, technical guidance)\n\nAudit mismatch: Audit lists OPCON, but not explicit in PDF)\n\nAffiliation: No\nCo-autho:  No\nPlatform: No\n"
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1093/treephys/tpac146"
+      }
+    }
+  },
+  {
+    "case_id": "7",
+    "metadata": {
+      "title": "Subset-specific Retention of Donor Myeloid \nCells After Major Histocompatibility \nComplexmatched and Mismatched Liver \nTransplantation",
+      "doi": "10.1097/TP.0000000000004481",
+      "journal": "Transplatation"
+    },
+    "authors_verbatim": "Martin J. Van Kranendonk b; Kliti Grice g",
+    "acknowledgement": {
+      "present": true,
+      "exact_text": "ACKNOWLEDGMENTS:\nThe authors thank the Centre for Microscopy,\nCharacterisation, and Analysis,, funded by The University\nof Western Australia (UWA), State and Commonwealth\nGovernments; the UWA Centre for Applied Statistics; and\nUWA Animal Care Services for their assistance, especially\nSandra Goodin.\n",
+      "pages": [
+        1511
+      ],
+      "sections": [
+        "Acknowledgements"
+      ]
+    },
+    "cmca_affiliation": {
+      "present": false
+    },
+    "instruments": [
+      {
+        "verbatim": "Nikon A1 Confocal Microscope"
+      },
+      {
+        "verbatim": "BD LSRFortessa flow cytometer"
+      },
+      {
+        "verbatim": "FlowJo software (BD Biosciences)"
+      }
+    ],
+    "labels": {
+      "initial": "Positive",
+      "adjudicated": "Positive",
+      "rationale": "\n\nAcknowledgement: Yes\nAffiliation: No\nCo-author: No\nPlatform: Yes\n\n"
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1097/TP.0000000000004481"
+      }
+    }
+  },
+  {
+    "case_id": "8",
+    "metadata": {
+      "title": "Distinct differences between calvarial and long \nbone osteocytes in cell morphologies, gene \nexpression and aging responses",
+      "doi": "10.1111/febs.16797",
+      "journal": "The FEBS Journal"
+    },
+    "authors_verbatim": "Gao M.; Zhu B.; Fan J.; Gao Y.; Xue F.; Li G.; Hubbard A.; Gao X.; Sun J.; Ling J.; Cao L.; Liu D.; Yuan J.; Jiang Q.; Papadimitriou J.; Zou W.; Feng J. Q.; Yang L.; Zhang C.; Gao J.; Zheng M",
+    "acknowledgement": {
+      "present": true,
+      "exact_text": "Acknowledgments: \nThis project was supported by a grant received from\nNational Natural Science Foundation of China\nawarded to CZ (no. 81820108020). \nWe would like to acknowledge the scientific and technical assistance received from the National Imaging Facility at the\nCentre for Microscopy, Characterization & Analysis,\nThe University of Western Australia.",
+      "pages": [
+        4089
+      ],
+      "sections": [
+        "Acknowledgements"
+      ]
+    },
+    "cmca_affiliation": {
+      "present": false
+    },
+    "cmca_coauthors": [
+      "Alysia Hubbard"
+    ],
+    "instruments": [
+      {
+        "verbatim": "Confocal microscopy (ECLIPSE Ti Series, Nikon, Tokyo, Japan)"
+      },
+      {
+        "verbatim": "Structured illumination microscopy (Ti2, Nikon)"
+      },
+      {
+        "verbatim": "SR Apo TIRF 100× 1.49NA Oil"
+      },
+      {
+        "verbatim": "immersion objective with motorized correction collar (Nikon)"
+      },
+      {
+        "verbatim": "iXon 897 EMCCD camera (Andor, Belfast, UK)"
+      },
+      {
+        "verbatim": "NIS ELEMENTS (Nikon)"
+      }
+    ],
+    "labels": {
+      "initial": "Positive",
+      "adjudicated": "Positive",
+      "rationale": "Acknowledgement: Yes\nAffiliation: No\nCo-author: Yes\nPlatform: Yes"
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1111/febs.16797"
+      }
+    }
+  },
+  {
+    "case_id": "9",
+    "metadata": {
+      "title": "An Orthogonal Conductance Pathway in \nSpiropyrans for Well-Defined Electrosteric \nSwitching Single-Molecule Junctions",
+      "doi": "10.1002/smll.202306334",
+      "journal": "Small"
+    },
+    "authors_verbatim": "Jago D.; Liu C.; Daaoub A. H. S.; Gaschk E.; Walkey M. C.; Pulbrook T.; Qiao X.; Sobolev A. N.; Moggach S. A.; Costa-Milan D.; Higgins S. J.; Piggott M. J.; Sadeghi H.; Nichols R. J.; Sangtarash S.; Vezzoli A.; Koutsantonis G. A.",
+    "acknowledgement": {
+      "present": true,
+      "exact_text": "Acknowledgements: \nThe authors acknowledge the facilities and the scientific\nand technical assistance of the Australian Microscopy and Microanalysis Research Facility at the Centre for Microscopy, Characterisation, and Analysis, The University of Western Australia, a facility funded by the University, State and Commonwealth Governments.\n ",
+      "sections": [
+        "Acknowledgements"
+      ]
+    },
+    "cmca_affiliation": {
+      "present": true,
+      "snippets": [
+        "Centre for Microscopy",
+        "Characterisation and Analysis",
+        "University ofWestern Australia",
+        "Stirling Highway,Crawley,Western Australia 6009, Australia"
+      ]
+    },
+    "instruments": [
+      {
+        "verbatim": "single-crystal X-ray diffraction experiments"
+      },
+      {
+        "verbatim": "STM-BJ (scanning tunneling microscope break junction)"
+      }
+    ],
+    "labels": {
+      "initial": "Positive",
+      "adjudicated": "Positive",
+      "rationale": "Acknowledgement: Yes\nAffiliation: Yes\nCo-author: No\nPlatform: Yes"
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1002/smll.202306334"
+      }
+    }
+  },
+  {
+    "case_id": "10",
+    "metadata": {
+      "title": "The lipoprotein lipase that is shuttled into \ncapillaries by GPIHBP1 enters the glycocalyx\n where it mediates lipoprotein processing",
+      "doi": "10.1073/pnas.2313825120",
+      "journal": "Proceedings of the National Academy\n of Sciences"
+    },
+    "authors_verbatim": "Wenxin Song; Anne P Beigneux; Thomas A Weston; Kai Chen; Ye Yang; Le Phuong Nguyen; Paul Guagliardo; Hyesoo Jung; Anh P Tran; Yiping Tu; Caitlyn Tran; Gabriel Birrane; Kazuya Miyashita; Katsuyuki Nakajima; Masami Murakami; Peter Tontonoz; Haibo Jiang; Michael Ploug; Loren G Fong; Stephen G Young",
+    "acknowledgement": {},
+    "cmca_affiliation": {
+      "present": true,
+      "snippets": [
+        "Centre for Microscopy, Characterisation & Analysis, The University of Western Australia listed for Paul Guagliardo."
+      ]
+    },
+    "cmca_coauthors": [
+      "Paul Guagliardo"
+    ],
+    "instruments": [
+      {
+        "verbatim": "Confocal microscopy"
+      },
+      {
+        "verbatim": "Immunogold electron microscopy"
+      },
+      {
+        "verbatim": "Backscattered electron (BSE) imaging with a scanning electron microscope"
+      },
+      {
+        "verbatim": "NanoSIMS (nanoscale secondary ion mass spectrometry)"
+      },
+      {
+        "verbatim": "10-nm gold nanoparticle–conjugated 88B8"
+      },
+      {
+        "verbatim": "LaCl3/DyCl3 staining"
+      }
+    ],
+    "labels": {
+      "initial": "Positive",
+      "adjudicated": "Positive",
+      "rationale": "Acknowledgement: \nYes (via co-author, \nNo (acknowlegedment section)\n\nAffiliation: Yes\nCo-author: Yes\nPlatform: Yes\n"
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1073/pnas.2313825120"
+      }
+    }
+  },
+  {
+    "case_id": "11",
+    "metadata": {
+      "title": "Micromachining porous silicon thin films for thermal sensing applications \n \n \n",
+      "doi": "10.1016/j.apmt.2024.102320",
+      "journal": "Applied Materials Today "
+    },
+    "authors_verbatim": "Sharma P.; Erfantalab S.; Dell J.; Parish G.; Keating A.",
+    "acknowledgement": {
+      "present": true,
+      "exact_text": "Acknowledgement:\nThe present work was supported by the Australian Research Council under the project DP170104266. The authors acknowledge the Western Australian node of the NCRIS enabled Australian National Fabrication Facility (ANFF) and the Centre for Microscopy, Characterisation & Analysis (CMCA) at The University of Western Australia and the WA state government.",
+      "pages": [
+        11
+      ],
+      "sections": [
+        "Acknowledgements"
+      ]
+    },
+    "cmca_affiliation": {
+      "present": false
+    },
+    "instruments": [
+      {
+        "verbatim": "FEI Verios XHR SEM"
+      },
+      {
+        "verbatim": "FIB-SEM"
+      },
+      {
+        "verbatim": "Zygo New View™ 6300 optical profilometer"
+      },
+      {
+        "verbatim": "SENTECH Instruments ICP-CVD system"
+      },
+      {
+        "verbatim": "Oxford Instruments Plasmalab system 100 (ICP-RIE)"
+      }
+    ],
+    "labels": {
+      "initial": "Positive",
+      "adjudicated": "Positive",
+      "rationale": "Acknowledgement: Yes\nAffiliation: No\nCo-author: No\nPlatform: Yes "
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1016/j.apmt.2024.102320"
+      }
+    }
+  },
+  {
+    "case_id": "12",
+    "metadata": {
+      "title": "Enhancing Fast-Charge Capabilities in\n Solid-State Lithium Batteries through the \nIntegration of High Li0.5La0.5TiO3 (LLTO) \nContent in the Lithium-Metal Anode",
+      "doi": "10.1021/acsami.3c12414",
+      "journal": "ACS Applied Materials and Interfaces"
+    },
+    "authors_verbatim": "Chencheng Cao; Yijun Zhong; Leqi Zhao; Hannah Seneque; Zongping Shao",
+    "acknowledgement": {
+      "present": false
+    },
+    "cmca_affiliation": {
+      "present": false
+    },
+    "instruments": [
+      {
+        "verbatim": "Verios SEM instrument"
+      },
+      {
+        "verbatim": "XRD apparatus from Bruker"
+      },
+      {
+        "verbatim": "Kratos Axis Ultra XPS"
+      },
+      {
+        "verbatim": "Solartron 1260"
+      },
+      {
+        "verbatim": "Biologic VSP"
+      }
+    ],
+    "labels": {
+      "initial": "Ambigiuous",
+      "adjudicated": "Ambigiuous",
+      "rationale": "Mismatch:\n\nAcknowledgement: No\nAffiliation: No\nCo-author: No\nPlatform: Yes "
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1021/acsami.3c12414"
+      }
+    }
+  },
+  {
+    "case_id": "13",
+    "metadata": {
+      "title": "Understanding the effect of microstructural\n texture on the anisotropic elastic properties of \nselective laser melted Ti-24Nb-4Zr-8Sn",
+      "doi": "10.1016/j.actamat.2023.119021",
+      "journal": "Acta Materialia"
+    },
+    "authors_verbatim": "Challis V. J.; Xu X.; Halfpenny A.; Cramer A. D.; Saunders M.; Roberts A. P.; Sercombe T. B.",
+    "acknowledgement": {
+      "present": false
+    },
+    "cmca_affiliation": {
+      "present": true,
+      "snippets": [
+        "Centre for Microscopy, Characterisation and Analysis, The University of Western Australia, Perth, WA 6009, Australia"
+      ]
+    },
+    "cmca_coauthors": [
+      "Martin Saunders"
+    ],
+    "instruments": [
+      {
+        "verbatim": "Zeiss Ultraplus FEG SEM"
+      },
+      {
+        "verbatim": "Bruker e− Flash detector"
+      },
+      {
+        "verbatim": "EBSD"
+      },
+      {
+        "verbatim": "Bruker Quantax Espirit 1.9 software"
+      },
+      {
+        "verbatim": "Oxford Instruments Channel 5 software"
+      }
+    ],
+    "labels": {
+      "initial": "Ambigiuous",
+      "adjudicated": "Positive",
+      "rationale": "Mismatch:\n\nAcknowledgement - No\nAffiliation: Yes\nCo-author: Yes\nPlatform: Yes \n\n"
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1016/j.actamat.2023.119021"
+      }
+    }
+  },
+  {
+    "case_id": "14",
+    "metadata": {
+      "title": "Highly Controlled Zigzag Perovskite \nNanocrystals Enabled by Dipole-Induced \nSelf-Assembly of Nanocubes for Low-Threshold \nAmplified Spontaneous Emission and Lasing",
+      "doi": "10.1002/adfm.202211466",
+      "journal": "Advanced Functional Materials"
+    },
+    "authors_verbatim": "Chengxi Zhang; Jiayi Chen; Lyudmila Turyanska; Junhui Wang; Weihua Wang; Lin Wang; Lingmei Kong; Kaifeng Wu; Jisong Yao; Hongbin Yao; Zhiwen Yang; Wanwan Li; Yehonadav Bekenstein; Yue Wang; Guohua Jia; Xuyong Yang",
+    "acknowledgement": {
+      "present": false
+    },
+    "cmca_affiliation": {
+      "present": false
+    },
+    "instruments": [
+      {
+        "verbatim": "JEOL JEM-2100F transmission electron microscope"
+      },
+      {
+        "verbatim": "FEI Tecnai G20 transmission electron microscope"
+      },
+      {
+        "verbatim": "Rigaku D/max 2500 diffractometer"
+      },
+      {
+        "verbatim": "ULVAC-PHI 5000 VersaProbe instrument"
+      },
+      {
+        "verbatim": "PerkinElmer Lambda 950 UV–vis–NIR spectrometer"
+      },
+      {
+        "verbatim": "FLS-1000 (Edinburgh Instruments)"
+      }
+    ],
+    "labels": {
+      "initial": "Ambigiuous",
+      "adjudicated": "Ambigiuous",
+      "rationale": "Mismatch:\n\nAcknowledgement - No\nAffiliation: No\nCo-author: No\nPlatform: Yes \n\n"
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1002/adfm.202211466"
+      }
+    }
+  },
+  {
+    "case_id": "15",
+    "metadata": {
+      "title": "Pharmacological blockade of the interleukin-1 \nreceptor suppressed Escherichia coli \nlipopolysaccharide-induced neuroinflammation\n in preterm fetal sheep",
+      "doi": "10.1016/j.ajogmf.2023.101124",
+      "journal": "American Journal of Obstetrics\n and Gynecology MFM"
+    },
+    "authors_verbatim": "Takahashi Y.; Takahashi T.; Usuda H.; Carter S.; Fee E. L.; Furfaro L.; Chemtob S.; Olson D. M.; Keelan J. A.; Kallapur S.; Kemp M. W.",
+    "acknowledgement": {
+      "present": false
+    },
+    "cmca_affiliation": {
+      "present": false
+    },
+    "instruments": [
+      {
+        "verbatim": "Confocal microscope (Nikon A1Si)"
+      },
+      {
+        "verbatim": "ELISA plate reader (Spectramax, Molecular Devices LLC)"
+      },
+      {
+        "verbatim": "ViiA7 real-time PCR thermocycler (Life Technologies)"
+      }
+    ],
+    "labels": {
+      "initial": "Ambigiuous",
+      "adjudicated": "Ambigiuous",
+      "rationale": "Mismatch:\n\nAcknowledgement - No\nAffiliation: No\nCo-author: No\nPlatform: Yes "
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1016/j.ajogmf.2023.101124"
+      }
+    }
+  },
+  {
+    "case_id": "16",
+    "metadata": {
+      "title": "The effects of anterior temporal lobe resection on cortical morphology",
+      "doi": "10.1016/j.cortex.2023.04.018",
+      "journal": "Cortex"
+    },
+    "authors_verbatim": "\n\n\n\n\nKaroline Leiberg; Jane de Tisi; John S. Duncan; Bethany Little; Peter N. Taylor; Sjoerd B. Vos; Gavin P. Winston; Bruno Mota; Yujiang Wang\n\n\n\n\n",
+    "acknowledgement": {
+      "present": true,
+      "exact_text": "Acknowledgement:\nThe authors acknowledge the\nfacilities and scientific and technical assistance of the National\nImaging Facility, a National Collaborative Research\nInfrastructure Strategy (NCRIS) capability, at the Centre for\nMicroscopy, Characterisation, and Analysis, the University of\nWestern Australia.",
+      "pages": [
+        241
+      ],
+      "sections": [
+        "Acknowledgements"
+      ]
+    },
+    "cmca_affiliation": {
+      "present": true,
+      "snippets": [
+        "Centre for Microscopy, Characterisation, And Analysis, The University of Western Australia, Nedlands, Australia"
+      ]
+    },
+    "cmca_coauthors": [
+      "N\n\n[Audit: Sjoerd B. Vos]"
+    ],
+    "instruments": [
+      {
+        "verbatim": "3T T1-weighted structural magnetic resonance images (MRIs)"
+      },
+      {
+        "verbatim": "FreeSurfer (Fischl, 2012) 6.0 recon-all pipeline"
+      },
+      {
+        "verbatim": "SurfStat random field theory clustering"
+      }
+    ],
+    "labels": {
+      "initial": "Positive",
+      "adjudicated": "Positive",
+      "rationale": "\nMismatch:\n\nAcknowledgement - Yes\nAffiliation: Yes\nCo-author: Not in the current list; Co-author: Sjoerd B. Vos?\nPlatform: No"
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1016/j.cortex.2023.04.018"
+      }
+    }
+  },
+  {
+    "case_id": "17",
+    "metadata": {
+      "title": "Decoupling of sulfur isotope signatures from \nplatinum group elements in komatiite-hosted \nore systems: Evidence from the Mount Keith \nMKD5 Ni-(Co-Cu) deposit, Western Australia",
+      "doi": "10.5382/econgeo.5030",
+      "journal": "Economic Geology"
+    },
+    "authors_verbatim": "Anne B Virnes; Marco L Fiorentini; Stephen J Barnes; Stefano Caruso; Laure A. J. Martin; Matvei Aleshin; Louise E Schoneveld; Malcolm P Roberts; Quentin Masurel; Nicolas Thebaud",
+    "acknowledgement": {
+      "exact_text": "Acknowledgement:\nThe authors acknowledge the facilities and the scientific\nand technical assistance of Microscopy Australia at the\nCentre for Microscopy, Characterisation, and Analysis, The\nUniversity of Western Australia, a facility funded by university,\nstate, and commonwealth governments.",
+      "pages": [
+        1831
+      ],
+      "sections": [
+        "Acknowledgements"
+      ]
+    },
+    "cmca_affiliation": {
+      "present": true,
+      "snippets": [
+        "Centre for Microscopy, Characterization, and Analysis, The University of Western Australia, 35 Stirling Hwy.,",
+        "Crawley, Western Australia 6009, Australia"
+      ]
+    },
+    "cmca_coauthors": [
+      "Laure A.J. Martin\n Matvei Aleshin\nMalcolm P. Roberts"
+    ],
+    "instruments": [
+      {
+        "verbatim": "CAMECA IMS1280 multicollector ion microprobe"
+      },
+      {
+        "verbatim": "Tescan Vega3 scanning electron microscope"
+      },
+      {
+        "verbatim": "JEOL 8530F hyperprobe equipped with five tunable wavelength-dispersive spectrometers"
+      }
+    ],
+    "labels": {
+      "initial": "Positive",
+      "adjudicated": "Positive",
+      "rationale": "Mismatch:\n\nAcknowledgement - Yes/But Audit: Unknown\nAffiliation: Yes\nCo-author: Yes \nPlatform: Yes"
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.5382/econgeo.5030"
+      }
+    }
+  },
+  {
+    "case_id": "18",
+    "metadata": {
+      "title": "Investigating parasites in three-dimensions: \nTrends in volume microscopy",
+      "doi": "10.1016/j.pt.2023.05.004",
+      "journal": "Trends in Parasitology"
+    },
+    "authors_verbatim": "Cooper C.; Thompson R. C. A.; Clode P. L.",
+    "acknowledgement": {
+      "present": true,
+      "exact_text": "Acknowledgments:\nThe authors acknowledge the instruments and expertise of Microscopy Australia at the Centre for Microscopy, Characterisation and Analysis, University of Western Australia, enabled by National Collaborative Research Infrastructure Strategy\n(NCRIS), university, and state government support.",
+      "pages": [
+        679
+      ],
+      "sections": [
+        "Acknowledgements"
+      ]
+    },
+    "cmca_affiliation": {
+      "present": true,
+      "snippets": [
+        "Centre forMicroscopy, Characterisation,",
+        "and Analysis, University of Western",
+        "Australia, Stirling Hwy, Crawley, WA",
+        "6009, Australia"
+      ]
+    },
+    "cmca_coauthors": [
+      "Peta L. Clode\nCrystal Cooper"
+    ],
+    "instruments": [
+      {
+        "verbatim": "Volume electron microscopy techniques"
+      },
+      {
+        "verbatim": "Serial block face–SEM (SBF-SEM)"
+      },
+      {
+        "verbatim": "Focussed ion beam–SEM (FIB-SEM)"
+      },
+      {
+        "verbatim": "Cryo-electron tomography (cryo-ET)"
+      },
+      {
+        "verbatim": "Cryo-scanning TEM (cryo-STEM)"
+      }
+    ],
+    "labels": {
+      "initial": "Positive",
+      "adjudicated": "Positive",
+      "rationale": "Mismatch:\n\nAcknowledgement - Yes\nAffiliation: Yes\nCo-author: Yes\nPlatform: No"
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1016/j.pt.2023.05.004"
+      }
+    }
+  },
+  {
+    "case_id": "19",
+    "metadata": {
+      "title": "Aster-dependent nonvesicular transport \nfacilitates dietary cholesterol uptake",
+      "doi": "10.1126/science.adf0966",
+      "journal": "Science"
+    },
+    "authors_verbatim": "Alessandra Ferrari; Emily Whang; Xu Xiao; John P Kennelly; Beatriz Romartinez-Alonso; Julia J Mack; Thomas Weston; Kai Chen; Youngjae Kim; Marcus J Tol; Lara Bideyan; Alexander Nguyen; Yajing Gao; Liujuan Cui; Alexander H Bedard; Jaspreet Sandhu; Stephen D Lee; Louise Fairall; Kevin J Williams; Wenxin Song; Priscilla Munguia; Robert A Russell; Martin G Martin; Michael E Jung; Haibo Jiang; John W. R. Schwabe; Stephen G Young; Peter Tontonoz",
+    "acknowledgement": {
+      "present": false,
+      "exact_text": "Acknowledgments: \nFunding: the National Collaborative Research Infrastructure Strategy (NCRIS), an Australian Government initiative, to the National Deuteration Facility in Australia.\n\nNote:(NCRIS, not CMCA)",
+      "pages": [
+        12
+      ],
+      "sections": [
+        "Acknowledgements"
+      ]
+    },
+    "cmca_affiliation": {
+      "present": false
+    },
+    "instruments": [
+      {
+        "verbatim": "Nanoscale secondary ion mass spectrometry (NanoSIMS) imaging"
+      },
+      {
+        "verbatim": "Backscattered electron images"
+      }
+    ],
+    "labels": {
+      "initial": "Ambigiuous",
+      "adjudicated": "Positive",
+      "rationale": "Mismatch:\n\nAcknowledgement - No\nAffiliation: No\nCo-author: No\nPlatform: Yes (by Audit)"
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1126/science.adf0966"
+      }
+    }
+  },
+  {
+    "case_id": "20",
+    "metadata": {
+      "title": "Molecular insights into the Darwin paradox of \ncoral reefs from the sea anemone Aiptasia",
+      "doi": "10.1126/sciadv.adf7108",
+      "journal": "Science Advances"
+    },
+    "authors_verbatim": "Guoxin Cui; Migle K Konciute; Lorraine Ling; Luke Esau; Jean-Baptiste Raina; Baoda Han; Octavio R Salazar; Jason S Presnell; Nils Rädecker; Huawen Zhong; Jessica Menzies; Phillip A Cleves; Yi Jin Liew; Cory J Krediet; Val Sawiccy; Maha J Cziesielski; Paul Guagliardo; Jeremy Bougoure; Mathieu Pernice; Heribert Hirt; Christian R Voolstra; Virginia M Weis; John R Pringle; Manuel Aranda",
+    "acknowledgement": {
+      "exact_text": "Methods:\nThe gold-coated sections were then imaged using the NanoSIMS\n50 ion probe at the Centre for Microscopy, Characterisation, and\nAnalysis at the University of Western Australia.",
+      "sections": [
+        "Methods"
+      ]
+    },
+    "cmca_affiliation": {
+      "present": true,
+      "snippets": [
+        "Centre for Microscopy Characterisation",
+        "and Analysis, The University of Western Australia, Perth, WA, Australia"
+      ]
+    },
+    "cmca_coauthors": [
+      "Paul Guagliardo"
+    ],
+    "instruments": [
+      {
+        "verbatim": "NanoSIMS 50 ion probe"
+      }
+    ],
+    "labels": {
+      "initial": "Ambigiuous",
+      "adjudicated": "Positive",
+      "rationale": "Mismatch:\n\nAcknowledgement - Found in Methods, not Acknowledgement Sdection\n\nAffiliation: Yes\nCo-author: Yes\nPlatform: Yes (by Audit)"
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1126/sciadv.adf7108"
+      }
+    }
+  },
+  {
+    "case_id": "21",
+    "metadata": {
+      "title": "\nQuantitative analysis of backscattered-electron contrast inscanning electron microscopy\n",
+      "doi": "10.1111%2Fjmi.13148",
+      "journal": "Journal of microscopy "
+    },
+    "authors_verbatim": "Čalkovský Martin; Müller Erich; Gerthsen Dagmar",
+    "acknowledgement": {
+      "present": false
+    },
+    "cmca_affiliation": {
+      "present": false
+    },
+    "instruments": [
+      {
+        "verbatim": "backscattered-electron scanning"
+      },
+      {
+        "verbatim": "electron microscopy (BSE-SEM)"
+      },
+      {
+        "verbatim": "Helios G4 FX dual-beam instrument"
+      },
+      {
+        "verbatim": "CBS detector"
+      },
+      {
+        "verbatim": "Monte–Carlo simulations"
+      },
+      {
+        "verbatim": "focused-ion-beam (FIB) milling"
+      }
+    ],
+    "labels": {
+      "initial": "Negative",
+      "adjudicated": "Negative",
+      "negative_type": "Random Negative",
+      "rationale": "Materials study using \nBSE-SEM with Monte–\nCarlo simulation; \nno CMCA involvement\n"
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1111%2Fjmi.13148"
+      }
+    }
+  },
+  {
+    "case_id": "22",
+    "metadata": {
+      "title": "\nTaxonomic significance of seed macro-micromorphology of Turkish Alcea L. (Malvaceae) through light microscopy and scanning electron microscopy\n",
+      "doi": "10.1002%2Fjemt.24385",
+      "journal": "Microscopy research and technique"
+    },
+    "authors_verbatim": "Ozbek Funda; Uzunhisarcikli Mehmet Erkan",
+    "acknowledgement": {
+      "present": false
+    },
+    "cmca_affiliation": {
+      "present": false
+    },
+    "instruments": [
+      {
+        "verbatim": "scanning electron microscope"
+      },
+      {
+        "verbatim": "(JEOL JSM 6060 LV)"
+      },
+      {
+        "verbatim": "stereoscopic microscope (Leica EZ4D)"
+      },
+      {
+        "verbatim": "stereomicroscope digital photomicrograph"
+      },
+      {
+        "verbatim": "system (Olympus SZX7)"
+      },
+      {
+        "verbatim": "sputter coater (Polaron SC 502)"
+      }
+    ],
+    "labels": {
+      "initial": "Negative",
+      "adjudicated": "Negative",
+      "negative_type": "Random Negative",
+      "rationale": "Taxonomic plant study using\n LM + SEM;                   \n\naffiliations are Gazi University, Turkey; \n\nno CMCA involvement."
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1002%2Fjemt.24385"
+      }
+    }
+  },
+  {
+    "case_id": "23",
+    "metadata": {
+      "title": "\nCD34+ stromal cells/telocytes and their role in mouse lung development: Light microscopy, immunofluorescence, ultrastructural and scanning electron microscopy evidence\n",
+      "doi": "10.1002%2Fcbin.12223",
+      "journal": "Cell biology international"
+    },
+    "authors_verbatim": "Dama Ganesh; Xue Chengxu; Zhang Yangxia; Li Dezhuang; Fan Jinyu; Qiao Liang; Xu Zhihao; Yang Ciqing; Liu Yanli; Abdullah Mohammad Farris Iman Leong Bin; Lin Juntang",
+    "acknowledgement": {
+      "present": false
+    },
+    "cmca_affiliation": {
+      "present": false
+    },
+    "instruments": [
+      {
+        "verbatim": "phase contrast microscope"
+      },
+      {
+        "verbatim": "(Diavert, Leica)"
+      },
+      {
+        "verbatim": "fluoview 1000 laser scanning confocal"
+      },
+      {
+        "verbatim": "imaging system (Olympus Optical)"
+      },
+      {
+        "verbatim": "HITACHI-HT7700 transmission electron"
+      },
+      {
+        "verbatim": "microscope"
+      },
+      {
+        "verbatim": "HITACHI-SU8100 scanning electron"
+      },
+      {
+        "verbatim": "Polaron apparatus"
+      },
+      {
+        "verbatim": "HITACHI-MC1000 ion sputtering device"
+      }
+    ],
+    "labels": {
+      "initial": "Negative",
+      "adjudicated": "Negative",
+      "negative_type": "Random Negative",
+      "rationale": "Developmental biology\nstudy using multiple microscopy techniques; \n\naffiliations are Xinxiang Medical University (China) and Universiti Sains Malaysia; \n\nno CMCA involvement.\n"
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1002%2Fcbin.12223"
+      }
+    }
+  },
+  {
+    "case_id": "24",
+    "metadata": {
+      "title": "Surface Degradation of Mg2X‑Based Composites at Room Temperature: Assessing Grain Boundary and Bulk Diffusion Using Atomic Force Microscopy and Scanning Electron Microscopy",
+      "doi": "10.1021/acsami.4c10236",
+      "journal": "ACS applied materials & interfaces"
+    },
+    "authors_verbatim": "Ghosh Sanyukta; Abdelbaky Mohamed; Mertin Wolfgang; Müller Eckhard; de Boor Johannes",
+    "acknowledgement": {
+      "present": false
+    },
+    "cmca_affiliation": {
+      "present": false
+    },
+    "instruments": [
+      {
+        "verbatim": "atomic force microscopy (AFM)"
+      },
+      {
+        "verbatim": "scanning electron microscopy (SEM)"
+      },
+      {
+        "verbatim": "energy-dispersive+N25:N30 X-ray (EDX)"
+      },
+      {
+        "verbatim": "Zeiss Ultra 55 SEM"
+      }
+    ],
+    "labels": {
+      "initial": "Negative",
+      "adjudicated": "Negative",
+      "negative_type": "Random Negative",
+      "rationale": "\nThermoelectric materials \nstudy using AFM and SEM; \n\naffiliations are German \nAerospace Center (DLR),\nUniversity of Duisburg-Essen, JLU Giessen; \n\nNo CMCA involvement.\n"
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1021/acsami.4c10236"
+      }
+    }
+  },
+  {
+    "case_id": "25",
+    "metadata": {
+      "title": "\nTermitomyces pakistanensis, a new mushroom species from Pakistan based on scanning electron microscopy and ITS-rDNA barcoding\n",
+      "doi": "10.1002%2Fjemt.24265",
+      "journal": "Microscopy research and technique"
+    },
+    "authors_verbatim": "Razaq Abdul; Ishaq Aamna; Ilyas Sobia; Niaz Shereen; Sadia Sehrish",
+    "acknowledgement": {
+      "present": false
+    },
+    "cmca_affiliation": {
+      "present": false
+    },
+    "instruments": [
+      {
+        "verbatim": "Scanning electron microscopy (SEM)"
+      },
+      {
+        "verbatim": "of basidiospores"
+      },
+      {
+        "verbatim": "SEM micrographs of spores"
+      }
+    ],
+    "labels": {
+      "initial": "Negative",
+      "adjudicated": "Negative",
+      "negative_type": "Random Negative",
+      "rationale": "Taxonomic mycology study describing a new \nmushroom species from \nPakistan. \n\nSEM used for spores; \n\naffiliations with UVAS Pattoki, Lahore College for Women, and Peshawar University. \n\nNo CMCA involvement."
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1002%2Fjemt.24265"
+      }
+    }
+  },
+  {
+    "case_id": "26",
+    "metadata": {
+      "title": "Novel approaches to material use and reuse in Victorian-Era Melbourne, Australia; New insights from stable light isotope analysis and scanning electron microscopy of fiber artifacts\n",
+      "doi": "10.1016/j.jasrep.2024.104864",
+      "journal": "Journal of archaeological science"
+    },
+    "authors_verbatim": "Martens Tracy; Cameron Judith; Stuart-Williams Hilary; Kurpiel Rebekah; Myers Sarah",
+    "acknowledgement": {
+      "present": false
+    },
+    "cmca_affiliation": {
+      "present": false
+    },
+    "instruments": [
+      {
+        "verbatim": "Hitachi TM3030Plus Tabletop SEM"
+      },
+      {
+        "verbatim": "scanning electron microscopy (SEM)"
+      },
+      {
+        "verbatim": "stable isotope analysis"
+      }
+    ],
+    "labels": {
+      "initial": "Negative",
+      "adjudicated": "Negative",
+      "negative_type": "Random Negative",
+      "rationale": "Historical archaeology \nstudy of textiles from a \nVictorian-era cesspit in \nMelbourne. \n\nSEM and stable isotope\nanalysis were conducted \nat La Trobe University and\nANU; \n\nNo CMCA involvement.\n"
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1016/j.jasrep.2024.104864"
+      }
+    }
+  },
+  {
+    "case_id": "27",
+    "metadata": {
+      "title": "\nPalaeomagnetic field intensity measurements from the 2.6 Ga Yandinilling dyke swarm (Western Australia)",
+      "doi": "10.1093/gji/ggad423",
+      "journal": "Geophysical journal international"
+    },
+    "authors_verbatim": "Hawkins Louise M.; Biggin Andrew J.; Liu Yebo; Grappone J. Michael; Li Zheng-Xiang",
+    "acknowledgement": {
+      "present": false
+    },
+    "cmca_affiliation": {
+      "present": false
+    },
+    "instruments": [
+      {
+        "verbatim": "JEOL JSM-7001F FEGSEM"
+      },
+      {
+        "verbatim": "scanning electron microscopy (SEM)"
+      },
+      {
+        "verbatim": "energy dispersive X-ray (EDX)"
+      },
+      {
+        "verbatim": "TD-48-SC thermal demagnetizer"
+      },
+      {
+        "verbatim": "2G Cryogenic magnetometer"
+      },
+      {
+        "verbatim": "Agico JR-6A spinner magnetometer"
+      },
+      {
+        "verbatim": "14 GHz microwave palaeointensity"
+      },
+      {
+        "verbatim": "system (Tristan)"
+      }
+    ],
+    "labels": {
+      "initial": "Negative",
+      "adjudicated": "Negative",
+      "negative_type": "Random Negative",
+      "rationale": "Study focuses on\n palaeointensity of Earth’s\n magnetic field using SEM \nand palaeomagnetic methods. \n\nAffiliations: University of Liverpool and Curtin University. \n\nNo CMCA/UWA facility acknowledgement."
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1093/gji/ggad423"
+      }
+    }
+  },
+  {
+    "case_id": "28",
+    "metadata": {
+      "title": "\nMiocene caddisflies from Australia: iron-rich sediments preserve internal organs, tracheoles, and corneal nanocoating of larvae and pupae\n",
+      "doi": "10.1093/zoolinnean/zlae003",
+      "journal": "Zoological journal of the Linnean Society"
+    },
+    "authors_verbatim": "Frese Michael; McCurry Matthew R.; Wells Alice",
+    "acknowledgement": {
+      "exact_text": "\n"
+    },
+    "cmca_affiliation": {
+      "present": false
+    },
+    "instruments": [
+      {
+        "verbatim": "FEI Quanta 650F variable-pressure"
+      },
+      {
+        "verbatim": "field-emission scanning electron"
+      },
+      {
+        "verbatim": "microscope (FEI Company,"
+      },
+      {
+        "verbatim": "Hillsboro, OR, USA)"
+      },
+      {
+        "verbatim": "photomicrographs with Canon EOS 7D"
+      },
+      {
+        "verbatim": "Mark II"
+      }
+    ],
+    "labels": {
+      "initial": "Ambigiuous",
+      "adjudicated": "Negative",
+      "negative_type": "Hard Negative",
+      "rationale": "Acknowledges Microscopy Australia (ANU node), not CMCA/UWA. \n\n\nGeneric NCRIS-linked acknowledgement → Ambiguous classification."
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1093/zoolinnean/zlae003"
+      }
+    }
+  },
+  {
+    "case_id": "29",
+    "metadata": {
+      "title": "\nBrittle–Ductile Threshold in Lithium Disilicate under Sharp Sliding Contact\n",
+      "doi": "10.1177/00220345241256279",
+      "journal": "Journal of dental research"
+    },
+    "authors_verbatim": "Bawazir M.; Lim C. H.; Arnés-Urgellés P.; Lu M.; Huang H.; Zhang Y.",
+    "acknowledgement": {
+      "present": false
+    },
+    "cmca_affiliation": {
+      "present": false
+    },
+    "instruments": [
+      {
+        "verbatim": "environmental field emission scanning"
+      },
+      {
+        "verbatim": "electron microscope (Quanta 250 FEG,"
+      },
+      {
+        "verbatim": "Thermo Fisher Scientific)"
+      },
+      {
+        "verbatim": "dual-beam plasma focused ion beam"
+      },
+      {
+        "verbatim": "scanning electron microscope (FIB-SEM"
+      },
+      {
+        "verbatim": "Tescan S8252X Plasma FIB, Tescan)"
+      }
+    ],
+    "labels": {
+      "initial": "Negative",
+      "adjudicated": "Negative",
+      "negative_type": "Random Negative",
+      "rationale": "Dental materials study \nusing SEM and FIB. \n\nAffiliations: University of \nPennsylvania,\nKing Abdulaziz University,\n University of Queensland,\n Sun Yat-sen University. \n\nNo CMCA involvement."
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1177/00220345241256279"
+      }
+    }
+  },
+  {
+    "case_id": "30",
+    "metadata": {
+      "title": "\nAraucarioides: A Polar Lineage of Araucariaceae with the New Paleogene Fossils from Tasmania, Australia\n",
+      "doi": "10.1086/726183",
+      "journal": "International journal of plant sciences"
+    },
+    "authors_verbatim": "Slodownik Miriam A.; Escapa Ignacio; Mays Chris; Jordan Gregory J.; Carpenter Raymond J.; Hill Robert S.",
+    "acknowledgement": {
+      "present": false
+    },
+    "cmca_affiliation": {
+      "present": false
+    },
+    "instruments": [
+      {
+        "verbatim": "Quanta 450 SEM"
+      },
+      {
+        "verbatim": "Olympus AX70 microscope"
+      },
+      {
+        "verbatim": "Nikon SMZ25 dissection microscope"
+      },
+      {
+        "verbatim": "SkyScan-1276 in vivo micro–computed"
+      },
+      {
+        "verbatim": "tomography scanner (Bruker MicroCT)"
+      }
+    ],
+    "labels": {
+      "initial": "Negative",
+      "adjudicated": "Negative",
+      "negative_type": "Random Negative",
+      "rationale": "Palaeobotanical study of\nAraucarioides fossils from the Macquarie Harbour \nFormation (Tasmania, \nEarly Eocene). Uses SEM \nand micro-CT imaging at \nUniversity of Adelaide / \nCork / ANU collaborators.\n\nNo CMCA acknowledgement,\nco-authors, or affiliations."
+    },
+    "provenance": {
+      "source": {
+        "type": "doi",
+        "id": "10.1086/726183"
+      }
+    }
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "case_id": "24",
+  "metadata": {
+    "title": "Surface Degradation of Mg2X‑Based Composites at Room Temperature: Assessing Grain Boundary and Bulk Diffusion Using Atomic Force Microscopy and Scanning Electron Microscopy",
+    "doi": "10.1021/acsami.4c10236",
+    "journal": "ACS applied materials & interfaces"
+  },
+  "authors_verbatim": "Ghosh Sanyukta; Abdelbaky Mohamed; Mertin Wolfgang; Müller Eckhard; de Boor Johannes",
+  "acknowledgement": {
+    "present": false
+  },
+  "cmca_affiliation": {
+    "present": false
+  },
+  "instruments": [
+    {
+      "verbatim": "atomic force microscopy (AFM)"
+    },
+    {
+      "verbatim": "scanning electron microscopy (SEM)"
+    },
+    {
+      "verbatim": "energy-dispersive+N25:N30 X-ray (EDX)"
+    },
+    {
+      "verbatim": "Zeiss Ultra 55 SEM"
+    }
+  ],
+  "labels": {
+    "initial": "Negative",
+    "adjudicated": "Negative",
+    "negative_type": "Random Negative",
+    "rationale": "\nThermoelectric materials \nstudy using AFM and SEM; \n\naffiliations are German \nAerospace Center (DLR),\nUniversity of Duisburg-Essen, JLU Giessen; \n\nNo CMCA involvement.\n"
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1021/acsami.4c10236"
+    }
+  }
+}

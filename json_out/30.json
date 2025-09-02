@@ -1,0 +1,44 @@
+{
+  "case_id": "30",
+  "metadata": {
+    "title": "\nAraucarioides: A Polar Lineage of Araucariaceae with the New Paleogene Fossils from Tasmania, Australia\n",
+    "doi": "10.1086/726183",
+    "journal": "International journal of plant sciences"
+  },
+  "authors_verbatim": "Slodownik Miriam A.; Escapa Ignacio; Mays Chris; Jordan Gregory J.; Carpenter Raymond J.; Hill Robert S.",
+  "acknowledgement": {
+    "present": false
+  },
+  "cmca_affiliation": {
+    "present": false
+  },
+  "instruments": [
+    {
+      "verbatim": "Quanta 450 SEM"
+    },
+    {
+      "verbatim": "Olympus AX70 microscope"
+    },
+    {
+      "verbatim": "Nikon SMZ25 dissection microscope"
+    },
+    {
+      "verbatim": "SkyScan-1276 in vivo micro–computed"
+    },
+    {
+      "verbatim": "tomography scanner (Bruker MicroCT)"
+    }
+  ],
+  "labels": {
+    "initial": "Negative",
+    "adjudicated": "Negative",
+    "negative_type": "Random Negative",
+    "rationale": "Palaeobotanical study of\nAraucarioides fossils from the Macquarie Harbour \nFormation (Tasmania, \nEarly Eocene). Uses SEM \nand micro-CT imaging at \nUniversity of Adelaide / \nCork / ANU collaborators.\n\nNo CMCA acknowledgement,\nco-authors, or affiliations."
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1086/726183"
+    }
+  }
+}

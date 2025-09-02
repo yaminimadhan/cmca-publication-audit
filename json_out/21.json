@@ -1,0 +1,47 @@
+{
+  "case_id": "21",
+  "metadata": {
+    "title": "\nQuantitative analysis of backscattered-electron contrast inscanning electron microscopy\n",
+    "doi": "10.1111%2Fjmi.13148",
+    "journal": "Journal of microscopy "
+  },
+  "authors_verbatim": "Čalkovský Martin; Müller Erich; Gerthsen Dagmar",
+  "acknowledgement": {
+    "present": false
+  },
+  "cmca_affiliation": {
+    "present": false
+  },
+  "instruments": [
+    {
+      "verbatim": "backscattered-electron scanning"
+    },
+    {
+      "verbatim": "electron microscopy (BSE-SEM)"
+    },
+    {
+      "verbatim": "Helios G4 FX dual-beam instrument"
+    },
+    {
+      "verbatim": "CBS detector"
+    },
+    {
+      "verbatim": "Monte–Carlo simulations"
+    },
+    {
+      "verbatim": "focused-ion-beam (FIB) milling"
+    }
+  ],
+  "labels": {
+    "initial": "Negative",
+    "adjudicated": "Negative",
+    "negative_type": "Random Negative",
+    "rationale": "Materials study using \nBSE-SEM with Monte–\nCarlo simulation; \nno CMCA involvement\n"
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1111%2Fjmi.13148"
+    }
+  }
+}

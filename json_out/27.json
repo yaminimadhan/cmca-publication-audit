@@ -1,0 +1,53 @@
+{
+  "case_id": "27",
+  "metadata": {
+    "title": "\nPalaeomagnetic field intensity measurements from the 2.6 Ga Yandinilling dyke swarm (Western Australia)",
+    "doi": "10.1093/gji/ggad423",
+    "journal": "Geophysical journal international"
+  },
+  "authors_verbatim": "Hawkins Louise M.; Biggin Andrew J.; Liu Yebo; Grappone J. Michael; Li Zheng-Xiang",
+  "acknowledgement": {
+    "present": false
+  },
+  "cmca_affiliation": {
+    "present": false
+  },
+  "instruments": [
+    {
+      "verbatim": "JEOL JSM-7001F FEGSEM"
+    },
+    {
+      "verbatim": "scanning electron microscopy (SEM)"
+    },
+    {
+      "verbatim": "energy dispersive X-ray (EDX)"
+    },
+    {
+      "verbatim": "TD-48-SC thermal demagnetizer"
+    },
+    {
+      "verbatim": "2G Cryogenic magnetometer"
+    },
+    {
+      "verbatim": "Agico JR-6A spinner magnetometer"
+    },
+    {
+      "verbatim": "14 GHz microwave palaeointensity"
+    },
+    {
+      "verbatim": "system (Tristan)"
+    }
+  ],
+  "labels": {
+    "initial": "Negative",
+    "adjudicated": "Negative",
+    "negative_type": "Random Negative",
+    "rationale": "Study focuses on\n palaeointensity of Earth’s\n magnetic field using SEM \nand palaeomagnetic methods. \n\nAffiliations: University of Liverpool and Curtin University. \n\nNo CMCA/UWA facility acknowledgement."
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1093/gji/ggad423"
+    }
+  }
+}

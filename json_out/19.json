@@ -1,0 +1,41 @@
+{
+  "case_id": "19",
+  "metadata": {
+    "title": "Aster-dependent nonvesicular transport \nfacilitates dietary cholesterol uptake",
+    "doi": "10.1126/science.adf0966",
+    "journal": "Science"
+  },
+  "authors_verbatim": "Alessandra Ferrari; Emily Whang; Xu Xiao; John P Kennelly; Beatriz Romartinez-Alonso; Julia J Mack; Thomas Weston; Kai Chen; Youngjae Kim; Marcus J Tol; Lara Bideyan; Alexander Nguyen; Yajing Gao; Liujuan Cui; Alexander H Bedard; Jaspreet Sandhu; Stephen D Lee; Louise Fairall; Kevin J Williams; Wenxin Song; Priscilla Munguia; Robert A Russell; Martin G Martin; Michael E Jung; Haibo Jiang; John W. R. Schwabe; Stephen G Young; Peter Tontonoz",
+  "acknowledgement": {
+    "present": false,
+    "exact_text": "Acknowledgments: \nFunding: the National Collaborative Research Infrastructure Strategy (NCRIS), an Australian Government initiative, to the National Deuteration Facility in Australia.\n\nNote:(NCRIS, not CMCA)",
+    "pages": [
+      12
+    ],
+    "sections": [
+      "Acknowledgements"
+    ]
+  },
+  "cmca_affiliation": {
+    "present": false
+  },
+  "instruments": [
+    {
+      "verbatim": "Nanoscale secondary ion mass spectrometry (NanoSIMS) imaging"
+    },
+    {
+      "verbatim": "Backscattered electron images"
+    }
+  ],
+  "labels": {
+    "initial": "Ambigiuous",
+    "adjudicated": "Positive",
+    "rationale": "Mismatch:\n\nAcknowledgement - No\nAffiliation: No\nCo-author: No\nPlatform: Yes (by Audit)"
+  },
+  "provenance": {
+    "source": {
+      "type": "doi",
+      "id": "10.1126/science.adf0966"
+    }
+  }
+}
