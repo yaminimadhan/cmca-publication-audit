@@ -5,6 +5,13 @@ __pycache__/
 data/raw_pdfs/*
 outputs/logs/*
 outputs/reports/*
+*.xlsx
+*.xls
 
 # Keep placeholders so empty dirs appear in repo
 !**/.gitkeep
+
+# Ignore everything in data/ except readme files
+data/*
+!data/README.md
+!data/Gold_Json_README.md
