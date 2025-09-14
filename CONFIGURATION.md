@@ -1,4 +1,4 @@
-# PostgreSQL + pgvector Configuration Guide
+ant # PostgreSQL + pgvector Configuration Guide
 
 ## Quick Setup
 
