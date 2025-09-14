@@ -1,4 +1,5 @@
-o# PostgreSQL Vector Database (DB-only Setup)
+o
+# PostgreSQL Vector Database (DB-only Setup)
 
 This repository contains a minimal PostgreSQL + pgvector database setup. It does not generate embeddings. It expects precomputed embeddings provided by an upstream service (your embeddings/gold-standard team).
 
