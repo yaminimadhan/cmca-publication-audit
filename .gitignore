@@ -1,0 +1,10 @@
+﻿chroma_db/
+__pycache__/
+*.pyc
+*.sqlite3
+.venv/
+.vscode/
+.idea/
+.DS_Store
+.cache/
+.pytest_cache/

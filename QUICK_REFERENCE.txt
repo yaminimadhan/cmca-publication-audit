@@ -1,0 +1,91 @@
+POSTGRESQL VECTOR DATABASE - QUICK REFERENCE
+=============================================
+
+SETUP COMMANDS:
+---------------
+pip install -r requirements.txt
+$env:DATABASE_URL="postgresql://postgres:password@localhost:5432/postgres"
+# Set environment variable first
+python test_pgvector.py
+
+START API:
+----------
+python pgvector_api.py
+# API available at: http://localhost:8000
+
+BASIC API USAGE:
+----------------
+# List collections
+curl http://localhost:8000/collections
+
+# Add documents
+curl -X POST http://localhost:8000/items \
+  -H "Content-Type: application/json" \
+  -d '{
+    "collection_name": "my_collection",
+    "ids": ["doc1"],
+    "documents": ["Document content"],
+    "metadatas": [{"type": "example"}],
+    "embeddings": [[0.1, 0.2, 0.3, 0.4, 0.5]]
+  }'
+
+# Search vectors
+curl -X POST http://localhost:8000/search/vector \
+  -H "Content-Type: application/json" \
+  -d '{
+    "collection_name": "my_collection",
+    "query_embedding": [0.1, 0.2, 0.3, 0.4, 0.5],
+    "n_results": 5
+  }'
+
+PYTHON INTEGRATION:
+-------------------
+import requests
+
+# Add documents
+data = {
+    "collection_name": "test_collection",
+    "ids": ["doc1"],
+    "documents": ["This is a test document"],
+    "metadatas": [{"type": "test"}],
+    "embeddings": [[0.1, 0.2, 0.3, 0.4, 0.5]]
+}
+response = requests.post("http://localhost:8000/items", json=data)
+
+# Search
+search_data = {
+    "collection_name": "test_collection",
+    "query_embedding": [0.1, 0.2, 0.3, 0.4, 0.5],
+    "n_results": 3
+}
+response = requests.post("http://localhost:8000/search/vector", json=search_data)
+
+TROUBLESHOOTING:
+----------------
+# Test connection
+python test_connection.py
+
+# Reset password
+# Check PostgreSQL service is running
+
+# Recreate database
+# Set environment variable first
+
+CONNECTION DETAILS:
+-------------------
+Host: localhost
+Port: 5432
+Database: postgres
+Username: postgres
+Password: password
+
+EMBEDDING FORMAT:
+-----------------
+# For all-MiniLM-L6-v2 (384 dimensions)
+embeddings = [
+    [0.1, 0.2, ..., 0.384],  # Document 1
+    [0.1, 0.2, ..., 0.384]   # Document 2
+]
+
+# All embeddings must have same dimension
+# Precomputed embeddings only - no embedding generation in this system
