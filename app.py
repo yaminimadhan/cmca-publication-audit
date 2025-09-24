@@ -12,7 +12,7 @@ local_css("static/css/tokens.css")
 st.subheader("CMCA Dashboard")
 
 # ---------- toolbar with 2 buttons (right aligned, with gap) ----------
-left, b1, gap, b2 = st.columns([8, 3, 1, 3])  # gap=1 gives clear space
+left, b1, gap, b2 = st.columns([10, 3, 1, 3])  # gap=1 gives clear space
 
 with b1:
     if st.button("📤 Upload New PDF", key="btn_upload"):
