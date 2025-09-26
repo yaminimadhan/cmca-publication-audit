@@ -1,8 +1,13 @@
+#src/backend/app/services/pdf_service.py
+
 import json
 from datetime import datetime
 from typing import Any, Dict
 from sqlalchemy.ext.asyncio import AsyncSession
+
 from app.repositories.pdf_repo import PdfRepo
+from app.services.extraction_service import extract_api
+
 
 # --- plug your existing services here ---
 # EXPECTED CONTRACTS:
@@ -17,14 +22,13 @@ from app.repositories.pdf_repo import PdfRepo
 # Replace the two stubs `_run_extractor` and `_run_llm` with your real calls.
 
 async def _run_extractor(file_bytes: bytes) -> Dict[str, Any]:
-    # TODO: CALL YOUR EXTRACTOR HERE (HTTP client or local function)
-    # e.g., resp = await http.post(EXTRACTOR_URL, files={"file": file_bytes}); return resp.json()
-    raise NotImplementedError("wire your extractor client here")
+    return extract_api(file_bytes)  # sync call is fine here
+   
 
-async def _run_llm(extractor_json: Dict[str, Any]) -> Dict[str, Any]:
-    # TODO: CALL YOUR LLM HERE using extractor_json as input
-    # e.g., resp = await llm_client.classify(extractor_json); return resp
-    raise NotImplementedError("wire your LLM client here")
+# async def _run_llm(extractor_json: Dict[str, Any]) -> Dict[str, Any]:
+#     # TODO: CALL YOUR LLM HERE using extractor_json as input
+#     # e.g., resp = await llm_client.classify(extractor_json); return resp
+#     raise NotImplementedError("wire your LLM client here")
 
 def _parse_publish_date(value: Any) -> datetime | None:
     if not value:
@@ -63,10 +67,10 @@ class PdfService:
         publish_date = (overrides or {}).get("publish_date") or extractor_json.get("publish_date")
         publish_dt = _parse_publish_date(publish_date)
 
-        # === 2) LLM CALL ===
-        llm_json = await _run_llm(extractor_json)         # <-- CALL YOUR LLM HERE
-        cosine = llm_json.get("cosine_similarity")
-        cmca = llm_json.get("cmca_result")
+        # # === 2) LLM CALL ===
+        # llm_json = await _run_llm(extractor_json)         # <-- CALL YOUR LLM HERE
+        # cosine = llm_json.get("cosine_similarity")
+        # cmca = llm_json.get("cmca_result")
 
         # === 3) PERSIST ===
         doc = await self.repo.create(
@@ -79,7 +83,7 @@ class PdfService:
             publish_date=publish_dt,
             uploaded_by=uploaded_by,
             project_id=project_id,
-            cosine_similarity=cosine,
-            cmca_result=cmca,
+            # cosine_similarity=cosine,
+            # cmca_result=cmca,
         )
         return doc

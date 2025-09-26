@@ -6,6 +6,7 @@ from app.core.config import settings
 from app.db.session import engine, get_session
 from app.routers import auth, users
 from app.routers import projects
+from app.routers import pdfs
 
 app = FastAPI(title=settings.APP_NAME)
 
@@ -26,3 +27,4 @@ async def db_health(session: AsyncSession = Depends(get_session)):
 app.include_router(auth.router)
 app.include_router(users.router)
 app.include_router(projects.router)
+app.include_router(pdfs.router) 
