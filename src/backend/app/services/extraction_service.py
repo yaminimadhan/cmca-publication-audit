@@ -373,6 +373,19 @@ def extract_api(file_bytes: bytes) -> Dict[str, Any]:
     # Optional, not strictly needed by API, but kept for parity with pages.jsonl
     pages_json = [{"page": i+1, "text": t} for i, t in enumerate(page_texts)]
 
+    payload = {
+        "title": title,
+        "authors": authors_text,
+        "affiliation": None,
+        "doi": doi,
+        "instruments": instruments,
+        "num_pages": len(doc),
+        "publish_date": publish_date_iso,
+        "sentences": sentences_rows,   # can be large
+    }
+
+    print("EXTRACTOR OUTPUT :\n" + json.dumps(payload, ensure_ascii=False, indent=2))
+
     return {
         # --- DB fields (from extractor) ---
         "title": title,

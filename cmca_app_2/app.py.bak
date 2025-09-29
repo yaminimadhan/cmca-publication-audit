@@ -1,0 +1,21 @@
+from __future__ import annotations
+import streamlit as st
+from core.state import init_session
+
+st.set_page_config(page_title="CMCA PDF Dashboard", layout="wide")
+init_session()
+
+from modules.login import render_login
+from pages.dashboard import render_dashboard
+from pages.details import render_details
+
+page = st.session_state.get("page", "login")
+
+if page == "login":
+    render_login()
+elif page == "dashboard":
+    render_dashboard()
+elif page == "details":
+    render_details()
+else:
+    render_login()

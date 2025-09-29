@@ -1,0 +1,41 @@
+{
+  "projects": [
+    {"name": "Corporate Assessment", "year": "2024"},
+    {"name": "Documentation", "year": "2024"},
+    {"name": "R&D", "year": "2025"}
+  ],
+  "pdfs": [
+    {
+      "id": "pdf_001",
+      "title": "Annual Report 2024",
+      "authors": ["John Smith", "Sarah Johnson"],
+      "affiliations": ["Department of Chemistry", "Quality Assurance Lab"],
+      "doi": "10.1234/annualreport.2024.001",
+      "instruments": ["Spectrophotometer", "UV-Vis"],
+      "project": "Corporate Assessment",
+      "uploaded_by": "John Smith",
+      "size": "2.4 MB",
+      "upload_date": "2024-03-15",
+      "year": "2024",
+      "cosine": 0.92,
+      "cmca_use": "Yes",
+      "file_path": null
+    },
+    {
+      "id": "pdf_002",
+      "title": "Employee Handbook",
+      "authors": ["HR Team"],
+      "affiliations": ["Documentation"],
+      "doi": "10.5555/doc.2024.002",
+      "instruments": ["Documentation"],
+      "project": "Documentation",
+      "uploaded_by": "Sarah Johnson",
+      "size": "1.8 MB",
+      "upload_date": "2024-03-10",
+      "year": "2024",
+      "cosine": 0.41,
+      "cmca_use": "No",
+      "file_path": null
+    }
+  ]
+}
