@@ -1,49 +1,29 @@
 o
 # PostgreSQL Vector Database (DB-only Setup)
 
-This repository contains a minimal PostgreSQL + pgvector database setup. It does not generate embeddings. It expects precomputed embeddings provided by an upstream service (your embeddings/gold-standard team).
+This repository contains a minimal PostgreSQL + pgvector database setup for the CMCA Publication Audit capstone project. It does not generate embeddings - it expects precomputed embeddings provided by an upstream service (your embeddings/gold-standard team).
 
 ## 📚 Documentation Overview
 
-This project includes comprehensive documentation to help you understand, set up, and use the vector database system:
+This project includes streamlined documentation focused on practical usage:
 
 ### Core Documentation Files
 
 | Document | Purpose | When to Use |
 |----------|---------|-------------|
 | **README.md** | Project overview, quick start, and API reference | First stop for understanding the project |
-| **HOW_TO_USE.md** | Complete step-by-step setup and usage guide | When you need detailed setup instructions |
-| **POSTGRESQL_VECTOR_CRASH_COURSE.md** | Background knowledge on vector databases and PostgreSQL | When you want to understand the underlying concepts |
-| **CONFIGURATION.md** | Database configuration and environment setup | When setting up PostgreSQL and pgvector |
 | **QUICK_REFERENCE.txt** | Command reference for daily operations | When you need quick command reminders |
-| **VECTOR_DB_SUMMARY.txt** | Integration summary for team collaboration | When coordinating with other team members |
-| **DESIGN_DOCUMENTATION.md** | Technical design decisions and implementation details | When understanding architecture and design choices |
-
-### Documentation Purpose Guide
 
 **🎯 For New Users:**
-1. Start with **README.md** for project overview
-2. Follow **HOW_TO_USE.md** for complete setup
-3. Read **POSTGRESQL_VECTOR_CRASH_COURSE.md** to understand concepts
-
-**⚙️ For Setup:**
-- **CONFIGURATION.md** - Database and environment configuration
-- **HOW_TO_USE.md** - Step-by-step setup process
-
-**📖 For Learning:**
-- **POSTGRESQL_VECTOR_CRASH_COURSE.md** - Deep dive into vector databases, embeddings, and PostgreSQL
+1. Start with **README.md** for project overview and setup
+2. Use **QUICK_REFERENCE.txt** for daily operations
 
 **🚀 For Daily Use:**
 - **QUICK_REFERENCE.txt** - Command cheat sheet
 - **README.md** - API reference and examples
 
 **👥 For Team Integration:**
-- **VECTOR_DB_SUMMARY.txt** - Integration patterns and API contracts
 - **README.md** - API documentation for embedding teams
-
-**🔧 For Technical Understanding:**
-- **DESIGN_DOCUMENTATION.md** - Architecture decisions and implementation rationale
-- **POSTGRESQL_VECTOR_CRASH_COURSE.md** - Deep technical concepts
 
 ## Scope (your job)
 - Stand up a persistent PostgreSQL database with pgvector extension
@@ -101,27 +81,22 @@ __pycache__/
 ```
 ├── pgvector_db.py             # Core database operations (PostgreSQL + pgvector)
 ├── pgvector_api.py            # FastAPI server for REST endpoints
-├── test_pgvector.py           # Test suite for functionality verification
 ├── requirements.txt           # Python dependencies
 └── VectorDB.code-workspace    # VS Code workspace configuration
 ```
 
 ### Documentation Files
 ```
-├── README.md                          # Project overview and quick start
-├── HOW_TO_USE.md                      # Complete setup and usage guide
-├── POSTGRESQL_VECTOR_CRASH_COURSE.md  # Background knowledge and concepts
-├── CONFIGURATION.md                    # Database configuration guide
-├── QUICK_REFERENCE.txt                # Command reference for daily use
-├── VECTOR_DB_SUMMARY.txt              # Integration summary for teams
-└── DESIGN_DOCUMENTATION.md             # Technical design and implementation details
+├── README.md                  # Project overview and quick start
+└── QUICK_REFERENCE.txt        # Command reference for daily use
 ```
 
 ### Data and Output Directories
 ```
 ├── data/           # Data storage (raw PDFs, processed data, examples)
-├── docs/           # Project documentation (gold standards, proposals)
-├── outputs/        # Generated reports and logs
+├── gold_standard/   # Gold standard documents and codebooks
+├── outputs/         # Generated reports and logs
+├── proposal/        # Project proposal documents
 └── src/            # Source code modules (extraction, ingestion, etc.)
 ```
 
@@ -205,6 +180,14 @@ results = vdb.query_by_vector(
 )
 print(results)
 ```
+
+## Recent Updates
+
+**Workspace Cleanup (Latest)**
+- Streamlined documentation to focus on essential files
+- Removed excessive documentation files for better maintainability
+- Kept core functionality: `pgvector_api.py`, `pgvector_db.py`, `README.md`, `QUICK_REFERENCE.txt`
+- Clean, focused codebase ready for team integration
 
 ## Deliverables checklist (DB side)
 - PostgreSQL + pgvector persistent storage works and survives restarts
