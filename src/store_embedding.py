@@ -18,7 +18,7 @@ model = SentenceTransformer("intfloat/e5-base-v2")
 #Read sentences
 print(f"Loading sentences from {TEXT_FILE}")
 lines = TEXT_FILE.read_text(encoding="utf-8").splitlines()
-sentences = [f"passage: {line.strip()}" for line in lines if line.strip()] #List of sentences in the format that embedding expects.
+sentences = [f"Query: {line.strip()}" for line in lines if line.strip()] #List of sentences in the format that embedding expects.
 
 
 #Connect to DB

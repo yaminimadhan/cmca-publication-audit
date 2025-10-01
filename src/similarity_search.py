@@ -27,7 +27,7 @@ def search_sentences(sentences, k=30):
             FROM sentence_embeddings
             ORDER BY embedding <=> %s::vector
             LIMIT %s;
-        """, (emb_str, emb_str, k))  #k = 30 by default
+        """, (emb_str, emb_str, k))
         results[sent] = cur.fetchall()
 
     cur.close()
