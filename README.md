@@ -1,9 +1,8 @@
-o
-# PostgreSQL Vector Database (DB-only Setup)
+# PostgreSQL Vector Database 
 
 This repository contains a minimal PostgreSQL + pgvector database setup for the CMCA Publication Audit capstone project. It does not generate embeddings - it expects precomputed embeddings provided by an upstream service (your embeddings/gold-standard team).
 
-## 📚 Documentation Overview
+##  Documentation Overview
 
 This project includes streamlined documentation focused on practical usage:
 
@@ -14,15 +13,15 @@ This project includes streamlined documentation focused on practical usage:
 | **README.md** | Project overview, quick start, and API reference | First stop for understanding the project |
 | **QUICK_REFERENCE.txt** | Command reference for daily operations | When you need quick command reminders |
 
-**🎯 For New Users:**
+**For New Users:**
 1. Start with **README.md** for project overview and setup
 2. Use **QUICK_REFERENCE.txt** for daily operations
 
-**🚀 For Daily Use:**
+** For Daily Use:**
 - **QUICK_REFERENCE.txt** - Command cheat sheet
 - **README.md** - API reference and examples
 
-**👥 For Team Integration:**
+**For Team Integration:**
 - **README.md** - API documentation for embedding teams
 
 ## Scope (your job)
@@ -75,7 +74,7 @@ __pycache__/
 .env
 ```
 
-## 📁 Project Structure
+##  Project Structure
 
 ### Core Implementation Files
 ```
@@ -185,11 +184,9 @@ print(results)
 
 **Workspace Cleanup (Latest)**
 - Streamlined documentation to focus on essential files
-- Removed excessive documentation files for better maintainability
 - Kept core functionality: `pgvector_api.py`, `pgvector_db.py`, `README.md`, `QUICK_REFERENCE.txt`
-- Clean, focused codebase ready for team integration
 
-## Deliverables checklist (DB side)
+## Deliverables checklist 
 - PostgreSQL + pgvector persistent storage works and survives restarts
 - Can create/list/delete collections (tables)
 - Can add items with ids/documents/metadatas/embeddings
