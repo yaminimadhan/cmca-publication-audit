@@ -85,7 +85,7 @@ def render_dashboard():
             meta_c1, meta_c2 = st.columns(2)
             with meta_c1:
                 title = st.text_input("Title", placeholder="Auto use filename if empty", key="upload_title")
-                authors = st.text_input("Authors (comma-separated)", key="upload_authors")
+                # authors = st.text_input("Authors (comma-separated)", key="upload_authors")
                 doi = st.text_input("DOI", key="upload_doi")
                 year = st.selectbox("Year", ["2023", "2024", "2025"], index=1, key="upload_year")
             with meta_c2:
@@ -93,7 +93,7 @@ def render_dashboard():
                 projects_data = _api_projects()
                 projects = [p["name"] for p in projects_data] or ["Documentation"]
                 project = st.selectbox("Project", projects, index=0, key="upload_project")
-                instruments = st.text_input("Instruments (comma-separated)", key="upload_instruments")
+                # instruments = st.text_input("Instruments (comma-separated)", key="upload_instruments")
                 cmca_use = st.toggle("CMCA Use = Yes", value=True, key="upload_cmca_toggle")
             if st.button("Upload", type="primary", key="upload_btn"):
                 meta = {
@@ -137,11 +137,6 @@ def render_dashboard():
                         st.rerun()
                     except Exception as e:
                         st.error(f"Failed to create project: {e}")
-
-        st.caption("Existing Projects")
-        # list from API for consistency
-        for p in _api_projects():
-            st.write(f"• {p['name']} ({p.get('year','-')})")
 
     st.divider()
 
