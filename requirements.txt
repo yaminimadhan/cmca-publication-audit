@@ -1,2 +1,5 @@
-
-# All project dependencies go here
+streamlit
+pandas
+pymupdf
+pdfplumber
+openpyxl
