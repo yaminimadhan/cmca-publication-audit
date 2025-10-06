@@ -33,3 +33,6 @@ CREATE TABLE IF NOT EXISTS public.pdfs (
 CREATE INDEX IF NOT EXISTS ix_pdfs_project_id  ON public.pdfs (project_id);
 CREATE INDEX IF NOT EXISTS ix_pdfs_uploaded_by ON public.pdfs (uploaded_by);
 CREATE INDEX IF NOT EXISTS ix_pdfs_doi         ON public.pdfs (doi);
+
+ALTER TABLE public.pdfs
+ADD COLUMN IF NOT EXISTS storage_path TEXT;

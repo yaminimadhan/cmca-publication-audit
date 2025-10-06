@@ -1,6 +1,9 @@
 #src/backend/app/services/pdf_service.py
 
 import json
+import os
+from uuid import uuid4
+from pathlib import Path
 from datetime import datetime
 from typing import Any, Dict
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -54,6 +57,14 @@ class PdfService:
         project_id: int | None,
         overrides: Dict[str, Any] | None = None
     ):
+        # ---- Save file to disk (local storage) ----
+        base_dir = os.getenv("UPLOAD_DIR", "storage/pdfs")
+        Path(base_dir).mkdir(parents=True, exist_ok=True)
+        filename = f"{uuid4().hex}.pdf"
+        storage_path = str((Path(base_dir) / filename).resolve())
+        with open(storage_path, "wb") as f:
+            f.write(file_bytes)
+
         # === 1) EXTRACTOR CALL ===
         extractor_json = await _run_extractor(file_bytes)  # <-- CALL YOUR EXTRACTOR HERE
 
@@ -85,5 +96,6 @@ class PdfService:
             project_id=project_id,
             # cosine_similarity=cosine,
             # cmca_result=cmca,
+            storage_path=storage_path,
         )
         return doc

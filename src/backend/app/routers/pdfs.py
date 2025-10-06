@@ -1,12 +1,17 @@
+from __future__ import annotations
+import os
 from typing import Annotated
+from datetime import datetime
+from typing import Any
 from fastapi import APIRouter, Depends, HTTPException, status, UploadFile, File, Form, Query
 from fastapi.security import OAuth2PasswordBearer
+from fastapi.responses import FileResponse
 from jose import JWTError, jwt
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import settings
 from app.db.session import get_session
-from app.schemas.pdf import PdfUploadParams, PdfOut
+from app.schemas.pdf import PdfUploadParams, PdfOut, PdfUpdate
 from app.services.pdf_service import PdfService
 
 router = APIRouter(prefix="/pdfs", tags=["pdfs"])
@@ -76,3 +81,90 @@ async def get_pdf(
     if not doc:
         raise HTTPException(status_code=404, detail="PDF not found")
     return doc
+
+@router.get("/{pdf_id}/file")
+async def download_pdf(
+    pdf_id: int,
+    session: AsyncSession = Depends(get_session),
+    actor=Depends(get_actor_claims),  # keeps it protected
+):
+    from app.repositories.pdf_repo import PdfRepo
+    repo = PdfRepo(session)
+    doc = await repo.get(pdf_id)
+    if not doc:
+        raise HTTPException(status_code=404, detail="PDF not found")
+    if not doc.storage_path or not os.path.exists(doc.storage_path):
+        raise HTTPException(status_code=404, detail="File not found on server")
+    return FileResponse(
+        doc.storage_path,
+        media_type="application/pdf",
+        filename=f"{(doc.title or 'document')}.pdf",
+    )
+
+def _parse_publish_date(value: Any):
+    if value is None:
+        return None
+    if isinstance(value, datetime):
+        return value
+    try:
+        return datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+    except Exception:
+        return None
+
+@router.patch("/{pdf_id}", response_model=PdfOut)
+async def edit_pdf(
+    pdf_id: int,
+    payload: PdfUpdate,
+    session: AsyncSession = Depends(get_session),
+    actor=Depends(get_actor_claims),
+):
+    from app.repositories.pdf_repo import PdfRepo
+    repo = PdfRepo(session)
+    doc = await repo.get(pdf_id)
+    if not doc:
+        raise HTTPException(status_code=404, detail="PDF not found")
+
+    # Optional auth rules (you said no special privileges; leaving open)
+    # if actor["user_type"] != "admin" and actor["user_id"] != doc.uploaded_by: ...
+
+    fields = payload.model_dump(exclude_unset=True)
+
+    # handle publish_date flexibility (str/datetime)
+    if "publish_date" in fields:
+        pd = fields.get("publish_date")
+        parsed = _parse_publish_date(pd)
+        # if your column is TEXT, store original string; if it's datetime, store parsed
+        fields["publish_date"] = parsed or pd  # harmless either way
+
+    try:
+        updated = await repo.update(doc, **fields)
+    except Exception as e:
+        # handle uniqueness errors etc.
+        raise HTTPException(status_code=400, detail=f"Update failed: {e}")
+
+    return updated
+
+@router.delete("/{pdf_id}", status_code=204)
+async def delete_pdf(
+    pdf_id: int,
+    session: AsyncSession = Depends(get_session),
+    actor=Depends(get_actor_claims),
+):
+    from app.repositories.pdf_repo import PdfRepo
+    repo = PdfRepo(session)
+    doc = await repo.get(pdf_id)
+    if not doc:
+        raise HTTPException(status_code=404, detail="PDF not found")
+
+    # Optional auth check
+    # if actor["user_type"] != "admin" and actor["user_id"] != doc.uploaded_by: ...
+
+    # Best-effort file removal
+    try:
+        if getattr(doc, "storage_path", None) and os.path.exists(doc.storage_path):
+            os.remove(doc.storage_path)
+    except Exception:
+        pass
+
+    await repo.delete(doc)
+    return

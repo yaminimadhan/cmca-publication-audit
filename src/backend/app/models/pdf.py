@@ -17,7 +17,8 @@ class Pdf(Base):
     instruments_json: Mapped[dict | list | None] = mapped_column(JSONB, nullable=True)
     num_pages: Mapped[int | None] = mapped_column(Integer, nullable=True)
     publish_date: Mapped[datetime | None] = mapped_column(nullable=True)
-
+    storage_path: Mapped[str | None] = mapped_column(String, nullable=True)
+    
     # From API / context
     uploaded_by: Mapped[int | None] = mapped_column(ForeignKey("users.user_id", ondelete="SET NULL"))
     project_id: Mapped[int | None] = mapped_column(ForeignKey("projects.project_id", ondelete="SET NULL"))

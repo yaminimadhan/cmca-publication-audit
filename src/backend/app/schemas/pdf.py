@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import Any
+from typing import Optional, List, Dict, Any, Literal
 from pydantic import BaseModel, Field
 
 class PdfUploadParams(BaseModel):
@@ -28,3 +28,15 @@ class PdfOut(BaseModel):
 
     class Config:
         from_attributes = True
+
+class PdfUpdate(BaseModel):
+    # all optional; only fields provided will be updated
+    title: Optional[str] = None
+    authors: Optional[str] = None
+    affiliation: Optional[str] = None
+    doi: Optional[str] = None
+    instruments_json: Optional[List[str] | Dict[str, Any]] = None
+    publish_date: Optional[datetime | str] = Field(default=None, description="ISO 8601 string or datetime")
+    project_id: Optional[int] = None
+    cmca_result: Optional[Literal["Yes", "No"]] = None
+    cosine_similarity: Optional[float] = None
