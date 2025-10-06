@@ -5,6 +5,7 @@ __pycache__/
 data/raw_pdfs/*
 outputs/logs/*
 outputs/reports/*
+outputs/processed_text/*
 
 # Keep placeholders so empty dirs appear in repo
-!**/.gitkeep
+!**/.gitkeepoutputs/
