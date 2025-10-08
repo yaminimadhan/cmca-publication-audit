@@ -5,6 +5,16 @@ from collections import Counter
 import streamlit as st
 import plotly.express as px
 
+
+import base64
+from pathlib import Path
+
+def _b64_file(p: str) -> str:
+    with open(Path(p), "rb") as f:
+        return base64.b64encode(f.read()).decode()
+
+
+
 # --- DEV MODE helpers (safe: only active when DEV_MODE=1) ---
 import os
 DEV_MODE = os.getenv("DEV_MODE") == "1"
@@ -118,58 +128,64 @@ def render_dashboard():
         bar_rows = [{"instrument": k, "pdfs": v} for k, v in top_items]
 
 
-        # ----------- CMCA Header Banner -----------
+        # ----------- CMCA hero with text over image (blended) -----------
         st.markdown("""
         <style>
-        .cmca-header {
-        text-align: center;
-        margin-top: 0.5rem;
-        margin-bottom: 0.2rem;
-        }
-        .cmca-header h2, .cmca-header h3 {
-        margin: 0;
-        font-weight: 700; /* make both lines bold */
-        color: #00205B;   /* UWA dark blue */
-        }
-        .cmca-header h2 {
-        font-size: 1.9rem;
-        line-height: 1.3;
-        }
-        .cmca-header h3 {
-        font-size: 1.4rem;
-        line-height: 1.2;
+        .cmca-hero {
+        position: relative;
+        height: 240px;                
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 22px rgba(0,0,0,.12);
+        margin: .4rem 0 1rem 0;
+        background: url('website_images/CMCA_Images_hero_color.jpg') center/cover no-repeat;
         }
 
-        /* Thin white-bordered image banner */
-        .cmca-photo-banner {
-        border-top: 4px solid #00205B;  /* UWA blue accent */
-        border-bottom: 4px solid #00205B;
-        border-radius: 6px;
-        overflow: hidden;
-        margin-top: 0.3rem;
-        margin-bottom: 0.7rem;
-        height: 180px; /* adjust if you want taller strip */
+        /* centered text container */
+        .cmca-hero__text {
+        position: absolute; top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 2;
         }
-        .cmca-photo-banner img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+
+        /* white chips so text reads on any colour */
+        .cmca-chip {
+        display: inline-block;
+        background: rgba(255,255,255,0.92);  /* brighter = more readable */
+        color: #00205B;                      /* UWA navy */
+        padding: 8px 16px;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        margin: 6px 0;
+        font-weight: 800;
+        }
+
+        /* sizes: nearly equal as you requested */
+        .cmca-chip--h1 { font-size: 2.0rem; letter-spacing: .2px; }
+        .cmca-chip--h2 { font-size: 1.85rem; }
+
+        /* optional thin UWA gold accent under the chips */
+        .cmca-accent {
+        position: absolute; left: 50%; transform: translateX(-50%);
+        bottom: 14px; height: 4px; width: 220px;
+        background: #FFC72C; border-radius: 2px;
         }
         </style>
 
-        <div class="cmca-header">
-        <h2>Centre for Microscopy</h2>
-        <h3>Characterisation and Analysis</h3>
+        <div class="cmca-hero">
+        <div class="cmca-hero__text">
+            <div class="cmca-chip cmca-chip--h1">Centre for Microscopy</div><br/>
+            <div class="cmca-chip cmca-chip--h2">Characterisation and Analysis</div>
         </div>
-
-        <div class="cmca-photo-banner">
-        <img src="website_images/CMCA_Images_hero_color.jpg">
+        <div class="cmca-accent"></div>
         </div>
         """, unsafe_allow_html=True)
 
         st.divider()
 
 
+        
         # ---------- Charts ---------
         c_pie, c_bar = st.columns(2)
         with c_pie:
