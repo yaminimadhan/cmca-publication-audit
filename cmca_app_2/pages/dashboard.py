@@ -118,22 +118,55 @@ def render_dashboard():
         bar_rows = [{"instrument": k, "pdfs": v} for k, v in top_items]
 
 
-        # -----------CMCA Header Banner -----------
+        # ----------- CMCA Header Banner -----------
         st.markdown("""
         <style>
-        .cmca-hero {
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 6px 22px rgba(0,0,0,0.10);
-            margin-top: 0.25rem;
-            margin-bottom: 0.5rem;
+        .cmca-header {
+        text-align: center;
+        margin-top: 0.5rem;
+        margin-bottom: 0.2rem;
+        }
+        .cmca-header h2, .cmca-header h3 {
+        margin: 0;
+        font-weight: 700; /* make both lines bold */
+        color: #00205B;   /* UWA dark blue */
+        }
+        .cmca-header h2 {
+        font-size: 1.9rem;
+        line-height: 1.3;
+        }
+        .cmca-header h3 {
+        font-size: 1.4rem;
+        line-height: 1.2;
+        }
+
+        /* Thin white-bordered image banner */
+        .cmca-photo-banner {
+        border-top: 4px solid #00205B;  /* UWA blue accent */
+        border-bottom: 4px solid #00205B;
+        border-radius: 6px;
+        overflow: hidden;
+        margin-top: 0.3rem;
+        margin-bottom: 0.7rem;
+        height: 180px; /* adjust if you want taller strip */
+        }
+        .cmca-photo-banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         }
         </style>
+
+        <div class="cmca-header">
+        <h2>Centre for Microscopy</h2>
+        <h3>Characterisation and Analysis</h3>
+        </div>
+
+        <div class="cmca-photo-banner">
+        <img src="website_images/CMCA_Images_hero_color.jpg">
+        </div>
         """, unsafe_allow_html=True)
 
-        st.markdown('<div class="cmca-hero">', unsafe_allow_html=True)
-        st.image("website_images/CMCA_Images_hero_gray.jpg", use_container_width=True)
-        st.markdown('</div>', unsafe_allow_html=True)
         st.divider()
 
 
