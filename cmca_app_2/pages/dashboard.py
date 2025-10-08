@@ -203,16 +203,31 @@ def render_dashboard():
     up_col, proj_col = st.columns(2)
 
     # ------------------------ Upload PDF (file + project only) ------------------------
-    with up_col:
-        with st.expander("📤 Upload New PDF", expanded=False):
-            f = st.file_uploader("Choose PDF", type=["pdf"], accept_multiple_files=False, key="uploader_pdf")
+with up_col:
+    with st.expander("📤 Upload New PDF", expanded=False):
+        # nonce ensures the uploader gets a fresh key after each successful upload
+        nonce = st.session_state.get("upload_nonce", 0)
+
+        with st.form("upload_form", clear_on_submit=True):
+            f = st.file_uploader(
+                "Choose PDF",
+                type=["pdf"],
+                accept_multiple_files=False,
+                key=f"uploader_pdf_{nonce}",
+            )
 
             # Pull projects from API
             projects_data = _api_projects()
             project_names = [p["name"] for p in projects_data] or ["Documentation"]
-            project_sel = st.selectbox("Project", project_names, index=0, key="upload_project")
+            project_sel = st.selectbox(
+                "Project",
+                project_names,
+                index=0,
+                key=f"upload_project_{nonce}",
+            )
 
-            if st.button("Upload", type="primary", key="upload_btn", disabled=(f is None)):
+            submitted = st.form_submit_button("Upload", disabled=(f is None))
+            if submitted and f is not None:
                 try:
                     # Map selected project name -> id
                     project_id = None
@@ -224,10 +239,15 @@ def render_dashboard():
                     # No overrides — extractor/LLM will populate metadata
                     resp = _api_upload_pdf(f, project_id=project_id, overrides={})
                     st.success(f"Uploaded: {resp.get('title') or f.name} (pdf_id {resp.get('pdf_id')})")
+
+                    # add these two lines for auto-refresh
+                    st.session_state["upload_nonce"] = nonce + 1
                     st.session_state['_force_rerun'] = True
                     st.rerun()
+
                 except Exception as e:
                     st.error(f"Upload failed: {e}")
+
 
 
     # -------------------- Create Project (API) --------------------
