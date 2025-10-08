@@ -5,6 +5,27 @@ import json
 import requests
 import streamlit as st
 
+# --- DEV MODE helpers (safe: only active when DEV_MODE=1) ---
+import os
+DEV_MODE = os.getenv("DEV_MODE") == "1"
+
+def _mock_pdf(pdf_id: int = 101) -> dict:
+    return {
+        "pdf_id": pdf_id,
+        "title": "sample1.pdf",
+        "authors": "A. Smith; B. Jones",
+        "affiliation": "UWA, CMCA",
+        "doi": "10.1234/abcd.efgh",
+        "instruments_json": ["SEM", "EDS"],
+        "project_id": 1,
+        "uploaded_by": 42,
+        "upload_date": "2025-10-01",
+        "publish_date": "2024-07-10",
+        "cmca_result": "Yes",
+        "cosine_similarity": 0.82,
+    }
+
+
 from core.state import require_auth, go
 from core.api import get as api_get, delete as api_delete  # reuse existing helpers
 
@@ -55,7 +76,7 @@ def _api_download_pdf_bytes(pdf_id: int) -> bytes:
 
 # ------------------------------ Page ------------------------------
 def render_details():
-    if not require_auth():
+    if not (DEV_MODE or require_auth()):
         st.stop()
 
     # optional navbar
@@ -64,6 +85,62 @@ def render_details():
         navbar()
     except Exception:
         pass
+
+        # --- DEV MODE short-circuit: render mock details, no backend calls ---
+    if DEV_MODE:
+        # pick a current id (from dashboard mock “Open”, or default)
+        pdf_id = st.session_state.get("current_pdf_id") or 101
+        item = _mock_pdf(int(pdf_id))
+
+        # basic navigation
+        if st.button("⬅️ Back to Dashboard", type="secondary"):
+            go("dashboard")
+            st.session_state['_force_rerun'] = True
+            st.rerun()
+
+        st.subheader("PDF Details (Mock)")
+        uploader_name = "mock_user"
+        proj_name = f"Project {item.get('project_id', '-')}"
+        title = item.get("title") or "Untitled"
+        authors_text = item.get("authors") or "-"
+        affiliation = item.get("affiliation") or "-"
+        doi = item.get("doi") or "-"
+        instruments = item.get("instruments_json") or []
+        upload_date = item.get("upload_date") or "-"
+        publish_date = item.get("publish_date") or "-"
+        cmca_result_current = item.get("cmca_result") or "-"
+        cosine_val = float(item.get("cosine_similarity") or 0.0)
+        cosine_val = max(0.0, min(cosine_val, 1.0))
+
+        cols = st.columns(2)
+        with cols[0]:
+            st.markdown(f"**{title}**")
+            st.caption("Authors");       st.write(authors_text)
+            st.caption("Affiliation");   st.write(affiliation)
+            st.caption("DOI");           st.code(doi)
+            st.caption("Instruments");   st.write(", ".join(instruments) if instruments else "-")
+            st.caption("Project");       st.write(proj_name)
+
+        with cols[1]:
+            st.caption("CMCA Use")
+            st.radio(
+                "Set CMCA Result",
+                options=["Yes", "No"],
+                index=0 if str(cmca_result_current).lower() == "yes" else 1,
+                horizontal=True,
+                key="cmca_edit_mock",
+                disabled=True,  # mock only
+            )
+            st.caption("Cosine Similarity"); st.progress(cosine_val)
+            st.caption("Uploaded By");       st.write(uploader_name)
+            st.caption("Upload Date");       st.write(upload_date)
+            st.caption("Publish Date");      st.write(publish_date)
+
+        st.divider()
+        st.info("📎 Download/Delete are disabled in DEV MODE (no backend).")
+
+        return  # IMPORTANT: don’t run real backend path in DEV
+
 
     pdf_id = st.session_state.get("current_pdf_id")
     if not pdf_id:

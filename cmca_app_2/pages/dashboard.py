@@ -5,6 +5,24 @@ from collections import Counter
 import streamlit as st
 import plotly.express as px
 
+# --- DEV MODE helpers (safe: only active when DEV_MODE=1) ---
+import os
+DEV_MODE = os.getenv("DEV_MODE") == "1"
+
+def _mock_pdfs():
+    return [
+        {"pdf_id": 101, "title": "sample1.pdf", "project_id": 1,
+         "instruments_json": ["SEM"], "upload_date": "2025-10-01",
+         "uploaded_by": "alice", "cmca_result": "Yes", "publish_date": "2024-07-10"},
+        {"pdf_id": 102, "title": "sample2.pdf", "project_id": 2,
+         "instruments_json": ["TEM", "EDS"], "upload_date": "2025-10-02",
+         "uploaded_by": "bob", "cmca_result": "No", "publish_date": "2024-05-03"},
+        {"pdf_id": 103, "title": "draft3.pdf", "project_id": 1,
+         "instruments_json": ["AFM"], "upload_date": "2025-10-03",
+         "uploaded_by": "charlie", "cmca_result": "Yes", "publish_date": "2023-12-20"},
+    ]
+
+
 from core.state import require_auth, go
 from core.api import get as api_get, post_json as api_post, post_multipart as api_post_multipart
 
@@ -70,7 +88,7 @@ def _api_upload_pdf(file, project_id: int | None = None, overrides: dict | None 
 
 # ------------------------------ Page ------------------------------
 def render_dashboard():
-    if not require_auth():
+    if not (DEV_MODE or require_auth()):
         st.stop()
 
     # ---- Navbar (unchanged if you have one) ----
@@ -79,6 +97,62 @@ def render_dashboard():
         navbar()
     except Exception:
         pass
+
+        # --- DEV MODE mock dashboard: skip backend calls and render preview ---
+    if DEV_MODE:
+        st.title("CMCA PDF Dashboard (Mock)")
+        st.caption("Previewing layout in DEV MODE – no backend calls")
+
+        all_pdfs = _mock_pdfs()
+
+        # KPIs + charts (same layout as real)
+        yes = sum(1 for x in all_pdfs if (x.get("cmca_result") or "").lower() == "yes")
+        no  = sum(1 for x in all_pdfs if (x.get("cmca_result") or "").lower() == "no")
+
+        from collections import Counter
+        counts = Counter()
+        for row in all_pdfs:
+            for inst in set(str(i) for i in (row.get("instruments_json") or [])):
+                counts[inst] += 1
+        top_items = counts.most_common(5)
+        bar_rows = [{"instrument": k, "pdfs": v} for k, v in top_items]
+
+        c_pie, c_bar = st.columns(2)
+        with c_pie:
+            if yes + no > 0:
+                fig = px.pie(names=["CMCA Yes", "CMCA No"], values=[yes, no], hole=0.55)
+                st.plotly_chart(fig, use_container_width=True)
+            else:
+                st.info("No CMCA-labelled PDFs yet — upload a PDF to see this chart.")
+        with c_bar:
+            st.subheader("Top instruments by PDFs")
+            if not bar_rows:
+                st.info("No instrument data yet.")
+            else:
+                fig_bar = px.bar(bar_rows, x="instrument", y="pdfs")
+                fig_bar.update_layout(xaxis_title="Instrument", yaxis_title="# PDFs", bargap=0.25)
+                st.plotly_chart(fig_bar, use_container_width=True)
+
+        st.divider()
+        st.caption(f"Showing {len(all_pdfs)} PDFs")
+
+        for it in all_pdfs:
+            with st.container(border=True):
+                cmca_badge = "CMCA Yes" if str(it.get("cmca_result")).lower() == "yes" else "CMCA No"
+                st.markdown(f"**{it.get('title','(untitled)')}** — {cmca_badge}")
+                st.caption(
+                    f"Project: {it.get('project_id','-')} · "
+                    f"Instruments: {', '.join(it.get('instruments_json', [])) or '-'} · "
+                    f"Uploaded: {it.get('upload_date','-')} · "
+                    f"By: {it.get('uploaded_by','-')}"
+                )
+                if st.button("Open", key=f"open_{it['pdf_id']}"):
+                    go("details", current_pdf_id=it["pdf_id"])
+                    st.session_state['_force_rerun'] = True
+                    st.rerun()
+
+        return  # important: do not run the real backend code below when in DEV
+
 
     # ---- Top stats (computed from backend PDFs) ----
     # ---- Top charts: Pie (CMCA) + Bar (Top instruments by #PDFs) ----

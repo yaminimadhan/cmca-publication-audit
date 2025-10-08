@@ -1,31 +1,23 @@
 from __future__ import annotations
+import os
 import streamlit as st
 
-import os
-if os.getenv("DEV_BYPASS") == "1":
-    st.session_state["page"] = "dashboard"
-
-import os
-if os.getenv("DEV_BYPASS") == "1":
-    st.session_state["page"] = "dashboard"
-
-# ===============================================================
-# 💡 LOCAL DEV MODE SWITCH (for Nat's safe GUI editing)
-# This block runs only if you set DEV_MODE=1 in your terminal.
-# It will skip login and use mock data, but never affects others.
-# ===============================================================
-IS_DEV_MODE = os.getenv("DEV_MODE", "0") == "1"
-
-if IS_DEV_MODE:
-    st.warning("🧩 Running in LOCAL DEV MODE – backend calls disabled.")
-    st.session_state["page"] = "dashboard"
-    st.session_state["mock_user"] = {"name": "Nat"}
-    st.session_state["mock_data"] = {"files": ["sample1.pdf", "sample2.pdf"]}
+st.set_page_config(page_title="CMCA PDF Dashboard", layout="wide", initial_sidebar_state="collapsed")
 
 from core.state import init_session
-
-st.set_page_config(page_title="CMCA PDF Dashboard", layout="wide", initial_sidebar_state="collapsed")
 init_session()
+
+# === Dev switches (local only; safe to keep in repo) ===
+DEV_BYPASS = os.getenv("DEV_BYPASS") == "1"   # real backend, skip login
+DEV_MODE   = os.getenv("DEV_MODE") == "1"     # no backend, mock data
+
+if DEV_BYPASS or DEV_MODE:
+    st.session_state["page"] = "dashboard"
+
+if DEV_MODE:
+    st.warning("🧩 Running in LOCAL DEV MODE – backend calls disabled.")
+    st.session_state.setdefault("mock_user", {"name": "Nat"})
+    st.session_state.setdefault("mock_data", {"files": ["sample1.pdf", "sample2.pdf"]})
 
 from modules.login import render_login
 from pages.dashboard import render_dashboard
