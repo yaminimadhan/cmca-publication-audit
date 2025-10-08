@@ -7,6 +7,22 @@ st.set_page_config(page_title="CMCA PDF Dashboard", layout="wide", initial_sideb
 from core.state import init_session
 init_session()
 
+
+# --- HARD RESET: remove any previous background CSS ---
+st.markdown("""
+<style>
+/* kill old injected backgrounds */
+[data-testid="stAppViewContainer"]{ 
+  background: #ffffff !important; 
+  background-image: none !important;
+}
+.stApp{
+  background: #ffffff !important;
+  background-image: none !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
 # === Dev switches (local only; safe to keep in repo) ===
 DEV_BYPASS = os.getenv("DEV_BYPASS") == "1"   # real backend, skip login
 DEV_MODE   = os.getenv("DEV_MODE") == "1"     # no backend, mock data

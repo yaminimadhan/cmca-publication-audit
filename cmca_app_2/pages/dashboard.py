@@ -98,7 +98,7 @@ def render_dashboard():
     except Exception:
         pass
 
-        # --- DEV MODE mock dashboard: skip backend calls and render preview ---
+    # --- DEV MODE mock dashboard: skip backend calls and render preview ---
     if DEV_MODE:
         st.title("CMCA PDF Dashboard (Mock)")
         st.caption("Previewing layout in DEV MODE – no backend calls")
@@ -117,6 +117,27 @@ def render_dashboard():
         top_items = counts.most_common(5)
         bar_rows = [{"instrument": k, "pdfs": v} for k, v in top_items]
 
+
+        # -----------CMCA Header Banner -----------
+        st.markdown("""
+        <style>
+        .cmca-hero {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 22px rgba(0,0,0,0.10);
+            margin-top: 0.25rem;
+            margin-bottom: 0.5rem;
+        }
+        </style>
+        """, unsafe_allow_html=True)
+
+        st.markdown('<div class="cmca-hero">', unsafe_allow_html=True)
+        st.image("website_images/CMCA_Images_hero_gray.jpg", use_container_width=True)
+        st.markdown('</div>', unsafe_allow_html=True)
+        st.divider()
+
+
+        # ---------- Charts ---------
         c_pie, c_bar = st.columns(2)
         with c_pie:
             if yes + no > 0:
@@ -178,6 +199,15 @@ def render_dashboard():
     top_items = counts.most_common(5)
     bar_rows = [{"instrument": k, "pdfs": v} for k, v in top_items]
 
+    # ------CMCA Header Image ------
+    st.markdown("### 🧪 Centre for Microscopy, Characterisation & Analysis")
+    st.image("website_images/CMCA_Images.tif", use_container_width=True)
+    st.divider()
+
+    
+    c_pie, c_bar = st.columns(2)
+
+    # Top charts: Pie (CMCA) + Bar (Top instruments by #PDFs) 
     c_pie, c_bar = st.columns(2)
 
     with c_pie:
@@ -198,55 +228,55 @@ def render_dashboard():
 
     st.divider()
 
-
     # —— Left: Upload —— Right: Project management ——
     up_col, proj_col = st.columns(2)
 
     # ------------------------ Upload PDF (file + project only) ------------------------
-with up_col:
-    with st.expander("📤 Upload New PDF", expanded=False):
-        # nonce ensures the uploader gets a fresh key after each successful upload
-        nonce = st.session_state.get("upload_nonce", 0)
+    with up_col:
+        with st.expander("📤 Upload New PDF", expanded=False):
+            # nonce ensures the uploader gets a fresh key after each successful upload
+            nonce = st.session_state.get("upload_nonce", 0)
 
-        with st.form("upload_form", clear_on_submit=True):
-            f = st.file_uploader(
-                "Choose PDF",
-                type=["pdf"],
-                accept_multiple_files=False,
-                key=f"uploader_pdf_{nonce}",
-            )
+            with st.form("upload_form", clear_on_submit=True):
+                f = st.file_uploader(
+                    "Choose PDF",
+                    type=["pdf"],
+                    accept_multiple_files=False,
+                    key=f"uploader_pdf_{nonce}",
+                )
 
-            # Pull projects from API
-            projects_data = _api_projects()
-            project_names = [p["name"] for p in projects_data] or ["Documentation"]
-            project_sel = st.selectbox(
-                "Project",
-                project_names,
-                index=0,
-                key=f"upload_project_{nonce}",
-            )
+                # Pull projects from API
+                projects_data = _api_projects()
+                project_names = [p["name"] for p in projects_data] or ["Documentation"]
+                project_sel = st.selectbox(
+                    "Project",
+                    project_names,
+                    index=0,
+                    key=f"upload_project_{nonce}",
+                )
 
-            submitted = st.form_submit_button("Upload", disabled=(f is None))
-            if submitted and f is not None:
-                try:
-                    # Map selected project name -> id
-                    project_id = None
-                    for p in projects_data:
-                        if p["name"] == project_sel:
-                            project_id = p.get("id")
-                            break
+                submitted = st.form_submit_button("Upload", disabled=(f is None))
+                if submitted and f is not None:
+                    try:
+                        # Map selected project name -> id
+                        project_id = None
+                        for p in projects_data:
+                            if p["name"] == project_sel:
+                                project_id = p.get("id")
+                                break
 
-                    # No overrides — extractor/LLM will populate metadata
-                    resp = _api_upload_pdf(f, project_id=project_id, overrides={})
-                    st.success(f"Uploaded: {resp.get('title') or f.name} (pdf_id {resp.get('pdf_id')})")
+                        # No overrides — extractor/LLM will populate metadata
+                        resp = _api_upload_pdf(f, project_id=project_id, overrides={})
+                        st.success(f"Uploaded: {resp.get('title') or f.name} (pdf_id {resp.get('pdf_id')})")
 
-                    # add these two lines for auto-refresh
-                    st.session_state["upload_nonce"] = nonce + 1
-                    st.session_state['_force_rerun'] = True
-                    st.rerun()
+                        # add these two lines for auto-refresh
+                        st.session_state["upload_nonce"] = nonce + 1
+                        st.session_state['_force_rerun'] = True
+                        st.rerun()
 
-                except Exception as e:
-                    st.error(f"Upload failed: {e}")
+                    except Exception as e:
+                        st.error(f"Upload failed: {e}")
+
 
 
 
