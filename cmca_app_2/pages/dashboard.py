@@ -134,54 +134,67 @@ def render_dashboard():
         if not Path(img_path).exists():
             st.error(f"Image not found: {img_path}")
         else:
-            b64 = _b64_file(img_path)  # ← use your helper here
+            b64 = _b64_file(img_path)
 
             st.markdown(f"""
             <style>
-            .cmca-hero {{
-                position: relative;
-                height: 230px;
-                border-radius: 12px;
-                overflow: hidden;
-                box-shadow: 0 6px 22px rgba(0,0,0,0.15);
-                margin: .5rem 0 1rem 0;
-                background: url("data:image/jpeg;base64,{b64}") center/cover no-repeat;
+            .cmca-banner {{
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 22px rgba(0,0,0,0.10);
+            margin-top: 0.25rem;
+            margin-bottom: 0.75rem;
             }}
-            .cmca-hero::before {{
-                content: "";
-                position: absolute; inset: 0;
-                background: rgba(0,0,0,0.18);
+
+            .cmca-banner img {{
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            filter: brightness(0.95);
             }}
-            .cmca-hero__text {{
-                position: absolute;
-                top: 50%; left: 50%;
-                transform: translate(-50%, -50%);
-                text-align: center;
-                color: #FFF;
-                z-index: 2;
-                text-shadow: 0 2px 10px rgba(0,0,0,0.55);
+
+            .cmca-banner-text {{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2;
             }}
-            .cmca-hero__text h2 {{
-                margin: 0;
-                font-size: 2.0rem;
-                font-weight: 800;
+
+            /* --- Force gold + shadow for visibility --- */
+            .cmca-banner-text h2,
+            .cmca-banner-text h3 {{
+            color: #FFB81C !important; /* UWA Gold */
+            text-shadow: 0 3px 8px rgba(0, 0, 0, 0.85) !important;
+            font-weight: 800 !important;
+            margin: 0;
             }}
-            .cmca-hero__text h3 {{
-                margin: .35rem 0 0;
-                font-size: 1.75rem;
-                font-weight: 800;
+
+            .cmca-banner-text h2 {{
+            font-size: 2.4rem;
+            letter-spacing: 0.5px;
+            }}
+            .cmca-banner-text h3 {{
+            margin-top: 0.35rem;
+            font-size: 2.1rem;
             }}
             </style>
 
-            <div class="cmca-hero">
-            <div class="cmca-hero__text">
+            <div class="cmca-banner">
+            <img src="data:image/jpeg;base64,{b64}">
+            <div class="cmca-banner-text">
                 <h2>Centre for Microscopy</h2>
                 <h3>Characterisation and Analysis</h3>
             </div>
             </div>
             """, unsafe_allow_html=True)
 
-        st.divider()
+            st.divider()
+
+
 
 
         # ---------- Charts ---------
