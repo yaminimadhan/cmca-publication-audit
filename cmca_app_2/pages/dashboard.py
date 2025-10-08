@@ -128,64 +128,62 @@ def render_dashboard():
         bar_rows = [{"instrument": k, "pdfs": v} for k, v in top_items]
 
 
-        # ----------- CMCA hero with text over image (blended) -----------
-        st.markdown("""
-        <style>
-        .cmca-hero {
-        position: relative;
-        height: 240px;                
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 6px 22px rgba(0,0,0,.12);
-        margin: .4rem 0 1rem 0;
-        background: url('website_images/CMCA_Images_hero_color.jpg') center/cover no-repeat;
-        }
+        # ----------- CMCA image banner with overlaid title -----------
+        img_path = "website_images/CMCA_Images_hero_color.jpg"
 
-        /* centered text container */
-        .cmca-hero__text {
-        position: absolute; top: 50%; left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        z-index: 2;
-        }
+        if not Path(img_path).exists():
+            st.error(f"Image not found: {img_path}")
+        else:
+            b64 = _b64_file(img_path)  # ← use your helper here
 
-        /* white chips so text reads on any colour */
-        .cmca-chip {
-        display: inline-block;
-        background: rgba(255,255,255,0.92);  /* brighter = more readable */
-        color: #00205B;                      /* UWA navy */
-        padding: 8px 16px;
-        border-radius: 12px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-        margin: 6px 0;
-        font-weight: 800;
-        }
+            st.markdown(f"""
+            <style>
+            .cmca-hero {{
+                position: relative;
+                height: 230px;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 6px 22px rgba(0,0,0,0.15);
+                margin: .5rem 0 1rem 0;
+                background: url("data:image/jpeg;base64,{b64}") center/cover no-repeat;
+            }}
+            .cmca-hero::before {{
+                content: "";
+                position: absolute; inset: 0;
+                background: rgba(0,0,0,0.18);
+            }}
+            .cmca-hero__text {{
+                position: absolute;
+                top: 50%; left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                color: #FFF;
+                z-index: 2;
+                text-shadow: 0 2px 10px rgba(0,0,0,0.55);
+            }}
+            .cmca-hero__text h2 {{
+                margin: 0;
+                font-size: 2.0rem;
+                font-weight: 800;
+            }}
+            .cmca-hero__text h3 {{
+                margin: .35rem 0 0;
+                font-size: 1.75rem;
+                font-weight: 800;
+            }}
+            </style>
 
-        /* sizes: nearly equal as you requested */
-        .cmca-chip--h1 { font-size: 2.0rem; letter-spacing: .2px; }
-        .cmca-chip--h2 { font-size: 1.85rem; }
-
-        /* optional thin UWA gold accent under the chips */
-        .cmca-accent {
-        position: absolute; left: 50%; transform: translateX(-50%);
-        bottom: 14px; height: 4px; width: 220px;
-        background: #FFC72C; border-radius: 2px;
-        }
-        </style>
-
-        <div class="cmca-hero">
-        <div class="cmca-hero__text">
-            <div class="cmca-chip cmca-chip--h1">Centre for Microscopy</div><br/>
-            <div class="cmca-chip cmca-chip--h2">Characterisation and Analysis</div>
-        </div>
-        <div class="cmca-accent"></div>
-        </div>
-        """, unsafe_allow_html=True)
+            <div class="cmca-hero">
+            <div class="cmca-hero__text">
+                <h2>Centre for Microscopy</h2>
+                <h3>Characterisation and Analysis</h3>
+            </div>
+            </div>
+            """, unsafe_allow_html=True)
 
         st.divider()
 
 
-        
         # ---------- Charts ---------
         c_pie, c_bar = st.columns(2)
         with c_pie:
