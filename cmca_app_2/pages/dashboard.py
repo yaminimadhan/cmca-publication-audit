@@ -5,6 +5,34 @@ from collections import Counter
 import streamlit as st
 import plotly.express as px
 
+
+import base64
+from pathlib import Path
+
+def _b64_file(p: str) -> str:
+    with open(Path(p), "rb") as f:
+        return base64.b64encode(f.read()).decode()
+
+
+
+# --- DEV MODE helpers (safe: only active when DEV_MODE=1) ---
+import os
+DEV_MODE = os.getenv("DEV_MODE") == "1"
+
+def _mock_pdfs():
+    return [
+        {"pdf_id": 101, "title": "sample1.pdf", "project_id": 1,
+         "instruments_json": ["SEM"], "upload_date": "2025-10-01",
+         "uploaded_by": "alice", "cmca_result": "Yes", "publish_date": "2024-07-10"},
+        {"pdf_id": 102, "title": "sample2.pdf", "project_id": 2,
+         "instruments_json": ["TEM", "EDS"], "upload_date": "2025-10-02",
+         "uploaded_by": "bob", "cmca_result": "No", "publish_date": "2024-05-03"},
+        {"pdf_id": 103, "title": "draft3.pdf", "project_id": 1,
+         "instruments_json": ["AFM"], "upload_date": "2025-10-03",
+         "uploaded_by": "charlie", "cmca_result": "Yes", "publish_date": "2023-12-20"},
+    ]
+
+
 from core.state import require_auth, go
 from core.api import get as api_get, post_json as api_post, post_multipart as api_post_multipart
 
@@ -70,7 +98,7 @@ def _api_upload_pdf(file, project_id: int | None = None, overrides: dict | None 
 
 # ------------------------------ Page ------------------------------
 def render_dashboard():
-    if not require_auth():
+    if not (DEV_MODE or require_auth()):
         st.stop()
 
     # ---- Navbar (unchanged if you have one) ----
@@ -79,6 +107,133 @@ def render_dashboard():
         navbar()
     except Exception:
         pass
+
+    # --- DEV MODE mock dashboard: skip backend calls and render preview ---
+    if DEV_MODE:
+        st.title("CMCA PDF Dashboard (Mock)")
+        st.caption("Previewing layout in DEV MODE – no backend calls")
+
+        all_pdfs = _mock_pdfs()
+
+        # KPIs + charts (same layout as real)
+        yes = sum(1 for x in all_pdfs if (x.get("cmca_result") or "").lower() == "yes")
+        no  = sum(1 for x in all_pdfs if (x.get("cmca_result") or "").lower() == "no")
+
+        from collections import Counter
+        counts = Counter()
+        for row in all_pdfs:
+            for inst in set(str(i) for i in (row.get("instruments_json") or [])):
+                counts[inst] += 1
+        top_items = counts.most_common(5)
+        bar_rows = [{"instrument": k, "pdfs": v} for k, v in top_items]
+
+
+        # ----------- CMCA image banner with overlaid title -----------
+        img_path = "website_images/CMCA_Images_hero_color.jpg"
+
+        if not Path(img_path).exists():
+            st.error(f"Image not found: {img_path}")
+        else:
+            b64 = _b64_file(img_path)
+
+            st.markdown(f"""
+            <style>
+            .cmca-banner {{
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 22px rgba(0,0,0,0.10);
+            margin-top: 0.25rem;
+            margin-bottom: 0.75rem;
+            }}
+
+            .cmca-banner img {{
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            filter: brightness(0.95);
+            }}
+
+            .cmca-banner-text {{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2;
+            }}
+
+            /* --- Force gold + shadow for visibility --- */
+            .cmca-banner-text h2,
+            .cmca-banner-text h3 {{
+            color: #FFB81C !important; /* UWA Gold */
+            text-shadow: 0 3px 8px rgba(0, 0, 0, 0.85) !important;
+            font-weight: 800 !important;
+            margin: 0;
+            }}
+
+            .cmca-banner-text h2 {{
+            font-size: 2.4rem;
+            letter-spacing: 0.5px;
+            }}
+            .cmca-banner-text h3 {{
+            margin-top: 0.35rem;
+            font-size: 2.1rem;
+            }}
+            </style>
+
+            <div class="cmca-banner">
+            <img src="data:image/jpeg;base64,{b64}">
+            <div class="cmca-banner-text">
+                <h2>Centre for Microscopy</h2>
+                <h3>Characterisation and Analysis</h3>
+            </div>
+            </div>
+            """, unsafe_allow_html=True)
+
+            st.divider()
+
+
+
+
+        # ---------- Charts ---------
+        c_pie, c_bar = st.columns(2)
+        with c_pie:
+            if yes + no > 0:
+                fig = px.pie(names=["CMCA Yes", "CMCA No"], values=[yes, no], hole=0.55)
+                st.plotly_chart(fig, use_container_width=True)
+            else:
+                st.info("No CMCA-labelled PDFs yet — upload a PDF to see this chart.")
+        with c_bar:
+            st.subheader("Top instruments by PDFs")
+            if not bar_rows:
+                st.info("No instrument data yet.")
+            else:
+                fig_bar = px.bar(bar_rows, x="instrument", y="pdfs")
+                fig_bar.update_layout(xaxis_title="Instrument", yaxis_title="# PDFs", bargap=0.25)
+                st.plotly_chart(fig_bar, use_container_width=True)
+
+        st.divider()
+        st.caption(f"Showing {len(all_pdfs)} PDFs")
+
+        for it in all_pdfs:
+            with st.container(border=True):
+                cmca_badge = "CMCA Yes" if str(it.get("cmca_result")).lower() == "yes" else "CMCA No"
+                st.markdown(f"**{it.get('title','(untitled)')}** — {cmca_badge}")
+                st.caption(
+                    f"Project: {it.get('project_id','-')} · "
+                    f"Instruments: {', '.join(it.get('instruments_json', [])) or '-'} · "
+                    f"Uploaded: {it.get('upload_date','-')} · "
+                    f"By: {it.get('uploaded_by','-')}"
+                )
+                if st.button("Open", key=f"open_{it['pdf_id']}"):
+                    go("details", current_pdf_id=it["pdf_id"])
+                    st.session_state['_force_rerun'] = True
+                    st.rerun()
+
+        return  # important: do not run the real backend code below when in DEV
+
 
     # ---- Top stats (computed from backend PDFs) ----
     # ---- Top charts: Pie (CMCA) + Bar (Top instruments by #PDFs) ----
@@ -104,6 +259,15 @@ def render_dashboard():
     top_items = counts.most_common(5)
     bar_rows = [{"instrument": k, "pdfs": v} for k, v in top_items]
 
+    # ------CMCA Header Image ------
+    st.markdown("### 🧪 Centre for Microscopy, Characterisation & Analysis")
+    st.image("website_images/CMCA_Images.tif", use_container_width=True)
+    st.divider()
+
+    
+    c_pie, c_bar = st.columns(2)
+
+    # Top charts: Pie (CMCA) + Bar (Top instruments by #PDFs) 
     c_pie, c_bar = st.columns(2)
 
     with c_pie:
@@ -124,36 +288,56 @@ def render_dashboard():
 
     st.divider()
 
-
     # —— Left: Upload —— Right: Project management ——
     up_col, proj_col = st.columns(2)
 
     # ------------------------ Upload PDF (file + project only) ------------------------
     with up_col:
         with st.expander("📤 Upload New PDF", expanded=False):
-            f = st.file_uploader("Choose PDF", type=["pdf"], accept_multiple_files=False, key="uploader_pdf")
+            # nonce ensures the uploader gets a fresh key after each successful upload
+            nonce = st.session_state.get("upload_nonce", 0)
 
-            # Pull projects from API
-            projects_data = _api_projects()
-            project_names = [p["name"] for p in projects_data] or ["Documentation"]
-            project_sel = st.selectbox("Project", project_names, index=0, key="upload_project")
+            with st.form("upload_form", clear_on_submit=True):
+                f = st.file_uploader(
+                    "Choose PDF",
+                    type=["pdf"],
+                    accept_multiple_files=False,
+                    key=f"uploader_pdf_{nonce}",
+                )
 
-            if st.button("Upload", type="primary", key="upload_btn", disabled=(f is None)):
-                try:
-                    # Map selected project name -> id
-                    project_id = None
-                    for p in projects_data:
-                        if p["name"] == project_sel:
-                            project_id = p.get("id")
-                            break
+                # Pull projects from API
+                projects_data = _api_projects()
+                project_names = [p["name"] for p in projects_data] or ["Documentation"]
+                project_sel = st.selectbox(
+                    "Project",
+                    project_names,
+                    index=0,
+                    key=f"upload_project_{nonce}",
+                )
 
-                    # No overrides — extractor/LLM will populate metadata
-                    resp = _api_upload_pdf(f, project_id=project_id, overrides={})
-                    st.success(f"Uploaded: {resp.get('title') or f.name} (pdf_id {resp.get('pdf_id')})")
-                    st.session_state['_force_rerun'] = True
-                    st.rerun()
-                except Exception as e:
-                    st.error(f"Upload failed: {e}")
+                submitted = st.form_submit_button("Upload", disabled=(f is None))
+                if submitted and f is not None:
+                    try:
+                        # Map selected project name -> id
+                        project_id = None
+                        for p in projects_data:
+                            if p["name"] == project_sel:
+                                project_id = p.get("id")
+                                break
+
+                        # No overrides — extractor/LLM will populate metadata
+                        resp = _api_upload_pdf(f, project_id=project_id, overrides={})
+                        st.success(f"Uploaded: {resp.get('title') or f.name} (pdf_id {resp.get('pdf_id')})")
+
+                        # add these two lines for auto-refresh
+                        st.session_state["upload_nonce"] = nonce + 1
+                        st.session_state['_force_rerun'] = True
+                        st.rerun()
+
+                    except Exception as e:
+                        st.error(f"Upload failed: {e}")
+
+
 
 
     # -------------------- Create Project (API) --------------------

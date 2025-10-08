@@ -1,12 +1,37 @@
+# --- Python & virtual environment ---
 __pycache__/
 *.pyc
-.env
-.DS_Store
-data/raw_pdfs/*
-outputs/logs/*
-outputs/reports/*
-outputs/processed_text/*
-storage/
+*.pyo
+*.pyd
+*.log
+*.sqlite3
+.venv/
+env/
+venv/
 
-# Keep placeholders so empty dirs appear in repo
-!**/.gitkeepoutputs/
+# --- IDE / editor / OS files ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Streamlit cache ---
+.streamlit/
+logs/
+outputs/
+website_images/__pycache__/
+
+# --- Data or large assets (if any) ---
+*.csv
+*.xlsx
+*.zip
+
+# --- Compiled / temporary files ---
+*.bak
+*.tmp
+*.swp
+*.swo
+
+# --- Local environment configs ---
+.env
+.env.*

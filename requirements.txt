@@ -1,0 +1,14 @@
+# --- Core ---
+streamlit==1.38.0
+pandas
+plotly
+requests
+fastapi
+uvicorn
+
+# --- Utilities ---
+pillow
+python-dotenv
+
+# --- Optional (for notebook / testing) ---
+jupyter
