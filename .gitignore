@@ -8,5 +8,3 @@ outputs/reports/*
 outputs/processed_text/*
 storage/
 
-# Keep placeholders so empty dirs appear in repo
-!**/.gitkeepoutputs/
