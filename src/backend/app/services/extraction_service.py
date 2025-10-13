@@ -106,56 +106,166 @@ def merge_blocks_reading_order(blocks: List[Tuple[float,float,float,float,str]])
 DOI_RE = re.compile(r"\b(10\.\d{4,9}/[-._;()/:A-Z0-9]+)\b", re.I)
 YEAR_RE = re.compile(r"\b(19|20)\d{2}\b")
 
-def extract_title_and_authors(doc) -> Tuple[Optional[str], List[str]]:
+# def extract_title_and_authors(doc) -> Tuple[Optional[str], List[str]]:
+#     """
+#     Heuristic title (largest spans near top) and authors (spans just below title).
+#     Works well on many publisher PDFs; not guaranteed.
+#     """
+#     try:
+#         page0 = doc.load_page(0)
+#         d = page0.get_text("dict")
+#     except Exception:
+#         return None, []
+
+#     spans = []
+#     for block in d.get("blocks", []):
+#         for line in block.get("lines", []):
+#             y = float(line.get("bbox", [0,0,0,0])[1])
+#             for span in line.get("spans", []):
+#                 txt = (span.get("text") or "").strip()
+#                 if not txt:
+#                     continue
+#                 size = float(span.get("size", 0.0))
+#                 spans.append({"text": txt, "size": size, "y": y})
+
+#     if not spans:
+#         return None, []
+
+#     max_size = max(s["size"] for s in spans)
+#     title_lines = [s for s in spans if abs(s["size"] - max_size) < 0.2 and s["y"] < 0.35*page0.rect.height]
+#     title = None
+#     if title_lines:
+#         title = " ".join(s["text"] for s in sorted(title_lines, key=lambda s: s["y"]))
+#         title = re.sub(r"\s{2,}", " ", title).strip(" .–-:")
+
+#     authors: List[str] = []
+#     if title_lines:
+#         band_top = max(s["y"] for s in title_lines)
+#         band = [s for s in spans if band_top < s["y"] < band_top + 220]  # ~220px after title
+#         candidate = " ".join(s["text"] for s in sorted(band, key=lambda s: s["y"]))
+#         candidate = re.sub(r"[\*\d†‡§#]+", "", candidate)  # strip markers
+#         parts = re.split(r"\s*(?:,|;| and )\s*", candidate)
+#         for p in parts:
+#             p = p.strip()
+#             if not p or "@" in p:
+#                 continue
+#             # Keep shortish tokens (avoid affiliations)
+#             if 2 <= len(p.split()) <= 5:
+#                 authors.append(p)
+#         # de-dup keep order
+#         seen=set(); authors = [a for a in authors if not (a.lower() in seen or seen.add(a.lower()))]
+
+#     return (title if title else None, authors)
+
+import re
+import collections
+from typing import List, Optional, Tuple
+
+def extract_title_and_authors(doc, max_pages: int = 2) -> Tuple[Optional[str], List[str]]:
     """
-    Heuristic title (largest spans near top) and authors (spans just below title).
-    Works well on many publisher PDFs; not guaranteed.
+    Heuristic title/authors extractor tuned for publisher PDFs.
+
+    Strategy
+    - Title: pick the largest font within the top 40% of page 1, and keep only
+      lines from the majority block; sort by (y,x) to join multi-line titles.
+    - Authors: look just below the title; choose the most common font size
+      (< title size, >=10pt) to avoid footnotes/abstract; strip affiliation marks;
+      split on commas/“and” and keep name-like tokens (2–5 words).
+    - Fallbacks: use PDF metadata if needed.
+
+    Returns
+    -------
+    (title or None, authors: List[str])
     """
+    title: Optional[str] = None
+    authors: List[str] = []
+
+    # --- Parse first page as dict
     try:
         page0 = doc.load_page(0)
-        d = page0.get_text("dict")
+        d0 = page0.get_text("dict")
     except Exception:
         return None, []
 
+    # --- Collect spans with positions, size, and block id
     spans = []
-    for block in d.get("blocks", []):
-        for line in block.get("lines", []):
-            y = float(line.get("bbox", [0,0,0,0])[1])
-            for span in line.get("spans", []):
-                txt = (span.get("text") or "").strip()
+    for bi, block in enumerate(d0.get("blocks", [])):
+        for line in block.get("lines", []) or []:
+            x0, y0, x1, y1 = line.get("bbox", [0, 0, 0, 0])
+            for sp in (line.get("spans", []) or []):
+                txt = (sp.get("text") or "").strip()
                 if not txt:
                     continue
-                size = float(span.get("size", 0.0))
-                spans.append({"text": txt, "size": size, "y": y})
+                size = float(sp.get("size", 0.0))
+                spans.append({"text": txt, "size": size, "x": x0, "y": float(y0), "bi": bi})
 
     if not spans:
         return None, []
 
+    page_h = float(page0.rect.height)
     max_size = max(s["size"] for s in spans)
-    title_lines = [s for s in spans if abs(s["size"] - max_size) < 0.2 and s["y"] < 0.35*page0.rect.height]
-    title = None
-    if title_lines:
-        title = " ".join(s["text"] for s in sorted(title_lines, key=lambda s: s["y"]))
-        title = re.sub(r"\s{2,}", " ", title).strip(" .–-:")
 
-    authors: List[str] = []
-    if title_lines:
-        band_top = max(s["y"] for s in title_lines)
-        band = [s for s in spans if band_top < s["y"] < band_top + 220]  # ~220px after title
-        candidate = " ".join(s["text"] for s in sorted(band, key=lambda s: s["y"]))
-        candidate = re.sub(r"[\*\d†‡§#]+", "", candidate)  # strip markers
-        parts = re.split(r"\s*(?:,|;| and )\s*", candidate)
-        for p in parts:
-            p = p.strip()
-            if not p or "@" in p:
-                continue
-            # Keep shortish tokens (avoid affiliations)
-            if 2 <= len(p.split()) <= 5:
-                authors.append(p)
-        # de-dup keep order
-        seen=set(); authors = [a for a in authors if not (a.lower() in seen or seen.add(a.lower()))]
+    # --- TITLE: largest font in top 40% of page, majority block
+    title_candidates = [s for s in spans if s["y"] < 0.40 * page_h and s["size"] >= max_size - 0.2]
+    if title_candidates:
+        # focus on the block that contributes most of these large spans
+        block_counts = collections.Counter(s["bi"] for s in title_candidates)
+        top_block = block_counts.most_common(1)[0][0]
+        t_lines = [s for s in title_candidates if s["bi"] == top_block]
+        t_lines.sort(key=lambda s: (s["y"], s["x"]))
+        t = " ".join(s["text"] for s in t_lines)
+        t = re.sub(r"\s{2,}", " ", t).strip()
+        # strip trailing punctuation or separators
+        t = re.sub(r"\s+[|•·]\s+.*$", "", t)
+        t = t.strip(" .–-:")
+        if t and len(t.split()) >= 3:
+            title = t
 
-    return (title if title else None, authors)
+    # --- AUTHORS: look in vertical band below title and identify dominant author font
+    if title and title_candidates:
+        top_y = max(s["y"] for s in title_candidates)
+        band = [s for s in spans if top_y < s["y"] < top_y + 250]  # ~250 px below the title
+        # filter out tiny footnotes; keep sizes smaller than title size
+        band = [s for s in band if 10.0 <= s["size"] < max_size]
+        if band:
+            # pick the most common font size in the band (author lines usually share a size)
+            size_counts = collections.Counter(round(s["size"], 1) for s in band)
+            target_size, _ = max(size_counts.items(), key=lambda kv: (kv[1], kv[0]))
+            a_spans = [s for s in band if round(s["size"], 1) == target_size]
+            a_spans.sort(key=lambda s: (s["y"], s["x"]))
+
+            text = " ".join(s["text"] for s in a_spans)
+            # remove affiliation markers like 1,2,*,†,‡,§,# directly after words
+            text = re.sub(r"(?<=\w)[\*\d†‡§#]+", "", text)
+            text = text.replace(" ,", ",")
+
+            # split on commas or the word 'and'
+            raw_pieces = re.split(r",|\band\b", text, flags=re.I)
+
+            cand_names: List[str] = []
+            for p in raw_pieces:
+                p = p.strip(" ,;")
+                if not p or "@" in p:
+                    continue
+                # drop a leading "and"
+                p = re.sub(r"^(and\s+)", "", p, flags=re.I).strip()
+                toks = p.split()
+                # keep short human-ish name chunks
+                if 2 <= len(toks) <= 5:
+                    cand_names.append(re.sub(r"\s{2,}", " ", p))
+
+            # de-dup while preserving order
+            seen = set()
+            authors = []
+            for nm in cand_names:
+                key = nm.lower()
+                if key not in seen:
+                    seen.add(key)
+                    authors.append(nm)
+                    
+    return (title, authors)
+
+
 
 INSTRUMENT_KEYWORDS = [
     # techniques

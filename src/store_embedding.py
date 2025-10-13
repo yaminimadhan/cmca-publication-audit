@@ -5,11 +5,6 @@ from pathlib import Path
 #Path
 TEXT_FILE = Path("../docs/gold_standard/goldstandard.txt")
 
-#PostgreSQL connection
-PG_HOST = "localhost"
-PG_DB = "postgres"
-PG_USER = "postgres"
-PG_PASSWORD = "Capstone"
 
 #Load model
 print("Loading embedding model.")
@@ -24,10 +19,12 @@ sentences = [f"Query: {line.strip()}" for line in lines if line.strip()] #List o
 #Connect to DB
 print("Connecting to PostgreSQL")
 conn = psycopg2.connect(
-    host=PG_HOST,
-    dbname=PG_DB,
-    user=PG_USER,
-    password=PG_PASSWORD or None
+    host="localhost",          # no port here
+    port=5432,                 # port goes here
+    dbname="cmca_audit",
+    user="postgres",
+    password="March@2025"      # not URL-encoded
+
 )
 cur = conn.cursor()
 

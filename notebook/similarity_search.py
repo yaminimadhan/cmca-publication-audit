@@ -10,7 +10,11 @@ model = SentenceTransformer("intfloat/e5-base-v2")
 def search_sentences(sentences, k=30):
     #Connect to DB
     conn = psycopg2.connect(
-        host="localhost", dbname="postgres", user="postgres", password="Capstone"
+    host="localhost",          # no port here
+    port=5432,                 # port goes here
+    dbname="cmca_audit",
+    user="postgres",
+    password="March@2025"      # not URL-encoded
     )
     cur = conn.cursor()
 
