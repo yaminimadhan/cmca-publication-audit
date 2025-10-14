@@ -18,22 +18,85 @@ The system implements a hybrid heuristic + LLM pipeline for semi-automated publi
 
 ### Component Diagram
 
-See `docs/architecture.mmd` for Mermaid source. To render:
+``` mermaid
+%%{init: {
+  'themeVariables': {
+    'fontSize': '20px',
+    'lineHeight': '1.6',
+    'textColor': '#111111',
+    'primaryTextColor': '#111111',
+    'secondaryTextColor': '#111111',
+    'tertiaryTextColor': '#111111',
+    'edgeLabelBackground': '#ffffff',
+    'fontFamily': 'Segoe UI, Roboto, Arial, sans-serif'
+  },
+  'flowchart': { 'curve': 'basis', 'htmlLabels': true, 'nodeSpacing': 80, 'rankSpacing': 100 }
+}}%%
+graph LR
 
-``` bash
-# Install mermaid-cli (requires Node.js)
-npm install -g @mermaid-js/mermaid-cli
+subgraph User Interface
+direction TB
+U[User]
+WEB[Streamlit UI]
+API_CLIENT[API Client]
+end
 
-# Generate SVG
-mmdc -i docs/architecture.mmd -o docs/architecture.svg
+subgraph API Layer
+direction TB
+API[FastAPI]
+AUTH[Auth Router]
+PDF_ROUTER[PDF Router]
+PROJ_ROUTER[Projects Router]
+end
+
+subgraph Services
+direction TB
+PDF_SVC[PdfService]
+EXTRACT[ExtractionService<br/>PyMuPDF]
+LLM_SVC[LLMService<br/>GPT-4o]
+SIM[SimilaritySearch<br/>pgvector]
+HIGHLIGHT[HighlightService]
+end
+
+subgraph Storage
+direction TB
+DB[(PostgreSQL + pgvector)]
+FILES[(File Storage)]
+GOLD[(Gold Standard<br/>goldstandard.txt)]
+end
+
+U --> WEB
+API_CLIENT --> API
+WEB --> API
+
+API --> AUTH
+API --> PDF_ROUTER
+API --> PROJ_ROUTER
+
+PDF_ROUTER --> PDF_SVC
+PDF_SVC --> EXTRACT
+PDF_SVC --> LLM_SVC
+LLM_SVC --> SIM
+SIM --> DB
+PDF_SVC --> HIGHLIGHT
+PDF_SVC --> FILES
+GOLD -.-> DB
+
+classDef ui fill:#e1f5ff,stroke:#01579b,stroke-width:2px;
+classDef api fill:#fff3e0,stroke:#e65100,stroke-width:2px;
+classDef svc fill:#f3e5f5,stroke:#4a148c,stroke-width:2px;
+classDef store fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px;
+
+class U,WEB,API_CLIENT ui
+class API,AUTH,PDF_ROUTER,PROJ_ROUTER api
+class PDF_SVC,EXTRACT,LLM_SVC,SIM,HIGHLIGHT svc
+class DB,FILES,GOLD store
 ```
 
-![Architecture Diagram](docs/architecture.svg)
 
 ### Sequence Diagram
 
-See `docs/sequence.mmd` for Mermaid source.
-
+```mermaid
 sequenceDiagram
     actor User
     participant Web as Streamlit Web UI
@@ -104,6 +167,100 @@ sequenceDiagram
     Files-->>API: 36. PDF bytes
     API-->>Web: 37. FileResponse (application/pdf)
     Web-->>User: 38. Browser downloads highlighted PDF
+```
+### Component Diagram2
+
+```mermaid
+%%{init: {
+  'themeVariables': {
+    'fontSize': '20px',
+    'lineHeight': '1.6',
+    'textColor': '#111111',
+    'primaryTextColor': '#111111',
+    'secondaryTextColor': '#111111',
+    'tertiaryTextColor': '#111111',
+    'edgeLabelBackground': '#ffffff',
+    'fontFamily': 'Segoe UI, Roboto, Arial, sans-serif'
+  },
+  'flowchart': { 'curve': 'basis', 'htmlLabels': true, 'nodeSpacing': 80, 'rankSpacing': 100 }
+}}%%
+graph LR
+
+subgraph User Interface
+direction TB
+U[User]
+WEB[Streamlit UI]
+API_CLIENT[API Client]
+end
+
+subgraph API Layer
+direction TB
+API[FastAPI<br/>app.main]
+AUTH[Auth Router]
+PDF_ROUTER[PDF Router<br/>/pdfs]
+PROJ_ROUTER[Projects Router]
+end
+
+subgraph Services
+direction TB
+PDF_SVC[PdfService]
+EXTRACT[ExtractionService<br/>PyMuPDF]
+LLM_SVC[LLMService<br/>OpenAI GPT-4o]
+SIM[SimilaritySearch<br/>Sentence-Transformers + pgvector]
+HIGHLIGHT[HighlightService]
+end
+
+subgraph Storage
+direction TB
+DB[(PostgreSQL + pgvector)]
+FILES[(File Storage)]
+GOLD[(Gold Standard<br/>goldstandard.txt)]
+end
+
+subgraph Config
+direction TB
+ENV[.env / pydantic-settings]
+end
+
+U --> WEB
+API_CLIENT --> API
+WEB -->|HTTP + JWT| API
+API_CLIENT -->|HTTP + JWT| API
+
+API -->|/auth/*| AUTH
+API -->|/pdfs/*| PDF_ROUTER
+API -->|/projects/*| PROJ_ROUTER
+
+PDF_ROUTER -->|POST /upload| PDF_SVC
+PDF_ROUTER -->|GET /&#123;id&#125;| PDF_SVC
+PROJ_ROUTER -->|CRUD| DB
+
+PDF_SVC -->|Parse PDF bytes| EXTRACT
+PDF_SVC -->|Verify acknowledgements| LLM_SVC
+LLM_SVC -->|Embed sentences| SIM
+SIM -->|Query sentence_embeddings| DB
+PDF_SVC -->|Highlight Yes| HIGHLIGHT
+PDF_SVC -->|Insert/Update| DB
+PDF_SVC -->|Save file| FILES
+GOLD -.->|Seed embeddings via store_embedding.py| DB
+
+ENV -.-> API
+ENV -.-> PDF_SVC
+ENV -.-> SIM
+
+classDef ui fill:#e1f5ff,stroke:#01579b,stroke-width:2px,color:#111111;
+classDef api fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#111111;
+classDef svc fill:#f3e5f5,stroke:#4a148c,stroke-width:2px,color:#111111;
+classDef store fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px,color:#111111;
+classDef cfg fill:#f1f8e9,stroke:#33691e,stroke-width:2px,color:#111111;
+
+class U,WEB,API_CLIENT ui
+class API,AUTH,PDF_ROUTER,PROJ_ROUTER api
+class PDF_SVC,EXTRACT,LLM_SVC,SIM,HIGHLIGHT svc
+class DB,FILES,GOLD store
+class ENV cfg
+```
+
 
 ## Pipeline Narrative
 
@@ -479,8 +636,6 @@ npm install -g @mermaid-js/mermaid-cli
 mmdc -i docs/architecture.mmd -o docs/architecture.svg
 mmdc -i docs/sequence.mmd -o docs/sequence.svg
 ```
-
-📌 **Note:** mermaid-cli not included in repository. Install separately or use online renderer at <https://mermaid.live>
 
 ------------------------------------------------------------------------
 
