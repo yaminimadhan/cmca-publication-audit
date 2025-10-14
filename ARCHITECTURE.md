@@ -34,7 +34,76 @@ mmdc -i docs/architecture.mmd -o docs/architecture.svg
 
 See `docs/sequence.mmd` for Mermaid source.
 
-![Sequence Diagram](docs/sequence.svg)
+sequenceDiagram
+    actor User
+    participant Web as Streamlit Web UI
+    participant API as FastAPI /pdfs/upload
+    participant PdfSvc as PdfService
+    participant Extract as ExtractionService<br/>(PyMuPDF)
+    participant LLM as LLMService<br/>(GPT-4o)
+    participant Sim as SimilaritySearch<br/>(pgvector)
+    participant DB as PostgreSQL
+    participant Files as File Storage
+    
+    %% Upload
+    User->>Web: 1. Select PDF + Project
+    Web->>API: 2. POST /pdfs/upload<br/>(multipart: file, project_id, JWT token)
+    API->>PdfSvc: 3. ingest(file_bytes, uploaded_by, project_id)
+    
+    %% Extraction
+    PdfSvc->>Extract: 4. extract_api(file_bytes)
+    Extract->>Extract: Parse layout<br/>(column detection, reading order)
+    Extract->>Extract: Extract metadata<br/>(title, authors, DOI, instruments)
+    Extract->>Extract: Segment sentences<br/>(IDs: p1_s1, p2_s5, ...)
+    Extract-->>PdfSvc: 5. Return JSON<br/>{title, authors, doi, sentences, ...}
+    
+    %% LLM Verification
+    PdfSvc->>LLM: 6. run_llm_verification_from_json(extractor_json)
+    LLM->>Sim: 7. search_sentences(sentences, k=30)
+    Sim->>Sim: Embed sentences<br/>(intfloat/e5-base-v2)
+    Sim->>DB: 8. Query sentence_embeddings<br/>(pgvector cosine similarity)
+    DB-->>Sim: 9. Top-k matches per sentence
+    Sim-->>LLM: 10. Return {sentence: [(match, score), ...]}
+    LLM->>LLM: 11. Filter by threshold >= 0.70<br/>Rank by best score, take top 7
+    
+    loop For each top candidate
+        LLM->>LLM: 12. Build prompt with sentence + top match
+        LLM->>LLM: 13. Call OpenAI API<br/>(GPT-4o, fallback to GPT-3.5)
+        LLM->>LLM: 14. Parse "Answer: Yes/No"
+    end
+    
+    LLM->>LLM: 15. Aggregate: any "Yes" → cmca_result="Yes"
+    LLM-->>PdfSvc: 16. Return {cmca_result, cosine_similarity,<br/>Sentence_verifications}
+    
+    %% Highlighting
+    PdfSvc->>PdfSvc: 17. highlight_answer_yes_sentences_from_bytes<br/>(yellow annotations on "Yes" sentences)
+    
+    %% Storage
+    PdfSvc->>Files: 18. Write highlighted PDF<br/>(UUID filename to UPLOAD_DIR)
+    PdfSvc->>DB: 19. Insert pdfs record<br/>(metadata, cmca_result, storage_path)
+    DB-->>PdfSvc: 20. Confirm insert (pdf_id)
+    PdfSvc-->>API: 21. Return PdfOut schema
+    API-->>Web: 22. HTTP 201 + JSON response
+    Web-->>User: 23. Show success + PDF card
+    
+    %% Review
+    User->>Web: 24. View dashboard (charts, filters)
+    Web->>API: 25. GET /pdfs?project_id=1
+    API->>DB: 26. Query pdfs table
+    DB-->>API: 27. Return list of PDFs
+    API-->>Web: 28. JSON array
+    Web-->>User: 29. Display PDF cards + charts
+    
+    %% Download
+    User->>Web: 30. Click "Open" → Detail page
+    User->>Web: 31. Click "Download PDF"
+    Web->>API: 32. GET /pdfs/{pdf_id}/file
+    API->>DB: 33. Lookup storage_path
+    DB-->>API: 34. Return path
+    API->>Files: 35. Read PDF file
+    Files-->>API: 36. PDF bytes
+    API-->>Web: 37. FileResponse (application/pdf)
+    Web-->>User: 38. Browser downloads highlighted PDF
 
 ## Pipeline Narrative
 
