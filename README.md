@@ -10,8 +10,7 @@ Automate the annual CMCA publication audit by: - Ingesting scientific publicatio
 
 | Stage | Description | Status | Evidence |
 |----|----|----|----|
-|  |  |  |  |
-| **1B** | FastAPI backend |  Implemented | `src/backend/app/main.py`, routers in `src/backend/app/routers/` |
+| **1** | FastAPI backend |  Implemented | `src/backend/app/main.py`, routers in `src/backend/app/routers/` |
 | **2A** | Basic Web GUI (Streamlit) |  Implemented | `cmca_app_2/app.py` with TinyDB fallback |
 | **2B** | Advanced Web GUI |  Implemented | User auth, projects, review workflow in `cmca_app_2/pages/`, API integration |
 
@@ -24,8 +23,6 @@ Automate the annual CMCA publication audit by: - Ingesting scientific publicatio
 -  PDF highlighting of verified acknowledgement sentences
 -  Streamlit web UI with user management, project organization, filtering, charts
 -  Multi-user support with admin and general user roles
-
-**TBD:** - CSV/XLSX export functionality - Automated tests
 
 ## Tech Stack
 
@@ -56,34 +53,78 @@ Automate the annual CMCA publication audit by: - Ingesting scientific publicatio
 
 ```         
 cmca-publication-audit-main/
-├── cmca_app_2/                  # Streamlit web UI (Stage 2A/2B)
-│   ├── app.py                   # Main Streamlit entry point
-│   ├── core/                    # State, session, API client, TinyDB
-│   ├── modules/                 # Login UI components
-│   ├── pages/                   # Dashboard, PDF details pages
-│   └── requirements.txt         # UI dependencies
+├── ARCHITECTURE.md              # System architecture overview
+├── INSTALLATION_GUIDE.md        # Full installation and setup guide
+├── QUICKSTART.md                # Short setup and run guide
+├── README.md                    # This file
+├── SOFTWARE_DEPENDENCIES.md     # Dependency details and troubleshooting
+├── env.template                 # Template for environment variables
+├── requirements.txt             # Unified, pinned project requirements
+├── requirements-all.txt         # Includes backend and Streamlit requirements
 ├── Database/
 │   ├── schema.sql               # Complete PostgreSQL schema
 │   └── README.md                # Database setup notes
 ├── docs/
+│   ├── architecture.mmd         # Mermaid architecture diagram
+│   ├── sequence.mmd             # Mermaid sequence diagram
 │   └── gold_standard/
 │       ├── goldstandard.txt     # Gold standard acknowledgement phrases
 │       ├── Gold_Standard_v1.xlsx
 │       └── Gold_Standard_Codebook_v2.docx
-├── src/
-│   ├── backend/
-│   │   └── app/
-│   │       ├── main.py          # FastAPI application entry point
-│   │       ├── core/            # Config, security utilities
-│   │       ├── db/              # Database session, base models
-│   │       ├── models/          # SQLAlchemy ORM models
-│   │       ├── repositories/    # Data access layer
-│   │       ├── routers/         # API route handlers (auth, pdfs, projects, users)
-│   │       ├── schemas/         # Pydantic request/response schemas
-│   │       └── services/        # Business logic (extraction, LLM, similarity, highlight)
-│   ├── match.py                 # Staff/instrument mention detection (spaCy NER)
-│   └── store_embedding.py       # Script to populate sentence_embeddings table
-└── README.md                    # This file
+├── cmca_app_2/                  # Streamlit web UI (Stage 2A/2B)
+│   ├── app.py                   # Main Streamlit entry point
+│   ├── app.py.bak               # Backup of previous app.py
+│   ├── core/                    # State, session, API client, TinyDB
+│   │   ├── api.py
+│   │   ├── db.py
+│   │   ├── sessions.py
+│   │   └── state.py
+│   ├── modules/                 # UI components
+│   │   ├── login.py
+│   │   └── navbar.py
+│   ├── pages/                   # Dashboard, PDF details pages
+│   │   ├── dashboard.py
+│   │   └── details.py
+│   └── requirements.txt         # UI-only dependencies
+└── src/
+    ├── backend/
+    │   ├── requirements.txt     # Backend runtime dependencies
+    │   ├── requirements-dev.txt # Dev/test/tools for backend
+    │   └── app/
+    │       ├── main.py          # FastAPI application entry point
+    │       ├── core/            # Config, security utilities
+    │       │   ├── config.py
+    │       │   └── security.py
+    │       ├── db/              # DB session and base
+    │       │   ├── base.py
+    │       │   ├── init.py
+    │       │   └── session.py
+    │       ├── models/          # SQLAlchemy ORM models
+    │       │   ├── pdf.py
+    │       │   ├── project.py
+    │       │   └── user.py
+    │       ├── repositories/    # Data access layer
+    │       │   ├── pdf_repo.py
+    │       │   ├── project_repo.py
+    │       │   └── user_repo.py
+    │       ├── routers/         # API route handlers
+    │       │   ├── auth.py
+    │       │   ├── pdfs.py
+    │       │   ├── projects.py
+    │       │   └── users.py
+    │       ├── schemas/         # Pydantic schemas
+    │       │   ├── pdf.py
+    │       │   ├── project.py
+    │       │   └── user.py
+    │       └── services/        # Business logic (extraction, LLM, similarity, highlight)
+    │           ├── auth_service.py
+    │           ├── extraction_service.py
+    │           ├── highlight_service.py
+    │           ├── llm_service.py
+    │           ├── pdf_service.py
+    │           └── similarity_search.py
+    ├── match.py                 # Staff/instrument mention detection (spaCy, rapidfuzz)
+    └── store_embedding.py       # Populate sentence_embeddings from goldstandard.txt
 ```
 
 ## Quick Start
