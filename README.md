@@ -11,21 +11,39 @@ Automate the annual CMCA publication audit by: - Ingesting scientific publicatio
 | Stage | Description | Status | Evidence |
 |----|----|----|----|
 |  |  |  |  |
-| **1B** | FastAPI backend | ✅ Implemented | `src/backend/app/main.py`, routers in `src/backend/app/routers/` |
-| **2A** | Basic Web GUI (Streamlit) | ✅ Implemented | `cmca_app_2/app.py` with TinyDB fallback |
-| **2B** | Advanced Web GUI | ✅ Implemented | User auth, projects, review workflow in `cmca_app_2/pages/`, API integration |
+| **1B** | FastAPI backend |  Implemented | `src/backend/app/main.py`, routers in `src/backend/app/routers/` |
+| **2A** | Basic Web GUI (Streamlit) |  Implemented | `cmca_app_2/app.py` with TinyDB fallback |
+| **2B** | Advanced Web GUI |  Implemented | User auth, projects, review workflow in `cmca_app_2/pages/`, API integration |
 
-**Implemented:** - ✅ FastAPI REST API with JWT authentication - ✅ PostgreSQL database with pgvector extension for embeddings - ✅ PDF text extraction (PyMuPDF) with layout handling and metadata parsing - ✅ Sentence-level embedding similarity search against gold standard phrases - ✅ LLM-based acknowledgement verification (OpenAI GPT-4o/GPT-3.5-turbo) - ✅ PDF highlighting of verified acknowledgement sentences - ✅ Streamlit web UI with user management, project organization, filtering, charts - ✅ Multi-user support with admin and general user roles
+**Implemented:** 
+-  FastAPI REST API with JWT authentication
+-  PostgreSQL database with pgvector extension for embeddings
+-  PDF text extraction (PyMuPDF) with layout handling and metadata parsing
+-  Sentence-level embedding similarity search against gold standard phrases
+-  LLM-based acknowledgement verification (OpenAI GPT-4o/GPT-3.5-turbo)
+-  PDF highlighting of verified acknowledgement sentences
+-  Streamlit web UI with user management, project organization, filtering, charts
+-  Multi-user support with admin and general user roles
 
 **TBD:** - CSV/XLSX export functionality - Automated tests
 
 ## Tech Stack
 
-**Backend:** - Python 3.10+ - FastAPI (REST API framework) - SQLAlchemy + asyncpg (async PostgreSQL ORM) - PostgreSQL 15+ with pgvector extension - PyMuPDF (fitz) for PDF parsing - sentence-transformers (intfloat/e5-base-v2) for embeddings - OpenAI API (GPT-4o, GPT-3.5-turbo fallback) - spaCy (en_core_web_trf) for NER in `src/match.py` - python-jose for JWT tokens - psycopg2 for synchronous database operations in embedding scripts
+**Backend:** 
+- Python 3.10+ - FastAPI (REST API framework)
+- SQLAlchemy + asyncpg (async PostgreSQL ORM)
+- PostgreSQL 15+ with pgvector extension
+- PyMuPDF (fitz) for PDF parsing
+- sentence-transformers (intfloat/e5-base-v2) for embeddings
+- OpenAI API (GPT-4o, GPT-3.5-turbo fallback)
+- spaCy (en_core_web_trf) for NER in `src/match.py`
+- python-jose for JWT tokens
+- psycopg2 for synchronous database operations in embedding scripts
 
 **Frontend:** - Streamlit 1.38.0 - Plotly for charts - TinyDB (lightweight JSON database for standalone mode)
 
-**Database:** - PostgreSQL with pgvector extension (vector similarity search) - Schema: users, projects, pdfs, sentence_embeddings, instruments, cmca_authors, gold_standards
+**Database:** - PostgreSQL with pgvector extension (vector similarity search) 
+- Schema: users, projects, pdfs, sentence_embeddings, instruments, cmca_authors, gold_standards
 
 ## Prerequisites
 
@@ -208,19 +226,6 @@ The web UI will open in your browser at `http://localhost:8501`.
 5.  **Store:** Save metadata to `pdfs` table, file to `UPLOAD_DIR` (`pdf_service.py:78-102`)
 6.  **Review:** View in Streamlit dashboard or query via API
 
-## License
-
-**TBD:** No LICENSE file present. TODO: Add LICENSE file at repository root.
-
-## Citation
-
-**TBD:** Citation information not provided in repository.
-
-## Contributing
-
-This is a capstone project. Contribution guidelines TBD.
-
-------------------------------------------------------------------------
 
 ## Documentation Guide
 
@@ -255,4 +260,4 @@ This project includes comprehensive documentation for different audiences and pu
 
 ------------------------------------------------------------------------
 
-**Last Updated:** Generated from repository state (main branch)
+**Last Updated:** 14/10/2025
