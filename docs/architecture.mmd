@@ -1,0 +1,77 @@
+graph TB
+    subgraph "User Interface"
+        U[User/Researcher]
+        WEB[Streamlit Web UI<br/>cmca_app_2/app.py]
+        API_CLIENT[API Client<br/>curl/HTTP]
+    end
+
+    subgraph "API Layer"
+        API[FastAPI REST API<br/>src/backend/app/main.py]
+        AUTH[Auth Router<br/>/auth/register<br/>/auth/login]
+        PDF_ROUTER[PDF Router<br/>/pdfs/upload<br/>/pdfs/{id}]
+        PROJ_ROUTER[Project Router<br/>/projects]
+    end
+
+    subgraph "Service Layer"
+        PDF_SVC[PDF Service<br/>pdf_service.py]
+        EXTRACT[Extraction Service<br/>extraction_service.py<br/>PyMuPDF]
+        LLM_SVC[LLM Service<br/>llm_service.py<br/>GPT-4o/GPT-3.5]
+        SIM[Similarity Search<br/>similarity_search.py<br/>intfloat/e5-base-v2]
+        HIGHLIGHT[Highlight Service<br/>highlight_service.py]
+    end
+
+    subgraph "Storage"
+        DB[(PostgreSQL<br/>with pgvector)]
+        FILES[File Storage<br/>UPLOAD_DIR]
+        GOLD[Gold Standard<br/>docs/gold_standard/<br/>goldstandard.txt]
+    end
+
+    %% User interactions
+    U -->|1. Upload PDF| WEB
+    U -->|1. Upload PDF| API_CLIENT
+    
+    %% Web and API client to API
+    WEB -->|HTTP + JWT| API
+    API_CLIENT -->|HTTP + JWT| API
+    
+    %% API routes
+    API --> AUTH
+    API --> PDF_ROUTER
+    API --> PROJ_ROUTER
+    
+    %% PDF upload flow
+    PDF_ROUTER -->|2. Ingest| PDF_SVC
+    PDF_SVC -->|3. Extract text/metadata| EXTRACT
+    PDF_SVC -->|4. Verify acknowledgements| LLM_SVC
+    
+    %% LLM verification
+    LLM_SVC -->|Embed sentences| SIM
+    SIM -->|Query embeddings| DB
+    DB -->|Top-k matches| SIM
+    SIM -->|Filtered candidates| LLM_SVC
+    LLM_SVC -->|GPT-4o API call| LLM_SVC
+    
+    %% Highlighting and storage
+    PDF_SVC -->|5. Annotate PDF| HIGHLIGHT
+    PDF_SVC -->|6a. Store metadata| DB
+    PDF_SVC -->|6b. Store file| FILES
+    
+    %% Gold standard loading
+    GOLD -.->|Embedded via<br/>store_embedding.py| DB
+    
+    %% Review and download
+    PDF_ROUTER -->|7. List/Get| DB
+    PDF_ROUTER -->|Download| FILES
+    WEB -->|Display charts/filters| WEB
+    
+    %% Styling
+    classDef userInterface fill:#e1f5ff,stroke:#01579b,stroke-width:2px
+    classDef apiLayer fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef serviceLayer fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef storage fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px
+    
+    class U,WEB,API_CLIENT userInterface
+    class API,AUTH,PDF_ROUTER,PROJ_ROUTER apiLayer
+    class PDF_SVC,EXTRACT,LLM_SVC,SIM,HIGHLIGHT serviceLayer
+    class DB,FILES,GOLD storage
+
