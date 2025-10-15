@@ -12,7 +12,6 @@ The system implements a hybrid heuristic + LLM pipeline for semi-automated publi
 4.  **Highlight:** Verified sentences are annotated with yellow highlights in PDF
 5.  **Store:** Metadata persisted to PostgreSQL; annotated PDF saved to file storage
 6.  **Review:** Streamlit dashboard provides filtering, charts, and detail views
-7.  **Export:** 📌 TBD - CSV/XLSX export not yet implemented
 
 ## Architecture Diagrams
 
@@ -411,27 +410,13 @@ class ENV cfg
     -   Instruments multiselect (client-side filter)
     -   Sort by date (newest/oldest) or title A→Z
 3.  **PDF Cards:** (line 254-276)
-    -   Title + CMCA badge (✅/❌)
+    -   Title + CMCA badge (YES/NO)
     -   Project, instruments, upload date (formatted as dd-mm-yyyy, line 73-97)
     -   "Open" button → navigate to detail page (line 274-275)
 
 **Detail Page:** `cmca_app_2/pages/details.py` - Displays full metadata, instruments, scores - Download button: `GET /pdfs/{pdf_id}/file` (line 85-102 in `routers/pdfs.py`) - Edit form: `PATCH /pdfs/{pdf_id}` (line 114-145) - Delete button: `DELETE /pdfs/{pdf_id}` (line 147-170)
 
 **API Access:** All routes require JWT Bearer token (line 18-29 in `routers/pdfs.py`).
-
-### 7. Export
-
-📌 **TBD:** Export functionality not implemented. Current workaround:
-
-**SQL Export:**
-
-``` bash
-psql -d cmca_audit -c "COPY (SELECT * FROM pdfs) TO '/tmp/export.csv' CSV HEADER;"
-```
-
-**TODO:** Add route `GET /pdfs/export?format=csv&project_id=1` in `src/backend/app/routers/pdfs.py` or Streamlit export button in `dashboard.py`.
-
-**Suggested Implementation:** - Use `pandas.DataFrame.to_csv()` or `openpyxl` for XLSX - Support filters: date range, project, CMCA result - Stream response with `StreamingResponse` or `FileResponse`
 
 ## Configuration
 
@@ -476,7 +461,7 @@ TODO: Migrate similarity search to use async session or read credentials from en
 
 ### Password Hashing
 
-📌 **TBD:** Check `src/backend/app/core/security.py` for bcrypt implementation. (File not read in initial inventory; TODO: document password hashing details.)
+**TBD:** Check `src/backend/app/core/security.py` for bcrypt implementation. (File not read in initial inventory; TODO: document password hashing details.)
 
 Expected: Use `passlib` with bcrypt or argon2:
 
@@ -624,19 +609,5 @@ Current setup supports local development with: - API: `uvicorn app.main:app --re
 6.  **Monitoring:** Add logging (structlog), metrics (Prometheus), tracing (OpenTelemetry).
 7.  **Caching:** Cache embeddings for frequently queried sentences (Redis).
 8.  **Background Jobs:** Move PDF processing to a background queue to avoid blocking HTTP requests.
-
-## Mermaid Diagram Sources
-
-Diagram source files are saved to `docs/architecture.mmd` and `docs/sequence.mmd`.
-
-To render as SVG:
-
-``` bash
-npm install -g @mermaid-js/mermaid-cli
-mmdc -i docs/architecture.mmd -o docs/architecture.svg
-mmdc -i docs/sequence.mmd -o docs/sequence.svg
-```
-
-------------------------------------------------------------------------
 
 **Related Documentation:** - [README.md](README.md) - Installation and usage - [QUICKSTART.md](QUICKSTART.md) - 10-minute setup guide - [REPORT_SECTIONS.md](REPORT_SECTIONS.md) - Methods, results, discussion, conclusion
