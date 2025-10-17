@@ -65,8 +65,6 @@ cmca-publication-audit-main/
 │   ├── schema.sql               # Complete PostgreSQL schema
 │   └── README.md                # Database setup notes
 ├── docs/
-│   ├── architecture.mmd         # Mermaid architecture diagram
-│   ├── sequence.mmd             # Mermaid sequence diagram
 │   └── gold_standard/
 │       ├── goldstandard.txt     # Gold standard acknowledgement phrases
 │       ├── Gold_Standard_v1.xlsx
@@ -283,9 +281,8 @@ This project includes comprehensive documentation for different audiences and pu
 -   [**SOFTWARE_DEPENDENCIES.md**](SOFTWARE_DEPENDENCIES.md) - Complete dependency specification, installation, and troubleshooting
 -   [**REQUIREMENTS.md**](REQUIREMENTS.md) - Full system requirements specification (business, functional, non-functional)
 
-### Project Documentation
+### Environment Configuration
 
--   [**REPORT_SECTIONS.md**](REPORT_SECTIONS.md) - Project report with methods, results, discussion, and conclusions
 -   [**env.template**](env.template) - Environment configuration template
 
 ### Recommended Reading Order
@@ -293,12 +290,5 @@ This project includes comprehensive documentation for different audiences and pu
 **For First-Time Setup:** 1. Read Prerequisites in this README 2. Follow [INSTALLATION_GUIDE.md](INSTALLATION_GUIDE.md) step-by-step 3. Review [QUICKSTART.md](QUICKSTART.md) for usage examples
 
 **For Development:** 1. Review [ARCHITECTURE.md](ARCHITECTURE.md) for system design 2. Check [SOFTWARE_DEPENDENCIES.md](SOFTWARE_DEPENDENCIES.md) for dependency details 3. Refer to [REQUIREMENTS.md](REQUIREMENTS.md) for specifications
-
-### Support and Help
-
--   See [INSTALLATION_GUIDE.md](INSTALLATION_GUIDE.md) for setup guidance
--   See [SOFTWARE_DEPENDENCIES.md](SOFTWARE_DEPENDENCIES.md) for dependency details
-
-------------------------------------------------------------------------
 
 **Last Updated:** 14/10/2025
