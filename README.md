@@ -24,7 +24,7 @@ This project includes streamlined documentation focused on practical usage:
 **For Team Integration:**
 - **README.md** - API documentation for embedding teams
 
-## Scope (your job)
+## Scope 
 - Stand up a persistent PostgreSQL database with pgvector extension
 - Manage collections (tables) and items
 - Store documents, metadata, and precomputed embeddings
