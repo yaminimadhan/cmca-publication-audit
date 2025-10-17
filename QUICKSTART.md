@@ -115,11 +115,11 @@ Browser opens at http://localhost:8501
 
 1. **Login:** Enter username `admin` and password `admin123` (or your registered credentials)
 2. **Create Project:**
-   - Expand "🗂️ Create New Project"
+   - Expand "Create New Project"
    - Enter project name: "Test Project"
    - Click "Create Project"
 3. **Upload PDF:**
-   - Expand "📤 Upload New PDF"
+   - Expand "Upload New PDF"
    - Select a scientific PDF from your computer (must contain text, not scanned images)
    - Choose "Test Project" from dropdown
    - Click "Upload"
@@ -168,7 +168,7 @@ Response includes:
   - Bar chart: Top 5 instruments by PDF count
 - **Filters:** Filter by project, instrument type; sort by date or title
 - **PDF Cards:** Each card shows:
-  - Title and CMCA result badge (✅ Yes / ❌ No)
+  - Title and CMCA result badge (Yes / No)
   - Project, instruments, upload date
   - "Open" button to view details
 
@@ -276,8 +276,6 @@ done
 ```
 
 ### How do I export results to CSV/XLSX?
-
-📌 **TBD:** Export functionality not yet implemented. TODO: Add export route in `src/backend/app/routers/pdfs.py` or Streamlit export button in `cmca_app_2/pages/dashboard.py`.
 
 Manual export via SQL:
 
